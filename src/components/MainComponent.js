@@ -1,16 +1,15 @@
 import React from 'react';
 import Header from './header/Header';
-// import Body from './body/Body';
+import Body from './body/Body';
 // import Footer from './footer/Footer';
 
-const MainComponent = () => {
+const MainComponent = (props) => {
+    // console.log("MainComponent: ", props);
     return (
         <div>
-            <div id="layout">
-                <Header />
-                {/* <Body />
-                <Footer /> */}
-            </div>
+            <Header />
+            <Body />
+            {/* <Footer /> */}
         </div>
     );
 }

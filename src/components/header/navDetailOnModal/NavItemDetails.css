@@ -1,0 +1,31 @@
+.serviceContent{
+    width: 25%;
+    float: left;
+    margin-top: 20px;
+}
+/* .serviceContent:nth-last-child(2){
+    width: 25%;
+} */
+.serviceContent:last-child ul{
+    margin-left: 70px;
+}
+.serviceContent:last-child h5{
+    padding-left: 70px;
+}
+
+.serviceContent h5{
+    padding: 0 0 10px 40px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #FF0000;
+}
+.serviceContent ul{
+    padding: 0;
+    margin-left: 40px;
+    list-style: none;
+}
+.serviceContent ul li{
+    margin: 0 0 10px 0px;
+}
+.serviceContent ul li:hover{
+    color:#CD3932;
+}

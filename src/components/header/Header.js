@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { connect } from 'react-redux';
 
+
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
     faFacebookF, 
@@ -13,7 +15,18 @@ import { faPhone, faBars } from '@fortawesome/free-solid-svg-icons';
 import './Header.css';
 import { Link } from 'react-router-dom';
 
-// import Signup from '../../auth/Signup';
+import Signup from '../../auth/Signup';
+import Login from '../../auth/Login';
+import NavItemDetails from './navDetailOnModal/NavItemDetails';
+
+
+
+const mapState = state =>{
+    // console.log("Glogal State: ", state);
+    return{
+        navMenuItem: state,
+    }
+}
 
 
 class Header extends Component {
@@ -21,26 +34,71 @@ class Header extends Component {
     constructor(props){
         super(props);
         this.state = {
-            modal: false,
+            signupModal: false,
+            loginModal: false,
+            detailsModal: false,
+            scrolled: false,
         }
     }
 
 
-    toggle = () =>{
+    signupToggle = () =>{
         this.setState({
-            modal: !this.state.modal,
+            signupModal: !this.state.signupModal,
         });
+    }
+
+    loginToggle = () =>{
+        this.setState({
+            loginModal: !this.state.loginModal,
+        });
+    }
+
+    detailsModalToggle = () =>{
+        if(window.pageYOffset > 0){
+            this.setState({
+                scrolled: !this.state.scrolled,
+                detailsModal: !this.state.detailsModal,
+            });
+        } else {
+            this.setState({detailsModal: !this.state.detailsModal});
+        }
+    }
+
+    handleScroll = () =>{
+        if(window.pageYOffset > 0){
+            this.setState({"scrolled": true})
+        } else {
+            this.setState({"scrolled": false})
+        }
+    }
+
+
+
+    componentDidMount(){
+        window.addEventListener("scroll", this.handleScroll);
+    }
+    componentWillUnmount(){
+        window.removeEventListener("scroll", this.handleScroll);
     }
 
 
 
     render(){
 
+        const scrolled = this.state.scrolled;
 
         return (
         
             <header>
-                <section className="navTop">
+
+                {/* Top Navbar */}
+                <section className="navTop" 
+                    style={{
+                        marginBottom: scrolled ? "60px" : "0px",
+                        borderBottom:"1px solid #CD3932"
+                    }}
+                >
                     <div className="container">
                         <div className='row'>
                             
@@ -48,22 +106,22 @@ class Header extends Component {
                                 <div className='col-sm-3'>
                                     <ul className='navTopIconList'>
                                         <li>
-                                            <Link to={"#"}>
+                                            <Link className='fb' to={"#"}>
                                                 <FontAwesomeIcon icon={faFacebookF} />
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to={"#"}>
+                                            <Link className='in' to={"#"}>
                                                 <FontAwesomeIcon icon={faLinkedinIn} />
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to={"#"}>
+                                            <Link className='tw' to={"#"}>
                                                 <FontAwesomeIcon icon={faTwitter} />
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to={"#"}>
+                                            <Link className='pt' to={"#"}>
                                                 <FontAwesomeIcon icon={faPinterestP} />
                                             </Link>
                                         </li>
@@ -89,11 +147,11 @@ class Header extends Component {
                             
                             <div className='col-md-6 col-sx-12'>
                                 <ul className='navTopRight'>
-                                    <li style={{cursor:"pointer"}}>
+                                    <li onClick={this.loginToggle} style={{cursor:"pointer"}}>
                                         Login
                                     </li>
                                     <li style={{paddingTop:"15px"}}>|</li>
-                                    <li onClick={this.toggle} style={{paddingRight:"0",cursor:"pointer"}}>
+                                    <li onClick={this.signupToggle} style={{paddingRight:"0",cursor:"pointer"}}>
                                         Signup
                                     </li>
                                 </ul>
@@ -103,18 +161,32 @@ class Header extends Component {
                 </section>
     
     
+                {/* Bottom Navbar */}
                 <section>
-                    <div className="navBottom">
+                    <div className="navBottom" 
+                        style={{
+                            display: "flex",
+                            zIndex: 9999,
+                            top: scrolled ? 0 : 30,
+                            position: scrolled ? "fixed" : "initial",
+                            background: scrolled ? "#775218" : "#fff",
+                            color: scrolled ? "#fff" : "#212529",
+                        }}
+                    >
                         <div className="container">
                             <div className='row'>
                                 <div className='col-sm-6 col-md-6'>
                                     <div className='navBottomLeft'>
-                                        <a className="navbar-brand" href="#">Navbar</a>
+                                        <a className="navbar-brand" href="#">LOGO</a>
                                     </div>
                                 </div>
                                 <div className='col-sm-6 col-md-6'>
                                     <div className='navBottomRight'>
-                                        <FontAwesomeIcon icon={faBars} />
+                                        <FontAwesomeIcon 
+                                            icon={faBars} 
+                                            style={{cursor:"pointer"}}
+                                            onClick={this.detailsModalToggle}
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -123,39 +195,41 @@ class Header extends Component {
                 </section>
     
     
+
+                {/* Signup and Login Modals */}
                 <section>
-                    <Modal size='md' isOpen={this.state.modal} toggle={this.toggle}>
-                        <ModalHeader toggle={this.toggle}>Register</ModalHeader>
+                    <Modal size='md' isOpen={this.state.signupModal}>
+                        <ModalHeader toggle={this.signupToggle}>Register</ModalHeader>
                         <ModalBody>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum.
+                            <Signup />
                         </ModalBody>
-                        <ModalFooter>
-                            <Button color="primary" onClick={this.toggle}>
-                                Do Something
-                            </Button>{' '}
-                            <Button color="secondary" onClick={this.toggle}>
-                                Cancel
-                            </Button>
-                        </ModalFooter>
+                    </Modal>
+                </section>
+
+                <section>
+                    <Modal size='md' isOpen={this.state.loginModal}>
+                        <ModalHeader toggle={this.loginToggle}>Login</ModalHeader>
+                        <ModalBody>
+                            <Login />
+                        </ModalBody>
                     </Modal>
                 </section>
 
 
-                {/* {this.state.isSigned ? <Signup /> : null} */}
+                {/* Bottom Navbar Details */}
+                <section>
+                    <NavItemDetails 
+                        item={this.props.navMenuItem}
+                        detailsModalToggle={this.detailsModalToggle} 
+                        isModalOpen={this.state.detailsModal}
+                    />
+                </section>
+
     
             </header>
-    
-    
-        
     
         );
     }
 }
 
-export default Header;
+export default connect(mapState)(Header);
