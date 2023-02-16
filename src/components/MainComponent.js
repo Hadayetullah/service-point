@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './header/Header';
 import Body from './body/Body';
-// import Footer from './footer/Footer';
+import Footer from './footer/Footer';
 
 const MainComponent = (props) => {
     // console.log("MainComponent: ", props);
@@ -9,7 +9,7 @@ const MainComponent = (props) => {
         <div>
             <Header />
             <Body />
-            {/* <Footer /> */}
+            <Footer />
         </div>
     );
 }

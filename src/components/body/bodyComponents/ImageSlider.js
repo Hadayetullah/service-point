@@ -14,7 +14,7 @@ class ImageSlider extends Component {
     ],
     currentIndex: 0,
     previousIndex: null,
-    textClass: "car-text-in",
+    // textClass: "car-text-in",
     // time: 9000,
   };
 
@@ -60,7 +60,7 @@ class ImageSlider extends Component {
         return {
           previousIndex: prevState.currentIndex,
           currentIndex: nextIndex,
-          textClass: "car-text-in",
+          // textClass: "car-text-in",
         };
       });
       // setTimeout(()=>{
@@ -83,7 +83,7 @@ class ImageSlider extends Component {
   }
 
   render() {
-    const { images, currentIndex, previousIndex, textClass } = this.state;
+    const { images, currentIndex, previousIndex } = this.state;
     return (
       <div className="car">
         {images.map((image, index) => (
@@ -101,7 +101,7 @@ class ImageSlider extends Component {
             />
             {index === currentIndex && (
               <div className="info-container">
-                <div className={textClass}>
+                <div className="car-text-in">
                   <h2>Header Content Will Go Here</h2>
                   <p>Some text content will be here</p>
                   {image.alt}

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './NavItemDetails.css';
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+
 class NavItemDetails extends Component {
     constructor(props){
         super(props);
@@ -28,15 +31,20 @@ class NavItemDetails extends Component {
 
     return (
         <Modal isOpen={this.props.isModalOpen} toggle={this.props.detailsModalToggle} fullscreen>
-            <div className='container'>
-                <ModalHeader 
-                    style={{paddingLeft:"0", marginRight:"0", background:"#fff"}} 
-                    toggle={this.props.detailsModalToggle}
-                >
-                    LOGO
-                </ModalHeader>
+            <div style={{paddingLeft:"0", marginRight:"0", height:"50px", color:`${this.props.modalBottomColor}`, background:`${this.props.modalTopColor}`}}>
+                <div className='container'>
+                    <h5 style={{float:"left", paddingTop:"10px"}}>LOGO</h5>
+                    <FontAwesomeIcon icon={faXmark} onClick={this.props.detailsModalToggle}
+                        style={{
+                            float:"right", 
+                            fontSize:"30px",
+                            paddingTop:"10px",
+                            cursor:"pointer"
+                        }}
+                     />
+                </div>
             </div>
-            <ModalBody style={{background:"#000000", color:"white"}}>
+            <ModalBody style={{background:`${this.props.modalBottomColor}`, color:`${this.props.modalTopColor}`}}>
                 <div className='container'>
                     {items}
                 </div>

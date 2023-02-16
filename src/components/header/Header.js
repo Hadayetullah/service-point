@@ -1,8 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import './Header.css';
 
 
-import { Modal, ModalHeader, ModalBody } from 'reactstrap';
+import {
+    Modal, 
+    ModalHeader, 
+    ModalBody,
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    NavbarText,
+    Button
+  } from 'reactstrap';
+
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
     faFacebookF, 
@@ -12,8 +33,7 @@ import {
     faWhatsapp, 
 } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faBars } from '@fortawesome/free-solid-svg-icons';
-import './Header.css';
-import { Link } from 'react-router-dom';
+
 
 import Signup from '../../auth/Signup';
 import Login from '../../auth/Login';
@@ -21,7 +41,7 @@ import NavItemDetails from './navDetailOnModal/NavItemDetails';
 
 
 
-const mapState = state =>{
+const mapStateToProps = state =>{
     // console.log("Glogal State: ", state);
     return{
         navMenuItem: state,
@@ -38,6 +58,12 @@ class Header extends Component {
             loginModal: false,
             detailsModal: false,
             scrolled: false,
+            isOpen: false,
+            isToggolerOnNav: true,
+            modalTopColor: "#fff",
+            modalBottomColor: "#1C2E3D",
+            zIndex: 9999,
+            isResponsive: false,
         }
     }
 
@@ -57,36 +83,69 @@ class Header extends Component {
     detailsModalToggle = () =>{
         if(window.pageYOffset > 0){
             this.setState({
-                scrolled: !this.state.scrolled,
+                modalTopColor: "#1C2E3D",
+                modalBottomColor: "#fff",
+                zIndex: 1,
                 detailsModal: !this.state.detailsModal,
             });
         } else {
-            this.setState({detailsModal: !this.state.detailsModal});
+            this.setState({
+                modalTopColor: "#fff",
+                modalBottomColor: "#1C2E3D",
+                zIndex: 9999,
+                detailsModal: !this.state.detailsModal,
+            });
         }
     }
 
     handleScroll = () =>{
         if(window.pageYOffset > 0){
-            this.setState({"scrolled": true})
+            this.setState({scrolled: true})
         } else {
-            this.setState({"scrolled": false})
+            this.setState({scrolled: false})
         }
     }
+
+    toggleNavbar = () => this.setState({isOpen: !this.state.isOpen});
+
+    responsiveNav = () =>{
+        if(window.innerWidth < 768){
+            this.setState({
+                isToggolerOnNav: false,
+                isResponsive: true,
+            })
+        } else {
+            this.setState({
+                isToggolerOnNav: true,
+                isResponsive: false,
+            })
+        }
+        // console.log(window.innerWidth);
+    }
+
+
 
 
 
     componentDidMount(){
+        this.responsiveNav();
         window.addEventListener("scroll", this.handleScroll);
+        window.addEventListener("resize", this.responsiveNav);
     }
     componentWillUnmount(){
         window.removeEventListener("scroll", this.handleScroll);
+        window.removeEventListener("resize", this.responsiveNav);
     }
+
+
 
 
 
     render(){
 
-        const scrolled = this.state.scrolled;
+        console.log(this.state.scrolled);
+
+        const {scrolled, zIndex, isResponsive } = this.state;
 
         return (
         
@@ -162,7 +221,7 @@ class Header extends Component {
     
     
                 {/* Bottom Navbar */}
-                <section>
+                {/* <section>
                     <div className="navBottom" 
                         style={{
                             display: "flex",
@@ -192,6 +251,86 @@ class Header extends Component {
                             </div>
                         </div>
                     </div>
+                </section> */}
+
+
+
+
+                {/* Navbar */}
+                <section
+                    style={{
+                        width: "100%",
+                        borderTop:"1px solid #CD3932",
+                        // display: "flex",
+                        zIndex: zIndex,
+                        top: scrolled ? 0 : 30,
+                        position: scrolled ? "fixed" : "initial",
+                        background: scrolled ? "#1C2E3D" : "#fff",
+                        // color: scrolled ? "#fff" : "#212529",
+                    }}
+                >
+                    <Navbar expand={"md"} container={true}>
+                        <NavbarBrand style={{color: scrolled ? "#fff" : "#212529",}} href="/">LOGO</NavbarBrand>
+                        <NavbarToggler 
+                            className='modal-icon-responsive'
+                            onClick={this.toggleNavbar}
+                        >
+                            <FontAwesomeIcon icon={faBars} style={{color: scrolled ? "#fff" : "#212529",}} />
+                        </NavbarToggler>
+                        {/* <NavbarToggler className='modal-icon' /> */}
+                        <Collapse isOpen={this.state.isOpen} navbar>
+                            <Nav className="me-auto" navbar style={{visibility: scrolled ? "visible" : (isResponsive ? "visible" : "hidden"),}}>
+                                <NavItem>
+                                    <NavLink style={{color: scrolled ? "#fff" : "#212529",}} href="#">About Us</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink style={{color: scrolled ? "#fff" : "#212529",}} href="#">Contact Us</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink style={{color: scrolled ? "#fff" : "#212529",}} href="#">Privacy &#38; Policy</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink style={{color: scrolled ? "#fff" : "#212529",}} href="#">Terms &#38; Condition</NavLink>
+                                </NavItem>
+                                {/* <NavItem>
+                                    <NavLink href="https://github.com/reactstrap/reactstrap">
+                                        GitHub
+                                    </NavLink>
+                                </NavItem> */}
+                                {/* <UncontrolledDropdown nav inNavbar>
+                                    <DropdownToggle nav caret>
+                                        Options
+                                    </DropdownToggle>
+                                    <DropdownMenu right>
+                                        <DropdownItem>Option 1</DropdownItem>
+                                        <DropdownItem>Option 2</DropdownItem>
+                                        <DropdownItem divider />
+                                        <DropdownItem>Reset</DropdownItem>
+                                    </DropdownMenu>
+                                </UncontrolledDropdown> */}
+                            </Nav>
+                            {/* <NavbarText>Simple Text</NavbarText> */}
+                            {/* <NavbarText>767</NavbarText> */}
+                            <hr style={{marginRight:"-120px"}} />
+                            {
+                                this.state.isToggolerOnNav
+                                ?
+                                (
+                                    <NavbarToggler 
+                                        className='modal-icon'
+                                        onClick={this.detailsModalToggle}
+                                    >
+                                        <FontAwesomeIcon icon={faBars} style={{color: scrolled ? "#fff" : "#212529",}} />
+                                    </NavbarToggler>
+                                )
+                                :
+                                (
+                                    <Button style={{fontSize:"17px", fontWeight:"bold"}} onClick={this.detailsModalToggle}>Visit All Servies</Button>
+                                )
+                            }
+                            {/* <NavbarToggler className='modal-icon' /> */}
+                        </Collapse>
+                    </Navbar>
                 </section>
     
     
@@ -222,6 +361,8 @@ class Header extends Component {
                         item={this.props.navMenuItem}
                         detailsModalToggle={this.detailsModalToggle} 
                         isModalOpen={this.state.detailsModal}
+                        modalTopColor={this.state.modalTopColor}
+                        modalBottomColor={this.state.modalBottomColor}
                     />
                 </section>
 
@@ -232,4 +373,4 @@ class Header extends Component {
     }
 }
 
-export default connect(mapState)(Header);
+export default connect(mapStateToProps)(Header);

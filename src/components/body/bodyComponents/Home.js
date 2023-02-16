@@ -2,12 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 import './Home.css';
 
-import HomeCarousel from "../carousel/HomeCarousel";
 import ServiceGalleryList from "./allService/ServiceGalleryList";
 
 
 import ImageSlider from "./ImageSlider";
-import Slide from './Slide';
 
 
 
@@ -20,7 +18,7 @@ const Home = () => {
              
             <section>
                 <div style={{borderTop: "1px solid #CD3932", }}>
-                    <HomeCarousel />
+                    <ImageSlider />
                 </div>
                 {/* <div style={{width:"250px",position:"relative", marginTop:"-32%", marginLeft:"20%"}}>
                     <p>sdosdfa'p;ksafjd'sadffopsfdsfj</p>
@@ -91,14 +89,14 @@ const Home = () => {
 
 
 
-            <section style={{margin:"50px 0"}}>
+            {/* <section style={{margin:"50px 0"}}>
                 <Slide />
-            </section>
+            </section> */}
 
 
-            <section style={{margin:"50px 0"}}>
+            {/* <section style={{margin:"50px 0"}}>
                 <ImageSlider />
-            </section>
+            </section> */}
 
 
           
