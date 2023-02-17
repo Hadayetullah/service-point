@@ -1,0 +1,50 @@
+.visit-summary {
+	display: inline-block;
+	margin: 25px 0 0 5px;
+	font-size: 13px;
+}
+.visit-summary strong {
+	margin: 0;
+	padding: 0;
+}
+.visit-summary p {
+	margin: -4px 0 5px 0;
+}
+.book-button{
+    margin-left: 5px;
+	width: 65%;
+	height: 45px;
+	background-color: #A6A6A6;
+	color: #fff;
+	font-weight: 777;
+	font-size: 25px;
+}
+.book-button:hover{
+    border: 1px solid #A6A6A6;
+    background-color: #fff;
+    color: #999;
+}
+.order-cases-bottom {
+	margin-top: 0px;
+}
+.order-cases-bottom p {
+	padding: 0;
+	margin: 0;
+}
+.different-services{
+    margin-left: 5% !important;
+}
+.service-col{
+    margin-bottom: 20px;
+}
+.service-col p{
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 17px;
+}
+.qs-ans{
+    margin-bottom: 20px;
+}
+.qs-ans p{
+    margin: 0;
+}

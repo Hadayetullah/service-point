@@ -2,10 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import './Home.css';
 
-import ServiceGalleryList from "./allService/ServiceGalleryList";
-
-
 import ImageSlider from "./ImageSlider";
+import ServiceGalleryList from "./allService/ServiceGalleryList";
 
 
 

@@ -218,49 +218,13 @@ class Header extends Component {
                         </div>
                     </div>
                 </section>
+                
     
     
                 {/* Bottom Navbar */}
-                {/* <section>
-                    <div className="navBottom" 
-                        style={{
-                            display: "flex",
-                            zIndex: 9999,
-                            top: scrolled ? 0 : 30,
-                            position: scrolled ? "fixed" : "initial",
-                            background: scrolled ? "#775218" : "#fff",
-                            color: scrolled ? "#fff" : "#212529",
-                        }}
-                    >
-                        <div className="container">
-                            <div className='row'>
-                                <div className='col-sm-6 col-md-6'>
-                                    <div className='navBottomLeft'>
-                                        <a className="navbar-brand" href="#">LOGO</a>
-                                    </div>
-                                </div>
-                                <div className='col-sm-6 col-md-6'>
-                                    <div className='navBottomRight'>
-                                        <FontAwesomeIcon 
-                                            icon={faBars} 
-                                            style={{cursor:"pointer"}}
-                                            onClick={this.detailsModalToggle}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
-
-
-
-
-                {/* Navbar */}
                 <section
                     style={{
                         width: "100%",
-                        borderTop:"1px solid #CD3932",
                         // display: "flex",
                         zIndex: zIndex,
                         top: scrolled ? 0 : 30,

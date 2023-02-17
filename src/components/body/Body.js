@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from './bodyComponents/Home';
+import Order from './bodyComponents/Order';
 // import AboutUs from './bodyComponents/AboutUs';
 // import ContactUs from './bodyComponents/ContactUs';
 // import FAQ from './bodyComponents/FAQ';
@@ -16,6 +17,7 @@ const Body = () => {
         <div>
             <Routes>
                 <Route path='/' element={<Home />} />
+                <Route path="order" element={<Order />} />
                 {/* <Route path='about-us' element={<AboutUs />} />
                 <Route path='/contact-us' element={<ContactUs />} />
                 <Route path='/faq' element={<FAQ />} />
