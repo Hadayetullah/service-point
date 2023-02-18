@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import { Card, CardBody, CardTitle } from "reactstrap";
 import './ServiceGalleryList.css';
 
+import { Navigate } from "react-router-dom";
+
 
 
 class ServiceGalleryList extends Component {
   state = {
     show: false,
-    limit: 6
+    limit: 6,
+    isSelected: false,
   };
 
   componentDidMount() {
@@ -36,10 +39,18 @@ class ServiceGalleryList extends Component {
     this.setState(state => ({ show: !state.show }));
   };
 
+  viewOrderDetail = () =>{
+    this.setState({isSelected: true});
+  }
+
   render() {
 
     const { galleryItem } = this.props;
-    const { show, limit } = this.state;
+    const { show, limit, isSelected } = this.state;
+
+    if(isSelected){
+        return <Navigate to="/order" />;
+    }
     
 
     return (
@@ -54,8 +65,10 @@ class ServiceGalleryList extends Component {
                 .map((product, i) => (
                   <div key={i} className="col-lg-2 col-md-3 col-sm-4 col-xs-12">
                     <Card 
+                      onClick={this.viewOrderDetail}
                       className="service"
                       style={{
+                        cursor:"pointer",
                         background: "#F5F5F5",
                         margin: "15px -11px 10px -11px",
                         textAlign: "center",

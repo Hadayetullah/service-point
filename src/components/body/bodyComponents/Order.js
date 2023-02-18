@@ -35,7 +35,7 @@ class Order extends Component {
                             Visit Charge : 
                             <span style={{fontSize:28}}> <FontAwesomeIcon icon={faBangladeshiTakaSign} /> 350</span>
                         </h2>
-                        <div style={{width:"98px", margin:"0px 0px 1px 5px", borderBottom:"1px solid #FC5C18"}}>
+                        <div style={{width:"102px", margin:"0px 0px 1px 5px", borderBottom:"1px solid #FC5C18"}}>
                             <p style={{marginBottom:"-2px", color:"#FC5C18"}}>View Price List</p>
                         </div>
                         <div className='visit-summary'>

@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import './Home.css';
 
-import ImageSlider from "./ImageSlider";
+import ImageSlider from "./imageSlider/ImageSlider";
 import ServiceGalleryList from "./allService/ServiceGalleryList";
 
 
@@ -18,9 +18,6 @@ const Home = () => {
                 <div style={{borderTop: "1px solid #CD3932", }}>
                     <ImageSlider />
                 </div>
-                {/* <div style={{width:"250px",position:"relative", marginTop:"-32%", marginLeft:"20%"}}>
-                    <p>sdosdfa'p;ksafjd'sadffopsfdsfj</p>
-                </div> */}
             </section>
 
 
