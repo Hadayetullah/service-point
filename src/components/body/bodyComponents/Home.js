@@ -1,15 +1,27 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import './Home.css';
 
 import ImageSlider from "./imageSlider/ImageSlider";
 import ServiceGalleryList from "./allService/ServiceGalleryList";
 
+import { detailView } from "../../../redux/actionCreators";
+
 
 
 const Home = () => {
 
-    const services = useSelector(state=> state);
+    
+    const navigate = useNavigate();
+    const galleryItems = useSelector(state=> state.galleryItems);
+
+
+    const dispatch = useDispatch();
+    const viewDetail = (parentId, childId) =>{
+        dispatch(detailView(parentId, childId));
+        navigate("/details");
+      }
     
     return (
         <div>
@@ -23,8 +35,8 @@ const Home = () => {
 
             <section>
                 {
-                    services.map((item, i)=>(
-                        <ServiceGalleryList key={i} galleryItem={item} />
+                    galleryItems.map((item, i)=>(
+                        <ServiceGalleryList key={i} galleryItem={item} viewDetail={viewDetail} />
                     ))
                 }
             </section>
@@ -40,61 +52,47 @@ const Home = () => {
                     </div>
 
                     <div className="steps">
-                        <div class="card-group">
-                            <div class="card step-card">
-                                <div class="card-body step-card-body">
+                        <div className="card-group">
+                            <div className="card step-card">
+                                <div className="card-body step-card-body">
                                     <div className="step-top">
-                                        <h5 class="card-title">
-                                            Step <span class="badge cap">1</span>
+                                        <h5 className="card-title">
+                                            Step <span className="badge cap">1</span>
                                         </h5>
                                     </div>
                                     <img src="/asset/step/step1.png" alt="Image" />
-                                    <h6 class="card-subtitle">Schedule Your Service</h6>
-                                    <p class="card-text">Fill Credential, Book Service & Relax</p>
+                                    <h6 className="card-subtitle">Schedule Your Service</h6>
+                                    <p className="card-text">Fill Credential, Book Service & Relax</p>
                                 </div>
                             </div>
-                            <div class="card step-card">
-                                <div class="card-body step-card-body">
+                            <div className="card step-card">
+                                <div className="card-body step-card-body">
                                     <div className="step-top">
-                                        <h5 class="card-title">
-                                            Step <span class="badge cap">2</span>
+                                        <h5 className="card-title">
+                                            Step <span className="badge cap">2</span>
                                         </h5>
                                     </div>
                                     <img src="/asset/step/step2.png" alt="Image" />
-                                    <h6 class="card-subtitle">Service At Your Home</h6>
-                                    <p class="card-text">Keep Calm, We Will Serve At Your Door</p>
+                                    <h6 className="card-subtitle">Service At Your Home</h6>
+                                    <p className="card-text">Keep Calm, We Will Serve At Your Door</p>
                                 </div>
                             </div>
-                            <div class="card step-card">
-                                <div class="card-body step-card-body">
+                            <div className="card step-card">
+                                <div className="card-body step-card-body">
                                     <div className="step-top">
-                                        <h5 class="card-title">
-                                            Step <span class="badge cap">3</span>
+                                        <h5 className="card-title">
+                                            Step <span className="badge cap">3</span>
                                         </h5>
                                     </div>
                                     <img src="/asset/step/step3.png" alt="Image" />
-                                    <h6 class="card-subtitle">Pay After Service</h6>
-                                    <p class="card-text">Make Payment After Job Get Done</p>
+                                    <h6 className="card-subtitle">Pay After Service</h6>
+                                    <p className="card-text">Make Payment After Job Get Done</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-
-
-
-            {/* <section style={{margin:"50px 0"}}>
-                <Slide />
-            </section> */}
-
-
-            {/* <section style={{margin:"50px 0"}}>
-                <ImageSlider />
-            </section> */}
-
-
-          
+            </section>   
 
         </div>
     );

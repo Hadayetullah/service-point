@@ -44,7 +44,7 @@ import NavItemDetails from './navDetailOnModal/NavItemDetails';
 const mapStateToProps = state =>{
     // console.log("Glogal State: ", state);
     return{
-        navMenuItem: state,
+        navMenuItem: state.galleryItems,
     }
 }
 
@@ -143,7 +143,7 @@ class Header extends Component {
 
     render(){
 
-        console.log(this.state.scrolled);
+        // console.log(this.state.scrolled);
 
         const {scrolled, zIndex, isResponsive } = this.state;
 

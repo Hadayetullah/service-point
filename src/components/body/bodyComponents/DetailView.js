@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
-import './Order.css';
+import {connect} from 'react-redux';
+import './DetailView.css';
 
 import { Card, CardImg } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faBangladeshiTakaSign, faCaretRight, faCheck } from '@fortawesome/free-solid-svg-icons';
 
-class Order extends Component {
+
+
+const mapStateToProps = state =>{
+    return{
+        data: state.serviceDetails.data,
+    }
+}
+
+
+
+
+class DetailView extends Component {
+    constructor(props){
+        super(props);
+    }
+
+
   render() {
+
     return (
         <section style={{paddingTop:"20px",borderTop:"1px solid rgb(205, 57, 50)"}}>
             <div className='container'>
                 <div className='row'>
                     <div className='col-12'>
-                        <h2 style={{color:"#1C2E3D"}}>Microwave-Oven Repairing Services</h2>
+                    <h2 style={{color:"#1C2E3D"}}>{this.props.data}</h2>
                     </div>
                 </div>
                 <div className='row'>
@@ -127,4 +145,4 @@ class Order extends Component {
   }
 }
 
-export default Order;
+export default connect(mapStateToProps)(DetailView);

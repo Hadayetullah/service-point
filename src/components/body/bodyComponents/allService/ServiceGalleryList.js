@@ -1,16 +1,14 @@
 import React, { Component } from "react";
+
+
 import { Card, CardBody, CardTitle } from "reactstrap";
 import './ServiceGalleryList.css';
-
-import { Navigate } from "react-router-dom";
-
 
 
 class ServiceGalleryList extends Component {
   state = {
     show: false,
-    limit: 6,
-    isSelected: false,
+    limit: 6
   };
 
   componentDidMount() {
@@ -39,18 +37,11 @@ class ServiceGalleryList extends Component {
     this.setState(state => ({ show: !state.show }));
   };
 
-  viewOrderDetail = () =>{
-    this.setState({isSelected: true});
-  }
 
   render() {
 
-    const { galleryItem } = this.props;
-    const { show, limit, isSelected } = this.state;
-
-    if(isSelected){
-        return <Navigate to="/order" />;
-    }
+    const { galleryItem, viewDetail } = this.props;
+    const { show, limit } = this.state;
     
 
     return (
@@ -62,35 +53,38 @@ class ServiceGalleryList extends Component {
 
               {galleryItem.services
                 .slice(0, show ? galleryItem.services.length : limit)
-                .map((product, i) => (
-                  <div key={i} className="col-lg-2 col-md-3 col-sm-4 col-xs-12">
-                    <Card 
-                      onClick={this.viewOrderDetail}
-                      className="service"
-                      style={{
-                        cursor:"pointer",
-                        background: "#F5F5F5",
-                        margin: "15px -11px 10px -11px",
-                        textAlign: "center",
-                        height: "170px",
-                        padding:"20px",
-                        borderRadius: "0px"
-                      }}
-                    >
-                      <img src={product.src} alt={product.title} 
+                .map((product, i) => {
+                  return(
+                    <div key={i} className="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+                      <Card 
+                        onClick={()=>viewDetail(galleryItem.id, product.id)}
+                        className="service"
                         style={{
-                          width:"90px",
-                          margin: "0 auto"
-                        }} 
-                      />
-                      <CardBody className="service-body">
-                        <CardTitle tag={"h6"} style={{color: "#5C5C5C"}}>
-                          {product.title}
-                        </CardTitle>
-                      </CardBody>
-                    </Card>
-                  </div>
-                ))
+                          cursor:"pointer",
+                          background: "#F5F5F5",
+                          margin: "15px -11px 10px -11px",
+                          textAlign: "center",
+                          height: "170px",
+                          padding:"20px",
+                          borderRadius: "0px"
+                        }}
+                      >
+                        <img src={product.src} alt={product.title} 
+                          style={{
+                            width:"90px",
+                            margin: "0 auto"
+                          }} 
+                        />
+                        <CardBody className="service-body">
+                          <CardTitle tag={"h6"} style={{color: "#5C5C5C"}}>
+                            {product.title}
+                          </CardTitle>
+                        </CardBody>
+                      </Card>
+                    </div>
+                  )
+                }
+                )
               }
 
           </div>
