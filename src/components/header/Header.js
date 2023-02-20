@@ -230,6 +230,7 @@ class Header extends Component {
                         top: scrolled ? 0 : 30,
                         position: scrolled ? "fixed" : "initial",
                         background: scrolled ? "#1C2E3D" : "#fff",
+                        borderBottom:"1px solid #CD3932"
                         // color: scrolled ? "#fff" : "#212529",
                     }}
                 >
@@ -245,21 +246,21 @@ class Header extends Component {
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="me-auto" navbar style={{visibility: scrolled ? "visible" : (isResponsive ? "visible" : "hidden"),}}>
                                 <NavItem>
-                                    <NavLink style={{color: scrolled ? "#fff" : "#212529",}} href="#">About Us</NavLink>
+                                    <Link style={{color: scrolled ? "#fff" : "#212529",}} to="/about-us">About Us</Link>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink style={{color: scrolled ? "#fff" : "#212529",}} href="#">Contact Us</NavLink>
+                                    <Link style={{color: scrolled ? "#fff" : "#212529",}} to="/contact-us">Contact Us</Link>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink style={{color: scrolled ? "#fff" : "#212529",}} href="#">Privacy &#38; Policy</NavLink>
+                                    <Link style={{color: scrolled ? "#fff" : "#212529",}} to="#">Privacy &#38; Policy</Link>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink style={{color: scrolled ? "#fff" : "#212529",}} href="#">Terms &#38; Condition</NavLink>
+                                    <Link style={{color: scrolled ? "#fff" : "#212529",}} to="#">Terms &#38; Condition</Link>
                                 </NavItem>
                                 {/* <NavItem>
-                                    <NavLink href="https://github.com/reactstrap/reactstrap">
+                                    <Link href="https://github.com/reactstrap/reactstrap">
                                         GitHub
-                                    </NavLink>
+                                    </Link>
                                 </NavItem> */}
                                 {/* <UncontrolledDropdown nav inNavbar>
                                     <DropdownToggle nav caret>

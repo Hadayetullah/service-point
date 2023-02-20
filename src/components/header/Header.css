@@ -127,3 +127,12 @@
 .navbar-toggler:focus {
 	box-shadow: none !important;
 }
+/* .navbar-nav{
+    list-style: none !important;
+} */
+.nav-item{
+    margin-right: 20px;
+}
+.nav-item a{
+    text-decoration: none;
+}

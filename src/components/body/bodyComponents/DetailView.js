@@ -50,7 +50,7 @@ class DetailView extends Component {
                     </div>
                     <div className='col-md-6'>
                         <h2 style={{color:"#1C2E3D"}}>
-                            Visit Charge : 
+                            Service Charge : 
                             <span style={{fontSize:28}}> <FontAwesomeIcon icon={faBangladeshiTakaSign} /> 350</span>
                         </h2>
                         <div style={{width:"102px", margin:"0px 0px 1px 5px", borderBottom:"1px solid #FC5C18"}}>
@@ -126,7 +126,7 @@ class DetailView extends Component {
                         </div>
                     </div>
                 </div>
-                <div className='row' style={{marginTop:"30px"}}>
+                {/* <div className='row' style={{marginTop:"30px"}}>
                     <h3 style={{fontWeight:"bold",color:"#1C2E3D"}}>FAQs</h3>
                     <div className='col-md-11 col-sm-12'>
                         <div className='qs-ans'>
@@ -138,7 +138,7 @@ class DetailView extends Component {
                             <p><strong>Answer </strong><FontAwesomeIcon icon={faArrowRight} /> To hire our services please login to ezHomeservices.in and book your required services thoroughly along with filling your details For more query you may catch us on or toll free number. </p>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     )
