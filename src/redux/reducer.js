@@ -11,7 +11,7 @@ const galleryItemsReducer = (galleryItemsState = GALLERYITEMS, action) =>{
     return galleryItemsState;
 }
 
-const ServiceDetailsReducer = (serviceDetailsState = {SERVICEDETAILSDATA}, action) =>{
+const ServiceDetailsReducer = (serviceDetailsState = {SERVICEDETAILSDATA, isUpdated:null}, action) =>{
     switch (action.type){
         case actionTypes.DETAIL_DATA:
             const parentId = action.parentId;
@@ -29,7 +29,8 @@ const ServiceDetailsReducer = (serviceDetailsState = {SERVICEDETAILSDATA}, actio
 
             return {
                 ...serviceDetailsState,
-            }
+                isUpdated: data
+            };
             
         default:
             return serviceDetailsState;

@@ -6,22 +6,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { useDispatch } from 'react-redux';
-// import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { detailView } from "../../../redux/actionCreators";
 
 const NavItemDetails = props => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    // const []
-
-
-    // const dispatch = useDispatch();
-    // const details = (parentId, childId) =>{
-    //     // localStorage.removeItem('item');
-    //     props.detailsModalToggle();
-    //     dispatch(detailView(parentId, childId));
-    //     navigate("/details");
-    //   }
+    const details = (parentId, childId) =>{
+        // localStorage.removeItem('item');
+        props.detailsModalToggle();
+        dispatch(detailView(parentId, childId));
+        navigate("/details");
+      }
 
 
     const items = props.item.map((item, index)=>{
@@ -33,7 +30,7 @@ const NavItemDetails = props => {
                         item.services.map((subItem, j)=>{
                             // console.log(item.id, subItem.id);
                             return(
-                                <li key={j} onClick={()=>props.viewDetail(item.id, subItem.id)}>{subItem.title}</li>
+                                <li key={j} onClick={()=>details(item.id, subItem.id)}>{subItem.title}</li>
                             )
                         })
                     }
