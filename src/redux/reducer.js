@@ -11,12 +11,12 @@ const galleryItemsReducer = (galleryItemsState = GALLERYITEMS, action) =>{
     return galleryItemsState;
 }
 
-const ServiceDetailsReducer = (serviceDetailsState = SERVICEDETAILSDATA, action) =>{
+const ServiceDetailsReducer = (serviceDetailsState = {SERVICEDETAILSDATA}, action) =>{
     switch (action.type){
         case actionTypes.DETAIL_DATA:
             const parentId = action.parentId;
             const childId = action.childId;
-            const data = serviceDetailsState.filter(i =>{
+            const data = serviceDetailsState.SERVICEDETAILSDATA.filter(i =>{
                 return i.id === parentId;
             })[0].services.filter(j =>{
                 return j.id === childId;
@@ -27,7 +27,9 @@ const ServiceDetailsReducer = (serviceDetailsState = SERVICEDETAILSDATA, action)
 
             // console.log(data);
 
-            return serviceDetailsState
+            return {
+                ...serviceDetailsState,
+            }
             
         default:
             return serviceDetailsState;

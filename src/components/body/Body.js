@@ -1,4 +1,6 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import Home from './bodyComponents/Home';
 import DetailView from './bodyComponents/DetailView';
@@ -12,9 +14,15 @@ import ContactUs from './bodyComponents/ContactUs';
 // import Register from './bodyComponents/Register';
 // import ServiceDetails from './bodyComponents/ServiceDetails';
 
-import { Routes, Route } from 'react-router-dom';
+
 
 const Body = () => {
+
+    // PROBLEM
+    // Without this line DetailView Component does not change dynamically.
+    // I don't understand why?
+    useSelector(state => state.serviceDetails);
+    // console.log("Details: ", details);
     return (
         <div>
             <Routes>

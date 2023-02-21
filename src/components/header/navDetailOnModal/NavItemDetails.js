@@ -1,26 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './NavItemDetails.css';
 import { Modal, ModalBody } from 'reactstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
-class NavItemDetails extends Component {
-    constructor(props){
-        super(props);
-    }
-  
-  render(){
+import { useDispatch } from 'react-redux';
+// import { Navigate, useNavigate } from 'react-router-dom';
+import { detailView } from "../../../redux/actionCreators";
 
-    const items = this.props.item.map((item, index)=>{
+const NavItemDetails = props => {
+    // const navigate = useNavigate();
+
+    // const []
+
+
+    // const dispatch = useDispatch();
+    // const details = (parentId, childId) =>{
+    //     // localStorage.removeItem('item');
+    //     props.detailsModalToggle();
+    //     dispatch(detailView(parentId, childId));
+    //     navigate("/details");
+    //   }
+
+
+    const items = props.item.map((item, index)=>{
         return(
             <div key={index} className='serviceContent'>
                 <h5>{item.title}</h5>
                 <ul>
                     {
                         item.services.map((subItem, j)=>{
+                            // console.log(item.id, subItem.id);
                             return(
-                                <li key={j}>{subItem.title}</li>
+                                <li key={j} onClick={()=>props.viewDetail(item.id, subItem.id)}>{subItem.title}</li>
                             )
                         })
                     }
@@ -30,11 +43,11 @@ class NavItemDetails extends Component {
     })
 
     return (
-        <Modal isOpen={this.props.isModalOpen} toggle={this.props.detailsModalToggle} fullscreen>
-            <div style={{paddingLeft:"0", marginRight:"0", height:"50px", color:`${this.props.modalBottomColor}`, background:`${this.props.modalTopColor}`}}>
+        <Modal isOpen={props.isModalOpen} toggle={props.detailsModalToggle} fullscreen>
+            <div style={{paddingLeft:"0", marginRight:"0", height:"50px", color:`${props.modalBottomColor}`, background:`${props.modalTopColor}`}}>
                 <div className='container'>
                     <h5 style={{float:"left", paddingTop:"10px"}}>LOGO</h5>
-                    <FontAwesomeIcon icon={faXmark} onClick={this.props.detailsModalToggle}
+                    <FontAwesomeIcon icon={faXmark} onClick={props.detailsModalToggle}
                         style={{
                             float:"right", 
                             fontSize:"30px",
@@ -44,14 +57,14 @@ class NavItemDetails extends Component {
                      />
                 </div>
             </div>
-            <ModalBody style={{background:`${this.props.modalBottomColor}`, color:`${this.props.modalTopColor}`}}>
+            <ModalBody style={{background:`${props.modalBottomColor}`, color:`${props.modalTopColor}`}}>
                 <div className='container'>
                     {items}
                 </div>
             </ModalBody>
         </Modal>
-      );
-  }
+    );
 }
+
 
 export default NavItemDetails;

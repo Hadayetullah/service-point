@@ -10,7 +10,8 @@ import { detailView } from "../../../redux/actionCreators";
 
 
 
-const Home = () => {
+const Home = (props) => {
+    console.log(props);
 
     
     const navigate = useNavigate();

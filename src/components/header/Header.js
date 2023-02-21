@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
+import { Navigate } from 'react-router-dom';
+
 
 import {
     Modal, 
@@ -38,6 +40,7 @@ import { faPhone, faBars } from '@fortawesome/free-solid-svg-icons';
 import Signup from '../../auth/Signup';
 import Login from '../../auth/Login';
 import NavItemDetails from './navDetailOnModal/NavItemDetails';
+import {detailView} from '../../redux/actionCreators';
 
 
 
@@ -45,6 +48,12 @@ const mapStateToProps = state =>{
     // console.log("Glogal State: ", state);
     return{
         navMenuItem: state.galleryItems,
+        isUpdated: state.serviceDetails.isUpdated,
+    }
+}
+const mapDispatchToProps = dispatch =>{
+    return{
+        viewDetail: (parentId, childId) => dispatch(detailView(parentId, childId)),
     }
 }
 
@@ -64,6 +73,7 @@ class Header extends Component {
             modalBottomColor: "#1C2E3D",
             zIndex: 9999,
             isResponsive: false,
+            isUpdated: this.props.isUpdated
         }
     }
 
@@ -123,11 +133,29 @@ class Header extends Component {
         // console.log(window.innerWidth);
     }
 
+    viewDetail = (parentId, childId) =>{
+        // console.log(parentId, childId);
+        this.props.viewDetail(parentId, childId);
+        this.detailsModalToggle();
+        return <Navigate to="/details" />;
+
+    }
+
 
 
 
 
     componentDidMount(){
+        // const navigate = useNavigate();
+
+        // if(this.props.isUpdated === 1){
+        //     return useNavigate("/details");
+        // }
+
+        // if(this.props.isUpdated === 1){
+        //     console.log(this.props.isUpdated);
+        //     return (<Navigate to="/details" />);
+        // }
         this.responsiveNav();
         window.addEventListener("scroll", this.handleScroll);
         window.addEventListener("resize", this.responsiveNav);
@@ -142,9 +170,21 @@ class Header extends Component {
 
 
     render(){
+        // console.log(this.props.isUpdated);
+        // const navigate = useNavigate();
 
-        // console.log(this.state.scrolled);
+        // if(this.props.isUpdated === 1){
+        //     return useNavigate("/details");
+        // }
 
+        // console.log(this.props.isUpdated);
+        // const viewDetail = (parentId, childId) =>{
+        //     // console.log(parentId, childId);
+        //     this.props.viewDetail(parentId, childId);
+        //     return <Navigate to="/details" />
+        // }
+
+        
         const {scrolled, zIndex, isResponsive } = this.state;
 
         return (
@@ -323,6 +363,7 @@ class Header extends Component {
                 {/* Bottom Navbar Details */}
                 <section>
                     <NavItemDetails 
+                        viewDetail={this.viewDetail}
                         item={this.props.navMenuItem}
                         detailsModalToggle={this.detailsModalToggle} 
                         isModalOpen={this.state.detailsModal}
@@ -338,4 +379,4 @@ class Header extends Component {
     }
 }
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
