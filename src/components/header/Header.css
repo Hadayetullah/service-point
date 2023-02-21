@@ -31,6 +31,15 @@
     margin: 0;
     transition: font-size 0.1s;
 }
+.nav-top-phone{
+    font-size:14px;
+    color:#3C5A9B;
+}
+.nav-top-whatsapp{
+    font-size:16px;
+    background-color:inherit;
+    color:#0E9805;
+}
 /* .navTopIconList li a:hover{
     color: red;
     padding: 0px;
@@ -84,6 +93,39 @@
     vertical-align: top;
     line-height: 0;
 }
+@media only screen and (max-width:428px){
+    .nav-top-left{
+        width: 65% !important;
+    }
+    .nav-top-right {
+        width: 35% !important;
+    }
+    .nav-top-left-icons{
+        display: none;
+    }
+    .navTopContact{
+        margin-left: 0px;
+        float: left;
+    }
+    .navTopContact span{
+        float: left;
+        vertical-align: baseline;
+        color: #333;
+        font-size:14px;
+        padding: 5px 2px 0px 0px;
+    }
+    .nav-top-phone{
+        font-size:13px;
+    }
+    .nav-top-whatsapp{
+        font-size:14px;
+    }
+    .navTopRight li{
+        padding: 15px 8px 0px 0px;
+        font-size: 14px;
+    }
+}
+
 
 
 /* .navBottom{

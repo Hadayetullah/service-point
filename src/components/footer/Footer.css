@@ -7,6 +7,22 @@
     color: #9DA6A6;
     background-color: #1C2E3D;
 }
-/* .container{
-    margin-bottom: 0px !important;
-} */
+.footer-left{
+    float: left;
+}
+.footer-right{
+    float: right;
+}
+
+/* Responsive */
+@media only screen and (max-width:428px){
+    .footer{
+        text-align: center;
+    }
+    .footer-left{
+        float: none;
+    }
+    .footer-right{
+        float: none;
+    }
+}

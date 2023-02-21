@@ -11,23 +11,26 @@ const galleryItemsReducer = (galleryItemsState = GALLERYITEMS, action) =>{
     return galleryItemsState;
 }
 
-const ServiceDetailsReducer = (ServiceDetailsState = {SERVICEDETAILSDATA, data:null}, action) =>{
+const ServiceDetailsReducer = (serviceDetailsState = SERVICEDETAILSDATA, action) =>{
     switch (action.type){
         case actionTypes.DETAIL_DATA:
             const parentId = action.parentId;
             const childId = action.childId;
-            const data = ServiceDetailsState.SERVICEDETAILSDATA.filter(i =>{
+            const data = serviceDetailsState.filter(i =>{
                 return i.id === parentId;
             })[0].services.filter(j =>{
                 return j.id === childId;
-            })[0].item;
+            })[0];
 
-            return{
-                data: data,
-            }
+
+            localStorage.setItem("item",data.item);
+
+            // console.log(data);
+
+            return serviceDetailsState
             
         default:
-            return ServiceDetailsState;
+            return serviceDetailsState;
     }
     
 }

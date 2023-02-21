@@ -161,8 +161,8 @@ class Header extends Component {
                     <div className="container">
                         <div className='row'>
                             
-                            <div className='col-md-6 col-sx-12'>
-                                <div className='col-sm-3'>
+                            <div className='col-md-9 nav-top-left'>
+                                <div className='col-sm-3 nav-top-left-icons'>
                                     <ul className='navTopIconList'>
                                         <li>
                                             <Link className='fb' to={"#"}>
@@ -187,14 +187,14 @@ class Header extends Component {
                                         <li style={{paddingTop:"15px"}}>|</li>
                                     </ul>
                                 </div>
-                                <div className='col-sm-9'>
+                                <div className='col-sm-9 col-xs-12'>
                                     <div className='navTopContact'>
                                         <span>
-                                            <Link to={"#"} style={{fontSize:"14px", color:"#3C5A9B"}}><FontAwesomeIcon icon={faPhone} /></Link>
+                                            <Link to={"#"} className='nav-top-phone'><FontAwesomeIcon icon={faPhone} /></Link>
                                         </span>
                                         <span>01846867388</span>
                                         <span>
-                                            <Link to={"#"} style={{fontSize:"16px",backgroundColor:"inherit", color:"#0E9805"}}>
+                                            <Link to={"#"} className='nav-top-whatsapp'>
                                                 <FontAwesomeIcon icon={faWhatsapp} />
                                             </Link>
                                         </span>
@@ -204,7 +204,7 @@ class Header extends Component {
                             </div>
     
                             
-                            <div className='col-md-6 col-sx-12'>
+                            <div className='col-md-3 nav-top-right'>
                                 <ul className='navTopRight'>
                                     <li onClick={this.loginToggle} style={{cursor:"pointer"}}>
                                         Login

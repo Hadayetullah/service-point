@@ -90,3 +90,44 @@
     color: #808080;
 }
 
+
+/* Responsive */
+@media only screen and (max-width:810px){
+    .steps {
+        width: 640px;
+    }
+    .step-card{
+        width: 230px;
+    }
+}
+@media only screen and (max-width:428px){
+    .step-card{
+        width: 403px;
+    }
+}
+@media only screen and (max-width:414px){
+    .step-card{
+        width: 388px;
+    }
+}
+@media only screen and (max-width:390px){
+    .step-card{
+        width: 366px;
+    }
+}
+@media only screen and (max-width:384px){
+    .step-card{
+        width: 362px;
+    }
+}
+@media only screen and (max-width:375px){
+    .step-card{
+        width: 348px;
+    }
+}
+@media only screen and (max-width:360px){
+    .step-card{
+        width: 335px;
+    }
+}
+
