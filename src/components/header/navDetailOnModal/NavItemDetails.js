@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { useDispatch } from 'react-redux';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { detailView } from "../../../redux/actionCreators";
 
 const NavItemDetails = props => {
@@ -43,7 +43,13 @@ const NavItemDetails = props => {
         <Modal isOpen={props.isModalOpen} toggle={props.detailsModalToggle} fullscreen>
             <div style={{paddingLeft:"0", marginRight:"0", height:"50px", color:`${props.modalBottomColor}`, background:`${props.modalTopColor}`}}>
                 <div className='container'>
-                    <h5 style={{float:"left", paddingTop:"10px"}}>LOGO</h5>
+                    <Link to="/" onClick={props.detailsModalToggle} 
+                        style={{float:"left", paddingTop:"10px", textDecoration:"none", color:`${props.modalBottomColor}`}}>
+                        <h5>LOGO</h5>
+                    </Link>
+                    {/* <h5 style={{float:"left", paddingTop:"10px"}}>
+                        <Link style={{textDecoration:"none", color:"#000"}} to={"/"}>LOGO</Link>
+                    </h5> */}
                     <FontAwesomeIcon icon={faXmark} onClick={props.detailsModalToggle}
                         style={{
                             float:"right", 

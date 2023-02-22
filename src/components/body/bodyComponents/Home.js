@@ -28,9 +28,10 @@ const Home = (props) => {
         <div>
              
             <section>
-                <div style={{borderTop: "1px solid #CD3932", }}>
+                <ImageSlider />
+                {/* <div style={{borderTop: "1px solid #CD3932", }}>
                     <ImageSlider />
-                </div>
+                </div> */}
             </section>
 
 
