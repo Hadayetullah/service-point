@@ -267,10 +267,10 @@ class Header extends Component {
                                     <Link style={{color: scrolled ? "#fff" : "#212529",}} to="/contact-us">Contact Us</Link>
                                 </NavItem>
                                 <NavItem>
-                                    <Link style={{color: scrolled ? "#fff" : "#212529",}} to="#">Privacy &#38; Policy</Link>
+                                    <Link style={{color: scrolled ? "#fff" : "#212529",}} to="/privacy">Privacy &#38; Policy</Link>
                                 </NavItem>
                                 <NavItem>
-                                    <Link style={{color: scrolled ? "#fff" : "#212529",}} to="#">Terms &#38; Condition</Link>
+                                    <Link style={{color: scrolled ? "#fff" : "#212529",}} to="/terms-of-use">Terms &#38; Condition</Link>
                                 </NavItem>
                                 {/* <NavItem>
                                     <Link href="https://github.com/reactstrap/reactstrap">
