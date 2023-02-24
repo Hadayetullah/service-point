@@ -35,7 +35,7 @@ const Home = (props) => {
             </section>
 
 
-            <section>
+            <section style={{background:"#F5F5F5"}}>
                 {
                     galleryItems.map((item, i)=>(
                         <ServiceGalleryList key={i} galleryItem={item} viewDetail={viewDetail} />

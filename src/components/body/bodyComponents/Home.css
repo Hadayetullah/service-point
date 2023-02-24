@@ -1,4 +1,4 @@
-.zoom {
+/* .zoom {
   float:left;
   padding: 50px;
   width: 100px;
@@ -13,11 +13,11 @@
 .zoom:hover {
   transform: scale(1.1);
   box-shadow: 0 1px 50px rgba(0,0,0,.1);
-}
+} */
 
 /* Work-Flow */
 .workflow{
-    margin-top: 60px;
+    /* margin-top: 60px; */
     border-top:1px solid #E3E1E1;
     padding-top:60px;
     background: rgb(245, 245, 245);

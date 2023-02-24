@@ -61,7 +61,7 @@ class ServiceGalleryList extends Component {
                         className="service"
                         style={{
                           cursor:"pointer",
-                          background: "#F5F5F5",
+                          background: "#fff",
                           margin: "15px -11px 10px -11px",
                           textAlign: "center",
                           height: "170px",

@@ -8,51 +8,90 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 class ContactUs extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            contactName: "",
+            contactEmail: "",
+            contactPhone: "",
+            contactAddress: "",
+            contactTextArea: "",
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange = e =>{
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({
+            [name]: value
+        });
+    }
+
+    handleSubmit = e =>{
+        console.log(this.state);
+        e.preventDefault();
+    }
+
   render() {
+
+    // const [contactName, contactEmail, contactPhone, contactAddress, contactTextArea] = this.state;
+
     return (
-      <section style={{paddingTop:"30px",marginBottom:"30px",background: "#F5F5F5"}}>
-        <div className='container' style={{background:"#fff",padding:"20px"}}>
+      <section style={{height:"150vh",paddingTop:"30px",marginBottom:"30px",background: "#F5F5F5"}}>
+        <div className='container' style={{background:"#fff",height:"150vh",padding:"20px"}}>
             <div className='row'>
 
                 <div className='col-md-6'>
                     <h4 style={{color:"#003366"}}>Contact/Enquiry Form</h4>
                     <p>Dear User, please provide the details below for any favourable suggestion or query to us.</p>
                     <div>
-                        <Form className='contact-form'>
+                        <Form onSubmit={this.handleSubmit} className='contact-form'>
                             <FormGroup>
                                 <Input
+                                    onChange={this.handleChange}
                                     name="contactName"
                                     placeholder="Name"
                                     type="text"
+                                    value={this.state.contactName}
                                 />
                             </FormGroup>
                             <FormGroup>
                                 <Input
+                                    onChange={this.handleChange}
                                     name="contactEmail"
                                     placeholder="Email"
                                     type="email"
+                                    value={this.state.contactEmail}
                                 />
                             </FormGroup>
                             <FormGroup>
                                 <Input
+                                    onChange={this.handleChange}
                                     name="contactPhone"
                                     placeholder="Phone Number"
                                     type="text"
+                                    value={this.state.contactPhone}
                                 />
                             </FormGroup>
                             <FormGroup>
                                 <Input
+                                    onChange={this.handleChange}
                                     name="contactAddress"
                                     placeholder="Address"
                                     type="text"
+                                    value={this.state.contactAddress}
                                 />
                             </FormGroup>
                             {' '}
                             <FormGroup>
                                 <Input
+                                    onChange={this.handleChange}
                                     name="contactTextArea"
                                     placeholder="Your Message"
                                     type="textarea"
+                                    value={this.state.contactTextArea}
                                     style={{height:"140px"}}
                                 />
                             </FormGroup>

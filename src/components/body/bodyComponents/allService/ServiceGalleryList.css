@@ -1,6 +1,6 @@
 .all-service {
 	width: 100%;
-	margin-top: 70px;
+	padding: 40px 0;
 	/* overflow: hidden; */
 }
 .all-service h3{
@@ -30,22 +30,20 @@
 .service img:hover{
 	transform: rotate(360deg);
 }
-.all-service button{
-	/* margin: 0 0 28px 0; */
-	width: 385px;
+.all-service button {
+	width: 300px;
 	padding: 5px 10px;
-	background-color: #808080;
+	background-color: #1C2E3D;
 	border: 1px solid #6C7B82;
-	/* color: #fff; */
 	font-size: 16px;
 	font-weight: 700;
 	cursor: pointer;
 	color: #f1f1f1;
-	/* margin-left: -10px; */
-	border-radius: 20px;
+	border-radius: 10px;
 }
 .all-service button:hover {
-	background-color: #6C7B82;
-	border: 1px solid #808080;
-	color: #eaebef;
+	/* background-color: #6C7B82; */
+	/* border: 1px solid #808080; */
+	box-shadow: 0px 1px 1px 1px #1C2E3D;
+	color: #CD3932;
 }

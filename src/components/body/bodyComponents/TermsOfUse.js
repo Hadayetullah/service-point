@@ -12,9 +12,9 @@ const TermsOfUse = () => {
                 BD Service Point Platform Limited ("bdservicepoint.com"), primarily operates, controls and manages the Services (as defined below) provided by it from its corporate office at Plot 1229, Avenue 11, Nikunjo-2, Dhaka (“Dhaka Corporate Office”).
             </p>
             <hr />
-            <h3>
+            <h2>
                 A. Acceptance of Terms
-            </h3>
+            </h2>
             <hr />
             <p>
                 PLEASE READ THE TERMS OF USE THOROUGHLY AND CAREFULLY. The terms and conditions set forth below ("Terms of Use") and the Privacy Policy (as defined below) constitute a legally-binding agreement between BD Service Point operating from its Dhaka Corporate Office and you. These Terms of Use contain provisions that define your limits, legal rights and obligations with respect to your use of and participation in (i) the BD Service Point website and mobile application, including the classified advertisements, forums, various email functions and Internet links, and all content and BD Service Point services available through the domain and sub-domains of BD Service Point at www.bdservicepoint.com or Its Mobile Apps(collectively referred to herein as the "Product"), and (ii) the online transactions between those users of the Product who are offering services (each, a "SERVICE PROVIDER") and those users of the Product who are obtaining services (each, a "SERVICE USER") through the Product (such services, collectively, the "Services"). The Terms of Use described below incorporate the Privacy Policy and apply to all users of the Website, including users who are also contributors of video content, information, private and public messages, advertisements, and other materials or Services on the Product.
@@ -28,11 +28,11 @@ const TermsOfUse = () => {
             <p>
                 All references to "you" or "your," as applicable, mean the person that accesses, uses, and/or participates in the Website in any manner.
             </p>
-            <h4>1. MODIFICATIONS TO TERMS OF USE AND/OR PRIVACY POLICY</h4>
+            <h5>1. MODIFICATIONS TO TERMS OF USE AND/OR PRIVACY POLICY</h5>
             <p>
                 BD Service Point reserves the right, in its sole discretion, to change, modify, or otherwise amend the Terms of Use, and any other documents incorporated by reference herein for complying with legal and regulatory framework and for other legitimate business purposes, at any time, and BD Service Point will post the amended Terms of Use at the domain of www.bdservicepoint.com/terms-and-condition. It is your responsibility to review the Terms of Use for any changes and you are encouraged to check the Terms of Use frequently. Your use of the Product following any amendment of the Terms of Use will signify your assent to and acceptance of any revised Terms of Use. If you do not agree to abide by these or any future Terms of Use, please do not use or access the Product.
             </p>
-            <h4>2.PRIVACY POLICY</h4>
+            <h5>2.PRIVACY POLICY</h5>
             <p>
                 BD Service Point has established a Privacy Policy that explains to users how their information is collected and used. The Privacy Policy is referenced above and hereby incorporated into the Terms of Use set forth herein. Your use of this Product is governed by the Privacy Policy.
             </p>
@@ -40,13 +40,13 @@ const TermsOfUse = () => {
                 B. Membership and Accessibility
             </h2>
             <hr />
-            <h4>1. LICENSE TO ACCESS</h4>
+            <h5>1. LICENSE TO ACCESS</h5>
             <p>
                 BD Service Point hereby grants you a non-exclusive, revocable license to use the Website, Apps or its product as set forth in the Terms of Use; provided, however, that (i) you will not copy, distribute, or make derivative works of the Website, Apps or its product in any medium without BD Service Point prior written consent; (ii) you will not alter or modify any part of the Website, Apps or its product other than as may be reasonably necessary to use the Website, Apps or its product for its intended purposes; and (iii) you will otherwise act in accordance with the terms and conditions of the Terms of Use and in accordance with all applicable laws.
             </p>
-            <h4>
+            <h5>
                 2. MEMBERSHIP ELIGIBILITY CRITERIA
-            </h4>
+            </h5>
             <p>
                 Use of the Product is available only to individuals who are at least 18 years old and can form legally binding contracts under applicable law. You represent, acknowledge and agree that you are at least 18 years of age, and that: (a) all registration information that you submit is truthful and accurate, (b) you will maintain the accuracy of such information, and (c) your use of the Website, Apps and Services offered through this Website, Apps do not violate any applicable law or regulation. Your Account (defined below) may be terminated without warning if we at our discretion, believe that you are under the age of 18 or that you are not complying with any applicable laws, rules or regulations.
             </p>
@@ -94,17 +94,17 @@ const TermsOfUse = () => {
                     You agree not to collect or harvest any personally identifiable data, including without limitation, names or other Account information, from the Website, nor to use the communication systems provided by the Website for any commercial solicitation purposes.
                 </li>
             </ul>
-            <h4>
+            <h5>
                 3. ADDITIONAL POLICIES
-            </h4>
+            </h5>
             <p>
                 Your access to, use of, and participation in the Product is subject to the Terms of Use and all applicable BD Service Point’s regulations, guidelines and additional policies that BD Service Point may set forth from time to time, including without limitation, a copyright policy and any other restrictions or limitations that BD Service Point publishes on the Website (the "Additional Policies"). You hereby agree to comply with the Additional Policies and your obligations thereunder at all times. You hereby acknowledge and agree that if you fail to adhere to any of the terms and conditions of this Agreement or documents referenced herein, including the Account Policies, membership eligibility criteria or Additional Policies, BD Service Point, in its sole discretion, may terminate your Account at any time without prior notice to you as well as initiate appropriate legal proceedings, if necessary.
             </p>
             <h2>C. Member Conduct</h2>
             <hr />
-            <h4>
+            <h5>
                 1. PROHIBITIONS ON SUBMITTED CONTENT
-            </h4>
+            </h5>
             <p>
                 You shall not upload, post, transmit, transfer, disseminate, distribute, or facilitate distribution of any content, including text, images, video, sound, data, information, or software, to any part of the Website, Apps or its product, including your profile ("Profile"), the posting of your desired Service ("Want"), or the posting of any opinions or reviews in connection with the Website, Apps or its product, the Service, the SERVICE USER ("Feedback") (all of the foregoing content is sometimes collectively referred to herein as "Submitted Content" and the posting of Submitted Content is sometimes referred to as a "Posting" or as "Postings") that:
             </p>
@@ -152,9 +152,9 @@ const TermsOfUse = () => {
                     contains identical content to other open Postings you have already posted; or uses any form of automated device or computer program that enables the submission of Postings without the express written consent of BD Service Point
                 </li>
             </ul>
-            <h4>
+            <h5>
                 2. PROHIBITIONS ON SENDING MESSAGES
-            </h4>
+            </h5>
             <p>
                 You will not send messages to other users containing:
             </p>
@@ -166,15 +166,15 @@ const TermsOfUse = () => {
                     unsolicited advertising or marketing of a service not offered on the Product or an external website.
                 </li>
             </ul>
-            <h4>
+            <h5>
                 3. NO DISCRIMINATION
-            </h4>
+            </h5>
             <p>
                 Discriminatory Postings. Bangladesh laws prohibit any preference, limitation or discrimination based on race, color, religion, sex, national origin, age, handicap or other protected class. BD Service Point will not knowingly accept any Posting which is in violation of the law. BD Service Point has the right, in its sole discretion and without prior notice to you; to immediately remove any posting that discriminates or is any way in violation of any law.
             </p>
-            <h4>
+            <h5>
                 4. PROHIBITIONS WITH RESPECT TO SERVICES
-            </h4>
+            </h5>
             <p>
                 While using the Website, you shall not:
             </p>
@@ -195,9 +195,9 @@ const TermsOfUse = () => {
                     take any action that may undermine the Feedback or ratings systems (such as displaying, importing or exporting Feedback information off of the Website or using it for purposes unrelated to the Website);
                 </li>
             </ul>
-            <h4>
+            <h5>
                 5. FEEDBACK
-            </h4>
+            </h5>
             <p>
                 As a participant in the Website, Apps or its product, you agree to use careful, prudent, and good judgment when leaving Feedback for another user. The following actions constitute inappropriate uses of Feedback: (a) threatening to leave negative or impartial Feedback for another user unless that user provides services not included in the original Posting or not agreed to as part of the Service to be provided; (b) leaving Feedback in order to make the SERVICE PROVIDER or SERVICE USER appear better than he or she actually is or was; and (c) including conditions in an Offer or Want that restrict a SERVICE PROVIDER or a SERVICE USER from leaving Feedback.
             </p>
@@ -223,15 +223,15 @@ const TermsOfUse = () => {
                 D. Rules for SERVICE USERS
             </h2>
             <hr />
-            <h4>
+            <h5>
                 1. SERVICE USERS SHALL NOT TAKE ANY OF THE FOLLOWING ACTIONS:
-            </h4>
+            </h5>
             <p>
                 (a) commit to purchasing or using a Service without paying; (b) sign up for, negotiate a price for, use, or otherwise solicit a Service with no intention of following through with your use of or payment for the Service; (c) agree to purchase a Service when you do not meet the SERVICE PROVIDER's terms as outlined in the Posting, or agree to purchase a Service with the intention of disrupting a Posting; or (d) misuse any options made available now or in the future by BD Service Point in connection with the use or purchase of any Service.
             </p>
-            <h4>
+            <h5>
                 2. SANCTIONS FOR VIOLATING ANY OF THE RULES FOR SERVICE USERS
-            </h4>
+            </h5>
             <p>
                 If a SERVICE USER violates any of the above-referenced rules in connection with his or her Posting, BD Service Point, in its sole discretion, may take any of the following actions: (a) cancel the Posting; (b) limit the SERVICE USER's Account privileges; (c) suspend the SERVICE USER's Account; and/or (d) decrease the SERVICE USER's status earned via the Feedback page.
             </p>
@@ -239,39 +239,39 @@ const TermsOfUse = () => {
                 E. Disclaimer and Warranties for SERVICE USERS
             </h2>
             <hr />
-            <h4>
+            <h5>
                 1. NO SPARE PARTS WARRANTY
-            </h4>
+            </h5>
             <p>
                 BD Service Point’s WARRANTY DOES NOT EXTEND TO ANY SPARE PARTS USED IN THE COMPLETION OR DELIVERY OF THE SERVICE PROVIDED BY THE SERVICE PROVIDER. THE SERVICE USERS CAN PURCHASE REQUIRED SPARE PARTS ON THEIR OWN OR ENGAGE THE SERVICE PROVIDER TO ACQUIRE THE SPARE PARTS. IN ANY CASE, THE SERVICE PROVIDER OR BD Service Point WILL NOT BE HELD RESPONSIBLE FOR THE QUALITY OR PRICE OF THE SPARE PARTS. THE SERVICE CHARGE HAS TO BE PAID IN FULL TO THE SERVICE PROVIDER AND CANNOT BE HELD BACK DUE TO ANY ISSUES RELATED WITH SPARE PARTS.
             </p>
-            <h4>
+            <h5>
                 2. CLAIM RAISE WITHIN WARRANTY PERIOD
-            </h4>
+            </h5>
             <p>
                 SERVICE USER HAS TO RAISE CLAIM WITHIN THE WARRANTY PERIOD OF CONCERNED TYPE OF SERVICE. ANY CLAIM RAISED AFTER THE WARRANTY PERIOD WILL BE TREATED AS NEW ORDER.
             </p>
-            <h4>
+            <h5>
                 3. DOCUMENT SUPPORT TO RAISE A CLAIM
-            </h4>
+            </h5>
             <p>
                 FOR PACK AND SHIFT, HOME APPLIANCE, PHONES, LAPTOPS AND OTHER ELECTRONIC GADGETS, IT IS SERVICE USER’S RESPONSIBILITY TO SIGN THE AGREED LIST OF FINAL ORDER LIST PROVIDED BY THE SERVICE PROVIDER. UNLESS THE SERVICE USER CAN PRODUCE A FINAL ORDER LIST SIGNED BY THE SERVICE PROVIDER, BD Service Point WILL NOT TAKE ANY RESPONSIBILITY OF SETTLING THE DISPUTE BETWEEN THE SERVICE USER AND SERVICE PROVIDER. BD Service Point SPECIALLY ENCOURAGES SERVICE USERS TO CLEARLY MENTION DETAILS OF ANY ITEM HANDED OVER TO SERVICE PROVIDER OR HIS REPRESENTATIVES IN THE FINAL ORDER LIST TO AVOID ANY CONFUSION OR MISUNDERSTANDING.
             </p>
-            <h4>
+            <h5>
                 4. MARKETPLACE DISCLAIMER AND RESPONSPONSIBILITY
-            </h4>
+            </h5>
             <p>
                 BD Service Point IS A MARKETPLACE WHERE SERVICE USERS CAN FIND DIFFERENT SERVICE PROVIDERS OFFERING THEIR SERVICES AT VARIOUS PRICES. THE SERVICE PROVIDERS ARE RESPONSIBLE FOR THE QUALITY OF SERVICE AS PER ORDER SPECIFICATIONS PROVIDED BY THE SERVICE USERS. ALL SERVICE USERS PLACING ORDERS THROUGH BD Service Point ARE RESPONSIBLE FOR CLARIFYING THE REQUIREMENTS AND EXPECTATIONS WITH INDIVIDUAL SERVICE PROVIDERS AT THE TIME OF PROCESSING ORDERS. BD Service Point IS NOT LIABLE FOR THE QUALITY OF SERVICE OR ANY NON-PERFORMANCE BY SERVICE PROVIDERS AFTER THE ORDER HAS BEEN PLACED.
             </p>
-            <h4>
+            <h5>
                 5. DISPUTE SETTLEMENT TIMELINE
-            </h4>
+            </h5>
             <p>
                 bdservicepoint.com AIMS TO SETTLE ANY DISPUTE WITHIN 2 DAYS FROM RAISING THE COMPLAINT. HERE BD Service Point WILL PLAY THE ROLE OF A MARKETPLACE TO RESOLVE THE DISPUTE ISSUE BETWEEN SERVICE USER AND SERVICE PROVIDER. IF THE STAKEHOLDERS FAILS TO RESPOND TO BD Service Point PROPOSAL OR COMMUNICATION REGARDING DISPUTE SETTLEMENT WITHIN 2 DAYS, bdservicepoint.com HAS THE RIGHT TO RESOLVE THE DISPUTE IF SEES FIT.
             </p>
-            <h4>
+            <h5>
                 6. DISPUTE COVERAGE
-            </h4>
+            </h5>
             <p>
                 HOWEVER, UNDER CERTAIN CIRCUMSTANCES, BD Service Point CAN CHOOSE TO COMPENSATE THE PLATFORM USERS FOR POOR SERVICE DELIVERY BY SERVICE PROVIDERS. THE EXTENT OF THIS COMPENSATION IS LIMITED TO 10% OF ORDER VALUE OR BDT 5000 WHICHEVER IS LOWER. THIS COMPENSATION WILL BE PROVIDED IN THE FORM OF FREE FUTURE SERVICE COUPON AGAINST THE DISPUTE CASE. DECISION WILL BE TAKEN BY BD Service Point SUPPORT MANAGEMENT TEAM AFTER PROPER INVESTIGATION OF THE DISPUTE.
             </p>
@@ -279,9 +279,9 @@ const TermsOfUse = () => {
                 F. Use of Submitted Content
             </h2>
             <hr />
-            <h4>
+            <h5>
                 1. NO CONFIDENTIALITY
-            </h4>
+            </h5>
             <p>
             The Website, Apps or its Product may now or in the future permit the submission of videos or other communications submitted by you and other users, including without limitation, your Profile, your Offer, your Wants, any Feedback, and all Submitted Content, and the hosting, sharing, and/or publishing of such Submitted Content. You understand that whether or not such Submitted Content is published, bdservicepoint.com does not guarantee any confidentiality with respect to any Submitted Content.
             </p>
@@ -294,15 +294,15 @@ const TermsOfUse = () => {
             <p>
             BD Service Point may also disclose user information including personal information if BD Service Point  reasonably believes that disclosure (i) is necessary in order to comply with a legal process (such as a court order, search warrant, etc.) or other legal requirement of any governmental authority, (ii) would potentially mitigate BD Service Point’s liability in an actual or potential lawsuit, (iii) is otherwise necessary or appropriate to protect our rights or property, or the rights or property of any person or entity, (iv) to enforce this Agreement (including, but not limited to ensuring payment of fees by users), or (v) as may be required or necessary to deter illegal behavior (including, but not limited to, fraud).
             </p>
-            <h4>
+            <h5>
             2. YOUR REPRESENTATIONS AND WARRANTIES
-            </h4>
+            </h5>
             <p>
             You shall be solely responsible for your own Submitted Content and the consequences of posting or publishing it. In connection with Submitted Content, you affirm, represent, and/or warrant that: (a) you own or have the necessary licenses, rights, consents, and permissions to use and authorize BD Service Point to use all patent, trademark, trade secret, copyright or other proprietary rights in and to any and all Submitted Content to enable inclusion and use of the Submitted Content in the manner contemplated by the Website and these Terms of Use; and (b) you have the written consent, release, and/or permission of each and every identifiable individual person in the Submitted Content to use the name or likeness of each and every such identifiable individual person to enable inclusion and use of the Submitted Content in the manner contemplated by the Website and these Terms of Use. You agree to pay for all royalties, fees, and any other monies owing any person by reason of any Submitted Content posted by you to or through the Website.
             </p>
-            <h4>
+            <h5>
             3. YOUR OWNERSHIP RIGHTS AND LICENSE TO BD Service Point
-            </h4>
+            </h5>
             <p>
             You retain all of your ownership rights in your Submitted Content. However, by submitting the Submitted Content to BD Service Point for posting on the Website, you hereby grant, and you represent and warrant that you have the right to grant, to BD Service Point a perpetual, worldwide, non-exclusive, royalty-free, sublicense able and transferable license to link to, use, reproduce, distribute, reformat, translate, prepare derivative works of, display, and perform the Submitted Content in connection with the Website and BD Service Point's (and its successor's) business operations, including without limitation, for the promotion and redistribution of any part or all of the Website, and any derivative works thereof, in any media formats and through any media channels. You also hereby grant each user of the Website a non-exclusive license to access your Submitted Content through the Website, and to use, reproduce, distribute, prepare derivative works of, display and perform such Submitted Content as permitted through the functionality of the Website and under these Terms of Use. The foregoing license granted by you terminates once you remove or delete the Submitted Content from the Website.
             </p>
@@ -312,9 +312,9 @@ const TermsOfUse = () => {
             <p>
             You may remove your Submitted Content from the Website at any time. If you choose to remove your Submitted Content, the license granted above will automatically expire.
             </p>
-            <h4>
+            <h5>
             4. BD Service Point’s DISCLAIMERS AND RIGHT TO REMOVE
-            </h4>
+            </h5>
             <p>
             1. BD Service Point does not endorse any Submitted Content or any opinion, recommendation, or advice expressed therein, and BD Service Point expressly disclaims any and all liability in connection with all Submitted Content. BD Service Point does not permit copyright infringing activities and infringement of intellectual property rights on the Website, and BD Service Point will remove any Data (as defined below) or Submitted Content if properly notified, pursuant to the "take down" notification procedure described in Section J below, that such Posting or Submitted Content infringes on another's intellectual property rights. BD Service Point reserves the right to remove any Data or Submitted Content without prior notice. BD Service Point will also terminate a user's access to the Website, if he or she is determined to be a repeat infringer. A repeat infringer is a Website user who has been notified of infringing activity more than twice and/ or has had Submitted Content removed from the Website more than twice. BD Service Point also reserves the right, in its sole and absolute discretion, to decide whether any Data or Submitted Content is appropriate and complies with these Terms of Use for all violations, in addition to copyright infringement and violations of intellectual property law, including, but not limited to, pornography, obscene or defamatory material, or excessive length. BD Service Point may remove such Submitted Content and/or terminate a user's access for uploading such material in violation of these Terms of Use at any time, without prior notice and in its sole discretion.
             </p>
@@ -324,9 +324,9 @@ const TermsOfUse = () => {
             <p>
             3. You are solely responsible for the photos, profiles and other content, including, without limitation, Submitted Content that you publish or display on or through the Website, or transmit to other Website users. You understand and agree that BD Service Point may, in its sole discretion and without incurring any liability, review and delete or remove any Submitted Content that violates this Agreement or which might be offensive, illegal, or that might violate the rights, harm, or threaten the safety of Website users or others.
             </p>
-            <h4>
+            <h5>
             5. SUGGESTIONS.
-            </h4>
+            </h5>
             <p>
             If you send or transmit any communications, comments, questions, suggestions, or related materials to BD Service Point, whether by letter, email, telephone, or otherwise (collectively, "Suggestions"), suggesting or recommending changes to the Website, including, without limitation, new features or functionality relating thereto, all such Suggestions are, and will be treated as, non-confidential and non-proprietary. You hereby assign all right, title, and interest in, and BD Service Point is free to use, without any attribution or compensation to you, any ideas, know-how, concepts, techniques, or other intellectual property and proprietary rights contained in the Suggestions, whether or not patentable, for any purpose whatsoever, including but not limited to, developing, manufacturing, having manufactured, licensing, marketing, and selling, directly or indirectly, products and services using such Suggestions. You understand and agree that BD Service Point is not obligated to use, display, reproduce, or distribute any such ideas, know-how, concepts, or techniques contained in the Suggestions, and you have no right to compel such use, display, reproduction, or distribution or seek recognition if the Suggestions are in fact implemented.
             </p>
@@ -367,27 +367,27 @@ const TermsOfUse = () => {
             H. Modifications to or Termination of Website
             </h2>
             <hr />
-            <h4>
+            <h5>
             1. MODIFICATION OR CESSATION OF WEBSITE/Apps/Products
-            </h4>
+            </h5>
             <p>
             BD Service Point reserves the right at any time and from time to time to modify or discontinue, temporarily or permanently, the Product (or any part thereof) with or without notice and in its sole discretion. You agree that BD Service Point shall not be liable to you or to any third party for any modification, suspension or discontinuance of BD Service Point services.
             </p>
-            <h4>
+            <h5>
             2. TERMINATION BY BD Service Point
-            </h4>
+            </h5>
             <p>
             You hereby acknowledge and agree that BD Service Point, in its sole and absolute discretion, has the right (but not the obligation) to delete, terminate, or deactivate your Account, block your email or IP address, cancel the Website or otherwise terminate your access to or participation in the use of the Website (or any part thereof), or remove and discard any Submitted Content on the Website ("Termination of Service"), immediately and without notice, for any reason, including without limitation, Account inactivity or if BD Service Point believes or has reason to believe that you have violated any provision of the Terms of Use.
             </p>
-            <h4>
+            <h5>
             3. TERMINATION BY YOU
-            </h4>
+            </h5>
             <p>
             You may cancel your use of the Website and/or terminate the Terms of Use with or without cause at any time.
             </p>
-            <h4>
+            <h5>
             4. EFFECT OF TERMINATION
-            </h4>
+            </h5>
             <p>
             Upon termination of your Account, your right to participate in the Website, including, but not limited to, your right to offer or purchase Services and your right to receive any fees or compensation, including, without limitation, referral discounts, incentive bonuses, or other special offer rewards, shall automatically terminate. You acknowledge and agree that your right to receive any fees or compensation hereunder is conditional upon your proper use of the Website, your adherence to the Terms of Use, the continuous activation of your Account, and your permitted participation in the Website. In the event of Termination of Service, your Account will be disabled and you may not be granted access to your Account or any files or other data contained in your Account. Notwithstanding the foregoing, residual data may remain in the BD Service Point system.
             </p>
@@ -404,18 +404,18 @@ const TermsOfUse = () => {
             I. Intellectual Property Rights
             </h2>
             <hr />
-            <h4>
+            <h5>
             1. BD Service Point OWNS OR HOLDS THE LICENSES TO ALL DATA AND MARKS ON THE WEBSITE
-            </h4>
+            </h5>
             <p>
             The content on the Website (exclusive of all Submitted Content), including without limitation, the text, software, scripts, graphics, photos, sounds, music, videos, interactive features and the like ("Data") and the trademarks, service marks and logos contained therein ("Marks"), are owned by BD Service Point. Other trademarks, names and logos on this Website are the property of their respective owners.
             </p>
             <p>
             Data on the Website is provided to you AS IS for your information and personal use only and may not be used, copied, reproduced, distributed, transmitted, broadcast, displayed, sold, licensed, or otherwise exploited for any other purposes whatsoever without the prior written consent of the respective owners. BD Service Point reserves all rights not expressly granted in and to the Website and the Data. You agree not to use, copy, or distribute, any of the Data other than as expressly permitted herein, including any use, copying, or distribution of Submitted Content obtained through the Website for any commercial purposes. If you download or print a copy of the Data for personal use, you must retain all copyright and other proprietary notices contained thereon. You agree not to circumvent, disable or otherwise interfere with security features of the Website or features that prevent or restrict use or copying of any Data or enforce limitations on use of the Website or the Data therein.
             </p>
-            <h4>
+            <h5>
             2. BD Service Point’s LICENSE TO YOU FOR THE USE OF DATA AND MARKS
-            </h4>
+            </h5>
             <p>
             The Website contains BD Service Point's Data and Marks, which are, or may become, protected by copyright, trademark, patent, trade secret and other laws, and BD Service Point owns and retains all rights in the BD Service Point Data and Marks. Subject to these Terms of Use, BD Service Point hereby grants you a limited, revocable, nontransferable, nonsublicensable license to reproduce and display the BD Service Point Data (excluding any software source code) solely for your personal use in connection with accessing and participating in the Website.
             </p>
@@ -426,24 +426,24 @@ const TermsOfUse = () => {
             J. BD Service Point Fees
             </h2>
             <hr />
-            <h4>
+            <h5>
             1. FEES INCURRED BY SERVICE USERS
-            </h4>
+            </h5>
             <p>
             Joining BD Service Point, opening an Account, viewing posted Services is free. BD Service Point currently does not charge SERVICE USERs for transactions completed on the bdservicepoint.com Product between SERVICE USERs and Services Professionals. However, BD Service Point reserves the right to charge a fee to SERVICE USERs in the future on a per-transaction basis or in any other manner, and reserves the right to do so in its sole discretion. Changes to this Fee Policy are effective after BD Service Point has provided you with thirty (30) days' notice by posting the changes on the Terms & Condition.
             </p>
             <p>
             If applicable, you agree to pay all fees or charges to your Account based on BD Service Point's fees, charges, and billing terms then in effect. If you do not pay on time or if BD Service Point cannot charge your credit card, any payment gateway or other payment method for any reason, BD Service Point reserves the right to either suspend or terminate your access to the Website and Account and terminate these Terms of Use. You are expressly agreeing that BD Service Point is permitted to bill you for the applicable fees, any applicable tax and any other charges you may incur in connection with your use of this Website and the fees will be billed to your credit card, a payment gateway or other payment method designated at the time you make a purchase or register for a fee-based service. If you cancel your Account at any time, you will not receive any refund. If you have a balance due on any account, you agree that BD Service Point may charge such unpaid fees to your credit card or otherwise bill you for such unpaid fees. BD Service Point reserves its right to initiate appropriate legal proceedings, if necessary, in its sole discretion, to recover such outstanding amounts.
             </p>
-            <h4>
+            <h5>
             2. TAXES
-            </h4>
+            </h5>
             <p>
             You understand that we are acting solely as an intermediary for the collection of rents and fees between a SERVICE USER and a Service Provider who choose to enter into an Agreement for Service. Because state and local tax laws vary significantly by locality, you understand and agree that you are solely responsible for determining your own tax reporting requirements in consultation with tax advisors, and that we cannot and do not offer tax advice to either hosts or guests. Further, you understand that BD Service Point shall not be responsible or liable in any manner in relation to tax liability of a SERVICE USER or a SERVICE PROVIDER.
             </p>
-            <h4>
+            <h5>
             3. REFUND POLICY
-            </h4>
+            </h5>
             <p>
             Service fees provided by Client to Service Provider or BD Service Point are final and non-refundable. But in some cases BD Service Point support management team can take some decisions, if any investigation report find any issues like
             </p>
@@ -465,21 +465,21 @@ const TermsOfUse = () => {
             k. Negotiation of Terms of Service; Disputes Between Registered Users
             </h2>
             <hr />
-            <h4>
+            <h5>
             1. bdservicepoint.com IS NOT A PARTY TO ANY SERVICE CONTRACT
-            </h4>
+            </h5>
             <p>
             Each Registered User hereby acknowledges and agrees that BD Service Point is NOT a party to any oral or written Agreement for Service, Negotiation Worksheet, or any contract entered into between Registered Users in connection with any Service offered, directly or indirectly, through the Website. Each Registered User acknowledges, agrees and understands that BD Service Point only seeks to provide a platform wherein the SERVICE USER and SERVICE PROVIDER can be brought together and BD Service Point itself has not role in the execution or provision of Services.
             </p>
-            <h4>
+            <h5>
             2. NO AGENCY OR PARTNERSHIP
-            </h4>
+            </h5>
             <p>
             No agency, partnership, joint venture, or employment is created as a result of the Terms of Use or your use of any part of the Website, including without limitation, the Negotiation Worksheet or Agreement for Service. You do not have any authority whatsoever to bind BD Service Point in any respect. All SERVICE PROVIDERs are independent contractors. Neither BD Service Point nor any users of the Website may direct or control the day-to-day activities of the other, or create or assume any obligation on behalf of the other.
             </p>
-            <h4>
+            <h5>
             3. DISPUTES BETWEEN REGISTERED USERS
-            </h4>
+            </h5>
             <p>
             Subject to the provisions regarding disputes between Website participants in connection with Feedback, your interactions with individuals and/or organizations found on or through the Website, including payment of and performance of any Service, and any other terms, conditions, warranties or representations associated with such transactions or dealings, are solely between you and such individual or organization. You should take reasonable precautions and make whatever investigation or inquiries you deem necessary or appropriate before proceeding with any online or offline transaction with any third party, including without limitation, SERVICE PROVIDERs and SERVICE USERs.
             </p>
@@ -496,9 +496,9 @@ const TermsOfUse = () => {
             <p>
             If a dispute arises between you and BD Service Point, our goal is to provide you with a neutral and cost effective means of resolving the dispute quickly. Accordingly, you and BD Service Point hereby agree that we will resolve any claim or controversy at law and equity that arises out of the Terms of Use or the Website in accordance with this Section O or as we and you otherwise agree in writing. Before resorting to the filing of a formal lawsuit, we strongly encourage you to first contact us directly to seek a resolution via e-mail at in servicepointdhaka@gmail.com, or call at our call center on 01736186865. The dispute shall be resolved through alternative dispute resolution procedures, such as mediation or arbitration, as alternatives to litigation.
             </p>
-            <h4>
+            <h5>
             1. GOVERNING LAW
-            </h4>
+            </h5>
             <p>
             The Terms of Use shall be governed in all respects by the laws of Bangladesh and any legal proceeding arising out of this Agreement will occur exclusively in the courts located in Dhaka, Bangladesh.
             </p>
@@ -516,9 +516,9 @@ const TermsOfUse = () => {
             <p>
                 The Website may provide, or third parties may provide, links, contact forms and/or phone numbers to other websites or resources, including, without limitation, social networking, blogging and similar websites through which you are able to log into the Website using your existing account and log-in credentials for such third-party websites. Certain areas of the Website may allow you to interact and/or conduct transactions with such third-party sites, and, if applicable, allow you to configure your privacy settings in your third-party site account to permit your activities on the Website to be shared with your contacts in your third-party site account. Because BD Service Point has no control over such sites and resources, you acknowledge and agree that BD Service Point is not responsible for the availability of such external sites or resources, and is not responsible or liable for any content, advertising, products, goods or services on or available from such websites or resources. Unless expressly stated on the Website, links to third-party sites should in no way be considered as or interpreted to be BD Service Point's endorsement of such third-party sites or any product or service offered through them. You further acknowledge and agree that BD Service Point shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, advertising, product, goods or services available on or through any such website or resource. The Third-party website may have different privacy policies and terms and conditions and business practices than BD Service Point. In certain situations, you may be transferred to a Third-party website through a link or connected to a Third-party resource by a contact form or phone but it may appear that you are still on this Website or transacting with BD Service Point. In these situations, you acknowledge and agree that the Third-party website terms and conditions and privacy policy apply in this situation. Your dealings and communications through the Website with any party other than BD Service Point are solely between you and such third party. Any complaints, concerns or questions you have relating to materials provided by third parties should be forwarded directly to the applicable third party.
             </p>
-            <h4>
+            <h5>
             REFERRAL PROGRAM POLICY
-            </h4>
+            </h5>
             <ul>
                 <li>
                 Referrer will be benefited only after the order of new user(receiver) is served.
@@ -684,9 +684,9 @@ const TermsOfUse = () => {
             <p>
             2. IN NO EVENT SHALL THE TOTAL, AGGREGATE LIABILITY OF BD Service Point, OR ANY OF THE ABOVE-REFERENCED RESPECTIVE PARTIES, ARISING FROM OR RELATING TO THE WEBSITE, AND/OR SUBMITTED CONTENT EXCEED THE TOTAL AMOUNT OF FEES ACTUALLY PAID TO BD Service Point BY YOU HEREUNDER. YOU HEREBY ACKNOWLEDGE AND AGREE THAT BD Service Point SHALL NOT BE LIABLE FOR SUBMITTED CONTENT OR THE DEFAMATORY, OFFENSIVE, OR ILLEGAL CONDUCT OF ANY THIRD PARTY OR SERVICE USER OR SERVICE PROVIDER AND THAT THE RISK OF HARM OR DAMAGE FROM THE FOREGOING RESTS ENTIRELY WITH YOU. YOU FURTHER ACKNOWLEDGE AND AGREE THAT BD Service Point SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, CONSEQUENTIAL OR EXEMPLARY DAMAGES (INCLUDING BUT NOT LIMITED TO LOSS OF BUSINESS, REVENUE, PROFITS, USE, DATA OR OTHER ECONOMIC ADVANTAGE) WHATSOEVER RESULTING FROM OR RELATING TO ANY CONTRACT BETWEEN WEBSITE USERS ENTERED INTO INDEPENDENTLY OF THE WEBSITE. THE WEBSITE MAY CONTAIN LINKS TO THIRD-PARTY WEBSITES THAT ARE NOT OWNED OR CONTROLLED BY BD Service Point. BD Service Point DOES NOT HAVE ANY CONTROL OVER, AND ASSUMES NO RESPONSIBILITY FOR, THE CONTENT, PRIVACY POLICIES, OR PRACTICES OF ANY THIRD-PARTY WEBSITES. IN ADDITION, BD Service Point WILL NOT AND CANNOT CENSOR OR EDIT THE CONTENT OF ANY THIRD-PARTY SITE. BY USING THE WEBSITE, YOU EXPRESSLY RELIEVE BD Service Point FROM ANY AND ALL LIABILITY ARISING FROM YOUR USE OF ANY THIRDPARTY WEBSITE. ACCORDINGLY, PLEASE BE ADVISED TO READ THE TERMS AND CONDITIONS AND PRIVACY POLICY OF EACH THIRD-PARTY WEBSITE THAT YOU VISIT, INCLUDING THOSE DIRECTED BY THE LINKS CONTAINED ON THE WEBSITE.
             </p>
-            <h4>
+            <h5>
             3. FORCE MAJEURE
-            </h4>
+            </h5>
             <p>
             Neither BD Service Point nor you shall be liable to the other for any delay or failure in performance under the Terms of Use, other than payment obligations, arising out of a cause beyond its control and without its fault or negligence. Such causes may include, but are not limited to fires, floods, earthquakes, strikes, unavailability of necessary utilities, blackouts, acts of God, acts of declared or undeclared war, acts of regulatory agencies, or national disasters.
             </p>
@@ -721,30 +721,30 @@ const TermsOfUse = () => {
             U. General Information
             </h2>
             <hr />
-            <h4>
+            <h5>
             1. ENTIRE TERMS OF USE
-            </h4>
+            </h5>
             <p>
             The Terms of Use, together with the Privacy Policy and any other legal notices or Additional Policies published by BD Service Point on the Website, shall constitute the entire agreement between you and BD Service Point concerning the Website. If any provision of the Terms of Use is deemed invalid by a court of competent jurisdiction, the invalidity of such provision shall not affect the validity of the remaining provisions of the Terms of Use, which shall remain in full force and effect.
             </p>
             <p>
             No waiver of any provision of this these Terms of Use shall be deemed a further or continuing waiver of such term or any other term, and BD Service Point’s failure to assert any right or provision under these Terms of Use shall not constitute a waiver of such right or provision.
             </p>
-            <h4>
+            <h5>
             2. STATUTE OF LIMITATIONS
-            </h4>
+            </h5>
             <p>
             You agree that any cause of action arising out of or related to the Website must commence within one (1) year after the cause of action accrues. Otherwise, such cause of action is permanently barred.
             </p>
-            <h4>
+            <h5>
             3. SECTION HEADINGS
-            </h4>
+            </h5>
             <p>
             The section headings in the Terms of Use are for convenience only and have no legal or contractual effect.
             </p>
-            <h4>
+            <h5>
             4. LIMITATION OF SCHEDULING
-            </h4>
+            </h5>
             <p>
             A Order's schedule can be set for 3 times maximum (Initial Schedule plus two Reschedule).
             </p>

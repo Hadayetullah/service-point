@@ -3,8 +3,8 @@ import { Card, CardImg } from 'reactstrap';
 
 const AboutUs = () => {
   return (
-    <section style={{paddingTop:"30px",background: "#F5F5F5"}}>
-        <div className='container' style={{background:"#fff",padding:"20px"}}>
+    <section style={{height:"150vh",paddingTop:"30px",background: "#F5F5F5"}}>
+        <div className='container' style={{background:"#fff",height:"150vh",padding:"20px"}}>
             <div className='row'>
                 <div className='col-12'>
                     <h2 style={{color:"#444444", borderBottom:"1px solid #CCCCCC"}}>

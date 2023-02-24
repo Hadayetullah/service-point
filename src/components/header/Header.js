@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 
 
@@ -14,7 +14,6 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
@@ -261,16 +260,16 @@ class Header extends Component {
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="me-auto" navbar style={{visibility: scrolled ? "visible" : (isResponsive ? "visible" : "hidden"),}}>
                                 <NavItem>
-                                    <Link style={{color: scrolled ? "#fff" : "#212529",}} to="/about-us">About Us</Link>
+                                    <NavLink className="NavLink" style={{color: scrolled ? "#fff" : "#212529",}} to="/about-us">About Us</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <Link style={{color: scrolled ? "#fff" : "#212529",}} to="/contact-us">Contact Us</Link>
+                                    <NavLink className="NavLink" style={{color: scrolled ? "#fff" : "#212529",}} to="/contact-us">Contact Us</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <Link style={{color: scrolled ? "#fff" : "#212529",}} to="/privacy">Privacy &#38; Policy</Link>
+                                    <NavLink className="NavLink" style={{color: scrolled ? "#fff" : "#212529",}} to="/privacy">Privacy &#38; Policy</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <Link style={{color: scrolled ? "#fff" : "#212529",}} to="/terms-of-use">Terms &#38; Condition</Link>
+                                    <NavLink className="NavLink" style={{color: scrolled ? "#fff" : "#212529",}} to="/terms-of-use">Terms &#38; Condition</NavLink>
                                 </NavItem>
                                 {/* <NavItem>
                                     <Link href="https://github.com/reactstrap/reactstrap">
