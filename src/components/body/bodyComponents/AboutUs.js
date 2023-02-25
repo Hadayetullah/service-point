@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Card, CardImg } from 'reactstrap';
 
 const AboutUs = () => {
+
+    useEffect(()=>{
+        if(window.pageYOffset > 0){
+            window.scrollTo(0,0);
+        }
+    },[]);
+
   return (
     <section style={{height:"150vh",paddingTop:"30px",background: "#F5F5F5"}}>
         <div className='container' style={{background:"#fff",height:"150vh",padding:"20px"}}>

@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const Privacy = () => {
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[]);
+
   return (
     <section style={{background: "#F5F5F5"}}>
         <div className='container' style={{background:"#fff",padding:"20px"}}>

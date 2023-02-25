@@ -34,6 +34,15 @@ class ContactUs extends Component {
         e.preventDefault();
     }
 
+    
+
+    componentDidMount(){
+        if(window.pageYOffset > 0){
+            window.scrollTo(0,0);
+        }
+    }
+
+
   render() {
 
     // const [contactName, contactEmail, contactPhone, contactAddress, contactTextArea] = this.state;

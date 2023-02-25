@@ -1,8 +1,39 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+
+import { faCircleUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
 
 const TermsOfUse = () => {
+
+    const [isVisible, setIsVisible] = useState("hidden");
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    },[]);
+
+
+    const handleScroll = () =>{
+        if(window.pageYOffset > 300){
+            setIsVisible("visible");
+        } else {
+            setIsVisible("hidden");
+        }
+    };
+
+    const handleScrollClick = () =>{
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
+
   return (
-    <section style={{background: "#F5F5F5"}}>
+    <section style={{background: "#F5F5F5", paddingBottom:"50px"}}>
         <div className='container' style={{background:"#fff",padding:"20px"}}>
             <h1 style={{color:"#C71F66", textShadow:"-1px 2px 0px rgb(199, 31, 102)"}}>BD Service Point Terms of Use</h1>
             <h6 style={{fontWeight:"bold"}}>
@@ -752,6 +783,33 @@ const TermsOfUse = () => {
             Reschedule can not be more than One week from current schedule. Exception can be handled case by case.
             </p>
         </div>
+
+
+        {/* Scroll To Top */}
+        <div 
+            onClick={handleScrollClick}
+            style={{
+                visibility:`${isVisible}`,
+                cursor:"pointer",
+                width:"40px",
+                height:"40px",
+                right:"1%",
+                bottom:"85px",
+                position:"fixed",
+                borderRadius:"50px",
+                boxShadow:"-2px 2px 3px 1px #333"
+            }}
+        >
+            <div 
+                style={{
+                    fontSize:"40px",
+                    color:"red"
+                }}
+            >
+                <FontAwesomeIcon style={{margin:"-1px 0px 13px -1px"}} icon={faCircleUp} />
+            </div>
+        </div>
+
     </section>
   )
 }

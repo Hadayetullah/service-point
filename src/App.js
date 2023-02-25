@@ -14,12 +14,13 @@ const App = () => {
   // console.log("Redux State: ", globalStore.getState());
 
   return (
-    <Provider store={globalStore}>
-      <BrowserRouter>
-        <MainComponent />
-      </BrowserRouter>
-    </Provider>
-
+    <div>
+      <Provider store={globalStore}>
+        <BrowserRouter>
+          <MainComponent />
+        </BrowserRouter>
+      </Provider>
+    </div>
   );
 }
 
