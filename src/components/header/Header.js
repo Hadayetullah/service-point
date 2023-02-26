@@ -34,8 +34,8 @@ import {
 import { faPhone, faBars } from '@fortawesome/free-solid-svg-icons';
 
 
-import Signup from '../../auth/Signup';
-import Login from '../../auth/Login';
+import Signup from '../auth/Signup';
+import Login from '../auth/Login';
 import NavItemDetails from './navDetailOnModal/NavItemDetails';
 // import {detailView} from '../../redux/actionCreators';
 

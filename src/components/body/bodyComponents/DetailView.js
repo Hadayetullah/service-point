@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
-// import {connect} from 'react-redux';
+import {connect} from 'react-redux';
 import './DetailView.css';
 
 import { Card, CardImg } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faBangladeshiTakaSign, faCaretRight, faCheck, faCirclePlus, faFaceAngry, faPersonCircleQuestion, faSmile } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faBangladeshiTakaSign, faCheck } from '@fortawesome/free-solid-svg-icons';
+
+import FAQs from '../../specialComponents/FAQs';
+import ScrollToTop from '../../specialComponents/ScrollToTop';
 
 
+
+const mapStateToProps = (state) =>{
+    return{
+        data: state,
+    }
+};
 
 
 class DetailView extends Component {
@@ -25,7 +34,23 @@ class DetailView extends Component {
 
   render() {
 
-    const item = localStorage.getItem("item");
+    const parentId = localStorage.getItem("parentId");
+    const childId = localStorage.getItem("childId");
+
+    const data = this.props.data.galleryItems[parentId - 1];
+    const title = data.services[childId - 1].item;
+    // const faqs = data.data;
+
+    // const data = this.props.data.filter[0].filter(i =>{
+    //     return i.id === parentId;
+    // })[0].services.filter(j =>{
+    //     return j.id === childId;
+    // })[0];
+
+
+    // console.log("data : ",parentId -1);
+    console.log(this.props.data);
+
 
     return (
         <section>
@@ -33,7 +58,7 @@ class DetailView extends Component {
                 <div className='container'>
                     <div className='row'>
                         <div className='col-12'>
-                        <h2 style={{color:"#4F4F4F"}}>{item}</h2>
+                        <h2>{title}</h2>
                         </div>
                     </div>
                     <div className='row'>
@@ -90,43 +115,43 @@ class DetailView extends Component {
 
             <div style={{border:"1px solid #5C636A", marginTop:"30px"}}></div>
 
-            <div style={{padding:"30px 0", background:"#E6E6E6", color:"#000"}}>
+            <div style={{padding:"30px 0", background:"#E9E1EC", color:"#2E2E41"}}>
                 <div className='container'>
 
                     <div className='row'>
                         <div className='col-md-10'>
                             <div style={{width:"100%"}}>
                                 <div className='detail-middle-top'>
-                                    <h2 style={{color:"#4F4F4F"}}>How to book an appointment <FontAwesomeIcon style={{fontSize:"20px"}} icon={faArrowRight} /></h2>
+                                    <h2>How to book an appointment <FontAwesomeIcon style={{fontSize:"20px"}} icon={faArrowRight} /></h2>
                                     <div className='visit-summary-child'>
-                                        <strong style={{color:"#4F4F4F"}}>Select service</strong>
+                                        <strong style={{color:"#56465E"}}>Select service</strong>
                                         <p>From the category, select the service you are looking for.</p>
                                         <p>Check price-list by clicking ‘View Price List’. </p>
                                     </div>
                                     <div className='visit-summary-child'>
-                                        <strong style={{color:"#4F4F4F"}}>Book your schedule</strong>
+                                        <strong style={{color:"#56465E"}}>Book your schedule</strong>
                                         <p>Select your convenient time slot.</p>
                                     </div>
                                     <div className='visit-summary-child'>
-                                        <strong style={{color:"#4F4F4F"}}>Place order</strong>
+                                        <strong style={{color:"#56465E"}}>Place order</strong>
                                         <p>Confirm your order by clicking ‘Book an Appointment’.</p>
                                     </div>
                                 </div>
 
                                 <div className='detail-middle-middle'>
-                                    <h2 style={{color:"#4F4F4F", marginTop:"15px"}}>
+                                    <h2 style={{marginTop:"15px"}}>
                                         Details <FontAwesomeIcon style={{fontSize:"20px"}} icon={faArrowRight} />
                                     </h2>
                                     <p>
                                         At BD Service Point you can hire expert AC repair service near you. Our professional Service Providers will give you the best AC repair service. From general inspection, to changing AC parts you can avail every AC related service within a few moments.
                                     </p>
-                                    <h4 style={{color:"#4F4F4F"}}>
-                                    About <strong >BD SERVICE POINT'S</strong> AC Repairing Service
+                                    <h4>
+                                    About <strong style={{color:"#56465E"}}>BD SERVICE POINT'S</strong> AC Repairing Service
                                     </h4>
                                     <p>
                                     BD Service Point is the largest marketplace in Bangladesh where we serve you with every possible service. AC Repairing service is one of our services to repair all types of AC related problems. We deliver expert and AC repair services with integrity from our professional service providers.
                                     </p>
-                                    <h5 style={{color:"#4F4F4F"}}>
+                                    <h5>
                                         Available Services
                                     </h5>
                                     <ul style={{fontSize:"18px"}}>
@@ -168,63 +193,63 @@ class DetailView extends Component {
                                         </li>
                                     </ul>
                                     <p>
-                                        <strong>AC Checkup Service: </strong>AC Checkup service offers only the diagnosis of your Air Conditioner by an expert technician who performs initial tests for problem identification. 
+                                        <strong style={{color:"#56465E"}}>AC Checkup Service: </strong>AC Checkup service offers only the diagnosis of your Air Conditioner by an expert technician who performs initial tests for problem identification. 
                                     </p>
                                     <p>
-                                        <strong>AC Basic Servicing: </strong>AC Basic service offers primary diagnosis, filter cleaning, test and identify problems by an expert AC technician.
+                                        <strong style={{color:"#56465E"}}>AC Basic Servicing: </strong>AC Basic service offers primary diagnosis, filter cleaning, test and identify problems by an expert AC technician.
                                     </p>
                                     <p>
-                                        <strong>AC Gas Charge: </strong>This service offers a performance checkup and post gas refill. If there is a leakage; most of the time AC can be fixed onsite but sometimes it might take a longer time. For that, you have to wait for 1 or 2 days. 
+                                        <strong style={{color:"#56465E"}}>AC Gas Charge: </strong>This service offers a performance checkup and post gas refill. If there is a leakage; most of the time AC can be fixed onsite but sometimes it might take a longer time. For that, you have to wait for 1 or 2 days. 
                                     </p>
                                     <p>
-                                        <strong>AC Master Service: </strong>AC Master Service offers detail cleaning of the indoor and outdoor units including minor problem-fixing (excluding materials and parts). The service charge varies on your AC amount, height, weight and difficulties. 
+                                        <strong style={{color:"#56465E"}}>AC Master Service: </strong>AC Master Service offers detail cleaning of the indoor and outdoor units including minor problem-fixing (excluding materials and parts). The service charge varies on your AC amount, height, weight and difficulties. 
                                     </p>
                                     <p>
-                                        <strong>AC Water Drop Solution: </strong>This service offers identification of the source of dripping water from your AC and fixation water drainage system accordingly. Any additional materials/parts will be charged separately.
+                                        <strong style={{color:"#56465E"}}>AC Water Drop Solution: </strong>This service offers identification of the source of dripping water from your AC and fixation water drainage system accordingly. Any additional materials/parts will be charged separately.
                                     </p>
                                     <p>
-                                        <strong>AC Shifting Service: </strong>This service is to shift your AC unit from one place or floor to the loading truck. Only the service charge is applicable for this service. The service charge varies on your AC amount, height, weight, and difficulties. 
+                                        <strong style={{color:"#56465E"}}>AC Shifting Service: </strong>This service is to shift your AC unit from one place or floor to the loading truck. Only the service charge is applicable for this service. The service charge varies on your AC amount, height, weight, and difficulties. 
                                     </p>
                                     <p>
-                                        <strong>AC Compressor Fitting With Gas Charge: </strong>This service offers old Compressor removal and new Compressor installation. Compressor price and warranty differ as per manufacturer.
+                                        <strong style={{color:"#56465E"}}>AC Compressor Fitting With Gas Charge: </strong>This service offers old Compressor removal and new Compressor installation. Compressor price and warranty differ as per manufacturer.
                                     </p>
                                     <p>
-                                        <strong>AC Jet Wash: </strong>AC Jet Wash offers detailed cleaning of the indoor and outdoor units with Jet Wash Machine including minor problem-fixing (excluding materials and parts). The service charge varies on your AC amount, height, weight, and difficulties. 
+                                        <strong style={{color:"#56465E"}}>AC Jet Wash: </strong>AC Jet Wash offers detailed cleaning of the indoor and outdoor units with Jet Wash Machine including minor problem-fixing (excluding materials and parts). The service charge varies on your AC amount, height, weight, and difficulties. 
                                     </p>
                                     <p>
-                                        <strong>AC Dismantling: </strong>This service offers dismantling AC from home or workplace and disconnecting all the electrical wiring from the AC unit. 
+                                        <strong style={{color:"#56465E"}}>AC Dismantling: </strong>This service offers dismantling AC from home or workplace and disconnecting all the electrical wiring from the AC unit. 
                                     </p>
                                     <p>
-                                        <strong>AC Capacitor Replacement: </strong>This service offers to replace the AC capacitor with a new one. Capacitor price and warranty differ as per manufacturer. 
+                                        <strong style={{color:"#56465E"}}>AC Capacitor Replacement: </strong>This service offers to replace the AC capacitor with a new one. Capacitor price and warranty differ as per manufacturer. 
                                     </p>
                                     <p>
-                                        <strong>AC Circuit Repairing: </strong>This service offers to repair the circuits of your AC. Circuit box price and warranty differ as per manufacturer.
+                                        <strong style={{color:"#56465E"}}>AC Circuit Repairing: </strong>This service offers to repair the circuits of your AC. Circuit box price and warranty differ as per manufacturer.
                                     </p>
                                     <p>
-                                        <strong>Special Corporate Ac Service: </strong>This service offer you dedicated key account manager for your massive corporate ac solution.
+                                        <strong style={{color:"#56465E"}}>Special Corporate Ac Service: </strong>This service offer you dedicated key account manager for your massive corporate ac solution.
                                     </p>
-                                    <h3 style={{color:"#4F4F4F"}}>Why Us ?</h3>
+                                    <h3>Why Us ?</h3>
                                     <p>
-                                        <strong>Hassle-Free: </strong>Ordering AC repair service from us is simple and easy. You can hire expert Service Providers from us hassle-free to carry your AC here and there. Our Service Provider will come to your doorstep for you.  
-                                    </p>
-                                    <p>
-                                        <strong>Budget-Friendly: </strong>You can hire a professional AC repair service in the same budget or less than any other local services near you. Our Service Providers will provide expert AC technicians to inspect problems and fix them.
+                                        <strong style={{color:"#56465E"}}>Hassle-Free: </strong>Ordering AC repair service from us is simple and easy. You can hire expert Service Providers from us hassle-free to carry your AC here and there. Our Service Provider will come to your doorstep for you.  
                                     </p>
                                     <p>
-                                        <strong>Well-trained Professionals: </strong>Our professional Service Providers have discreet and skilled AC repair technicians. Their backgrounds are thoroughly checked in detail. Safety Assurance: Our service providers offer a safe AC repairing service for you. This means they will handle repairs with care.
+                                        <strong style={{color:"#56465E"}}>Budget-Friendly: </strong>You can hire a professional AC repair service in the same budget or less than any other local services near you. Our Service Providers will provide expert AC technicians to inspect problems and fix them.
                                     </p>
-                                    <h2 style={{color:"#4F4F4F", marginTop:"15px"}}>Pricing <FontAwesomeIcon style={{fontSize:"20px"}} icon={faArrowRight} /></h2>
+                                    <p>
+                                        <strong style={{color:"#56465E"}}>Well-trained Professionals: </strong>Our professional Service Providers have discreet and skilled AC repair technicians. Their backgrounds are thoroughly checked in detail. Safety Assurance: Our service providers offer a safe AC repairing service for you. This means they will handle repairs with care.
+                                    </p>
+                                    <h2 style={{marginTop:"15px"}}>Pricing <FontAwesomeIcon style={{fontSize:"20px"}} icon={faArrowRight} /></h2>
                                     <p style={{padding:"0px",margin:"0px"}}>
                                     You only have to pay the service charge including materials/parts cost if taken using cost will have to pay if no service is avail payment.
                                     </p>
                                     <p>
                                     After service completion you will receive a text message on your mobile from BD Service Point then you have to pay through Online or Cash on Delivery. 
                                     </p>
-                                    <h2 style={{color:"#4F4F4F", marginTop:"15px"}}>Liability <FontAwesomeIcon style={{fontSize:"20px"}} icon={faArrowRight} /></h2>
+                                    <h2 style={{marginTop:"15px"}}>Liability <FontAwesomeIcon style={{fontSize:"20px"}} icon={faArrowRight} /></h2>
                                     <p>
                                     BD Service Point will not be liable for any pre-existing issues or potential risks reported by the technician but not handled due to the customer’s refusal to repair.
                                     </p>
-                                    <h2 style={{color:"#4F4F4F", marginTop:"15px"}}>Night Service: 10 pm to 8 am</h2>
+                                    <h2 style={{marginTop:"15px"}}>Night Service: 10 pm to 8 am</h2>
                                     <ul style={{fontSize:"18px"}}>
                                         <li>
                                             Night service starts from 10:00 pm to 8:00 am.
@@ -262,37 +287,15 @@ class DetailView extends Component {
 
 
             <div className='container'>
-                <div className='faq'>
-                    <h2 style={{color:"#4F4F4F", marginTop:"15px"}}><FontAwesomeIcon icon={faPersonCircleQuestion} /> FAQs <FontAwesomeIcon style={{fontSize:"20px"}} icon={faArrowRight} /></h2>
-                    <div className='faq-icon'>
-                        <span><FontAwesomeIcon icon={faCirclePlus} /></span>
-                        <h6>Do I have to pay any charge if I don’t take any service?</h6>
-                    </div>
-                    <div className='faq-icon'>
-                        <span><FontAwesomeIcon icon={faCirclePlus} /></span>
-                        <h6>Do I have to pay advance money before availing your service?</h6>
-                    </div>
-                    <div className='faq-icon'>
-                        <span><FontAwesomeIcon icon={faCirclePlus} /></span>
-                        <h6>Is this only for household AC?</h6>
-                    </div>
-                    <div className='faq-icon'>
-                        <span><FontAwesomeIcon icon={faCirclePlus} /></span>
-                        <h6>What if they damage my AC?</h6>
-                    </div>
-                    <div className='faq-icon'>
-                        <span><FontAwesomeIcon icon={faCirclePlus} /></span>
-                        <h6>Do you give Materials/Parts warranty?</h6>
-                    </div>
-                    <div className='faq-icon'>
-                        <span><FontAwesomeIcon icon={faCirclePlus} /></span>
-                        <h6>Can I buy AC materials/parts by myself and ask your technician to use them?</h6>
-                    </div>
-                </div>
+                <FAQs />
             </div>
+
+            {/* Scroll To Top */}
+            <ScrollToTop />
+
         </section>
     )
   }
 }
 
-export default DetailView;
+export default connect(mapStateToProps)(DetailView);

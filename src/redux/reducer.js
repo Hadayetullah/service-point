@@ -11,29 +11,34 @@ const galleryItemsReducer = (galleryItemsState = GALLERYITEMS, action) =>{
     return galleryItemsState;
 }
 
-const ServiceDetailsReducer = (serviceDetailsState = {SERVICEDETAILSDATA, isUpdated:null}, action) =>{
+
+const ServiceDetailsState = {
+    ServiceDetailsDate: SERVICEDETAILSDATA,
+}
+
+const ServiceDetailsReducer = (serviceState = ServiceDetailsState, action) =>{
     switch (action.type){
         case actionTypes.DETAIL_DATA:
             const parentId = action.parentId;
             const childId = action.childId;
-            const data = serviceDetailsState.SERVICEDETAILSDATA.filter(i =>{
+            const data = serviceState.ServiceDetailsDate.filter(i =>{
                 return i.id === parentId;
             })[0].services.filter(j =>{
                 return j.id === childId;
             })[0];
 
 
-            localStorage.setItem("item",data.item);
+            localStorage.setItem("parentId", parentId);
+            localStorage.setItem("childId", childId);
 
-            // console.log(data);
+            // console.log("Reducer : ",data);
 
             return {
-                ...serviceDetailsState,
-                isUpdated: data
+                ...serviceState
             };
             
         default:
-            return serviceDetailsState;
+            return serviceState;
     }
     
 }

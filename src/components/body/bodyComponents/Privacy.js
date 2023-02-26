@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
 
+import ScrollToTop from '../../specialComponents/ScrollToTop';
+
 const Privacy = () => {
 
     useEffect(()=>{
@@ -305,6 +307,10 @@ const Privacy = () => {
             &#169;2022 Bd Servicepoint Platform Limited. All Rights Reserved.
             </p>
         </div>
+
+        {/* Scroll To Top */}
+        <ScrollToTop />
+        
     </section>
   )
 }

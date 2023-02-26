@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import {Form, FormGroup, Input, Button} from 'reactstrap';
 import './ContactUs.css';
+
+import ScrollToTop from '../../specialComponents/ScrollToTop';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
@@ -48,8 +50,8 @@ class ContactUs extends Component {
     // const [contactName, contactEmail, contactPhone, contactAddress, contactTextArea] = this.state;
 
     return (
-      <section style={{height:"150vh",paddingTop:"30px",marginBottom:"30px",background: "#F5F5F5"}}>
-        <div className='container' style={{background:"#fff",height:"150vh",padding:"20px"}}>
+      <section style={{height:"130vh",paddingTop:"30px",marginBottom:"30px",background: "#F5F5F5"}}>
+        <div className='container' style={{background:"#fff",height:"130vh",padding:"20px"}}>
             <div className='row'>
 
                 <div className='col-md-6'>
@@ -130,6 +132,10 @@ class ContactUs extends Component {
                 
             </div>
         </div>
+
+        {/* Scroll To Top */}
+        <ScrollToTop />
+
       </section>
     )
   }

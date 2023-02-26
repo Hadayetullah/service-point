@@ -57,7 +57,40 @@ const GalleryItems = [
             {
                 id: 18, item:"Water Purifier Setup Service", title:"Water Purifier Setup", src:"asset/service-icon/water-purifier.png"
             }
-        ]
+        ],
+        
+        data: [
+            {
+                id:1,
+                title: "Do I have to pay any charge if I don’t take any service?",
+                text: ""
+            },
+            {
+                id:2,
+                title: "Do I have to pay advance money before availing your service?",
+                text: ""
+            },
+            {
+                id:3,
+                title: "Is this only for household AC?",
+                text: ""
+            },
+            {
+                id:4,
+                title: "What if they damage my AC?",
+                text: ""
+            },
+            {
+                id:5,
+                title: "Do you give Materials/Parts warranty?",
+                text: ""
+            },
+            {
+                id:6,
+                title: "Can I buy AC materials/parts by myself and ask your technician to use them?",
+                text: ""
+            },
+        ],
     },
     {
         id: 2,

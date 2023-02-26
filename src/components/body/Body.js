@@ -20,7 +20,7 @@ const Body = () => {
     // PROBLEM
     // Without this line DetailView Component does not change dynamically.
     // I don't understand why?
-    useSelector(state => state.serviceDetails.isUpdated);
+    // useSelector(state => state.serviceDetails.isUpdated);
     // const details = useSelector(state => state.serviceDetails.isUpdated);
     // console.log("Details: ", details);
     return (

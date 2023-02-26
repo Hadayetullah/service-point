@@ -1,6 +1,9 @@
 import React, {useEffect} from 'react';
 import { Card, CardImg } from 'reactstrap';
 
+import ScrollToTop from '../../specialComponents/ScrollToTop';
+
+
 const AboutUs = () => {
 
     useEffect(()=>{
@@ -74,6 +77,10 @@ const AboutUs = () => {
                 </p>
             </div>
         </div>
+
+        {/* Scroll To Top */}
+        <ScrollToTop />
+
     </section>
   )
 }

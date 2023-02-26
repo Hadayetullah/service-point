@@ -6,12 +6,14 @@ import './Home.css';
 import ImageSlider from "./imageSlider/ImageSlider";
 import ServiceGalleryList from "./allService/ServiceGalleryList";
 
+import ScrollToTop from "../../specialComponents/ScrollToTop";
+
 import { detailView } from "../../../redux/actionCreators";
 
 
 
 const Home = (props) => {
-    console.log(props);
+    // console.log(props);
 
     
     const navigate = useNavigate();
@@ -94,7 +96,10 @@ const Home = (props) => {
                         </div>
                     </div>
                 </div>
-            </section>   
+            </section> 
+
+            {/* Scroll To Top */}
+            <ScrollToTop />  
 
         </div>
     );
