@@ -49,7 +49,7 @@ class DetailView extends Component {
 
 
     // console.log("data : ",parentId -1);
-    console.log(this.props.data);
+    // console.log(data.data);
 
 
     return (
@@ -287,7 +287,7 @@ class DetailView extends Component {
 
 
             <div className='container'>
-                <FAQs />
+                <FAQs faqDetail={data.data} />
             </div>
 
             {/* Scroll To Top */}

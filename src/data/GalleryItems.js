@@ -63,32 +63,32 @@ const GalleryItems = [
             {
                 id:1,
                 title: "Do I have to pay any charge if I don’t take any service?",
-                text: ""
+                text: "If you don’t avail any services for your AC after our Service Provider send a technician at your doorstep then you only have to pay the visiting charge which is BDT 200."
             },
             {
                 id:2,
                 title: "Do I have to pay advance money before availing your service?",
-                text: ""
+                text: "Of course not! After service completion you will receive a text on your mobile from BD Service Point then you have to pay through Online or Cash on Delivery."
             },
             {
                 id:3,
                 title: "Is this only for household AC?",
-                text: ""
+                text: "Definitely not! As long as you want to avail this service for your AC then you can order for your office Air Conditioners too."
             },
             {
                 id:4,
                 title: "What if they damage my AC?",
-                text: ""
+                text: "Our professional Service Providers have expert and skilled AC technicians. If they occur any damages to your AC during repairing you will get proper compensation after proper investigation. However, your complaint for any pre-damaged problems will not be considered."
             },
             {
                 id:5,
                 title: "Do you give Materials/Parts warranty?",
-                text: ""
+                text: "No. We do not manufacture AC parts by ourselves. So, the warranty differs as per manufacturer. However, we can give you 7 days free service warranty."
             },
             {
                 id:6,
                 title: "Can I buy AC materials/parts by myself and ask your technician to use them?",
-                text: ""
+                text: "Certainly. You can buy necessary and required materials/parts by yourself. But any operational dysfunctionality won’t be held responsible by our Service Providers and BD Service Point itself."
             },
         ],
     },
@@ -135,7 +135,40 @@ const GalleryItems = [
             {
                 id: 13, item:"AC Inspection Service", title:"Inspection", src:"asset/service-icon/ac-services.png"
             }
-        ]
+        ],
+
+        data: [
+            {
+                id:1,
+                title: "Do I have to pay any charge if I don’t take any service?",
+                text: "If you don’t avail any services for your AC after our Service Provider send a technician at your doorstep then you only have to pay the visiting charge which is BDT 200."
+            },
+            {
+                id:2,
+                title: "Do I have to pay advance money before availing your service?",
+                text: "Of course not! After service completion you will receive a text on your mobile from BD Service Point then you have to pay through Online or Cash on Delivery."
+            },
+            {
+                id:3,
+                title: "Is this only for household AC?",
+                text: "Definitely not! As long as you want to avail this service for your AC then you can order for your office Air Conditioners too."
+            },
+            {
+                id:4,
+                title: "What if they damage my AC?",
+                text: "Our professional Service Providers have expert and skilled AC technicians. If they occur any damages to your AC during repairing you will get proper compensation after proper investigation. However, your complaint for any pre-damaged problems will not be considered."
+            },
+            {
+                id:5,
+                title: "Do you give Materials/Parts warranty?",
+                text: "No. We do not manufacture AC parts by ourselves. So, the warranty differs as per manufacturer. However, we can give you 7 days free service warranty."
+            },
+            {
+                id:6,
+                title: "Can I buy AC materials/parts by myself and ask your technician to use them?",
+                text: "Certainly. You can buy necessary and required materials/parts by yourself. But any operational dysfunctionality won’t be held responsible by our Service Providers and BD Service Point itself."
+            },
+        ],
     },
     {
         id: 3,
@@ -171,7 +204,39 @@ const GalleryItems = [
             {
                 id: 10, item:"Refrigerator Services", title:"Refrigerator", src:"asset/service-icon/refrigerator.png"
             }
-        ]
+        ],
+        data: [
+            {
+                id:1,
+                title: "Do I have to pay any charge if I don’t take any service?",
+                text: "If you don’t avail any services for your AC after our Service Provider send a technician at your doorstep then you only have to pay the visiting charge which is BDT 200."
+            },
+            {
+                id:2,
+                title: "Do I have to pay advance money before availing your service?",
+                text: "Of course not! After service completion you will receive a text on your mobile from BD Service Point then you have to pay through Online or Cash on Delivery."
+            },
+            {
+                id:3,
+                title: "Is this only for household AC?",
+                text: "Definitely not! As long as you want to avail this service for your AC then you can order for your office Air Conditioners too."
+            },
+            {
+                id:4,
+                title: "What if they damage my AC?",
+                text: "Our professional Service Providers have expert and skilled AC technicians. If they occur any damages to your AC during repairing you will get proper compensation after proper investigation. However, your complaint for any pre-damaged problems will not be considered."
+            },
+            {
+                id:5,
+                title: "Do you give Materials/Parts warranty?",
+                text: "No. We do not manufacture AC parts by ourselves. So, the warranty differs as per manufacturer. However, we can give you 7 days free service warranty."
+            },
+            {
+                id:6,
+                title: "Can I buy AC materials/parts by myself and ask your technician to use them?",
+                text: "Certainly. You can buy necessary and required materials/parts by yourself. But any operational dysfunctionality won’t be held responsible by our Service Providers and BD Service Point itself."
+            },
+        ],
     },
     {
         id: 4,
@@ -201,7 +266,39 @@ const GalleryItems = [
             {
                 id: 8, item:"Event Management Services", title:"Event Management", src:"asset/service-icon/ac-services.png"
             }
-        ]
+        ],
+        data: [
+            {
+                id:1,
+                title: "Do I have to pay any charge if I don’t take any service?",
+                text: "If you don’t avail any services for your AC after our Service Provider send a technician at your doorstep then you only have to pay the visiting charge which is BDT 200."
+            },
+            {
+                id:2,
+                title: "Do I have to pay advance money before availing your service?",
+                text: "Of course not! After service completion you will receive a text on your mobile from BD Service Point then you have to pay through Online or Cash on Delivery."
+            },
+            {
+                id:3,
+                title: "Is this only for household AC?",
+                text: "Definitely not! As long as you want to avail this service for your AC then you can order for your office Air Conditioners too."
+            },
+            {
+                id:4,
+                title: "What if they damage my AC?",
+                text: "Our professional Service Providers have expert and skilled AC technicians. If they occur any damages to your AC during repairing you will get proper compensation after proper investigation. However, your complaint for any pre-damaged problems will not be considered."
+            },
+            {
+                id:5,
+                title: "Do you give Materials/Parts warranty?",
+                text: "No. We do not manufacture AC parts by ourselves. So, the warranty differs as per manufacturer. However, we can give you 7 days free service warranty."
+            },
+            {
+                id:6,
+                title: "Can I buy AC materials/parts by myself and ask your technician to use them?",
+                text: "Certainly. You can buy necessary and required materials/parts by yourself. But any operational dysfunctionality won’t be held responsible by our Service Providers and BD Service Point itself."
+            },
+        ],
     }
 ];
 

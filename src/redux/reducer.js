@@ -19,17 +19,17 @@ const ServiceDetailsState = {
 const ServiceDetailsReducer = (serviceState = ServiceDetailsState, action) =>{
     switch (action.type){
         case actionTypes.DETAIL_DATA:
-            const parentId = action.parentId;
-            const childId = action.childId;
-            const data = serviceState.ServiceDetailsDate.filter(i =>{
-                return i.id === parentId;
-            })[0].services.filter(j =>{
-                return j.id === childId;
-            })[0];
+            // const parentId = action.parentId;
+            // const childId = action.childId;
+            // const data = serviceState.ServiceDetailsDate.filter(i =>{
+            //     return i.id === parentId;
+            // })[0].services.filter(j =>{
+            //     return j.id === childId;
+            // })[0];
 
 
-            localStorage.setItem("parentId", parentId);
-            localStorage.setItem("childId", childId);
+            localStorage.setItem("parentId", action.parentId);
+            localStorage.setItem("childId", action.childId);
 
             // console.log("Reducer : ",data);
 
