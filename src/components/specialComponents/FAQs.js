@@ -8,17 +8,25 @@ import './FAQs.css';
 
 const QsBar = (props) =>{
 
+    const textContent = props.item;
+    const qsTitle = textContent.title;
+    const qsAnswers = textContent.text.map((answers, i)=>{
+        return(
+            <p key={i}>{answers}</p>
+        )
+    });
+
     return(
         <div className='faq-icon'>
             <div className='faq-qs' onClick={props.handleIsExpanded}>
                 <span><FontAwesomeIcon icon={faCirclePlus} /></span>
-                <h6>{props.item.title}</h6>
+                <h6>{qsTitle}</h6>
             </div>
             {
                 props.expanded 
                 ?
                 <div className='faq-text'>
-                    <p>{props.item.text}</p>
+                    {qsAnswers}
                 </div>
                 :
                 null
