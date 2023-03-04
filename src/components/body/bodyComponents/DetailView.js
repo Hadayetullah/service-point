@@ -41,31 +41,36 @@ class DetailView extends Component {
     const parentId = localStorage.getItem("parentId");
     const childId = localStorage.getItem("childId");
 
-    const data = this.props.data.galleryItems[parentId - 1];
+    const data = this.props.data.galleryItems.serviceDetailsData[parentId - 1];
     const childData = data.services[childId - 1];
     const title = childData.item;
     const textData = childData.data;
 
     let displayContent = null;
 
-    // const generateComponent = () =>{
+    const generateComponent = (componentName) => {
+      for (let i in homeNeedsList) {
+        if (componentName === homeNeedsList[i].name) {
+          let BringComponent = homeNeedsList[i];
+          displayContent = <BringComponent />;
+          break;
+        }
+      }
+    };
 
-    // }
-
+    const componentName = childData.componentName;
     switch (data.id) {
       case 1:
-        const componentName = childData.componentName;
-
-        for (let i in homeNeedsList) {
-          if (componentName === homeNeedsList[i].name) {
-            let BringComponent = homeNeedsList[i];
-            displayContent = <BringComponent />;
-            break;
-          }
-        }
+        generateComponent(componentName);
         break;
       case 2:
         displayContent = <AcRepair />;
+        break;
+      case 3:
+        generateComponent(componentName);
+        break;
+      case 4:
+        generateComponent(componentName);
         break;
     }
 

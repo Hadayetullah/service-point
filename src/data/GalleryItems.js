@@ -164,8 +164,8 @@ const GalleryItems = [
             title: "What is Packaging cost?",
             text: [
               "Medium Size carton",
-              "- 150tk/per peace Carton tape",
-              "- 130tk/ per peace Babble wrap, paper, rope, jute beg, etc.",
+              " 150tk/per peace Carton tape",
+              " 130tk/ per peace Babble wrap, paper, rope, jute beg, etc.",
               "the price will be very as per requirement.",
             ],
           },
@@ -191,6 +191,131 @@ const GalleryItems = [
         title: "Commercial Shifting",
         componentName: "CommercialShifting",
         src: "asset/service-icon/ac-services.png",
+        data: [
+          {
+            id: 1,
+            title: "What services do you offer?",
+            text: [
+              "We offer a full range of packing, moving and storage services. This includes local moves and full packing services. If you are packing yourself we can provide boxes and any other packing supplies for you to purchase.",
+            ],
+          },
+          {
+            id: 2,
+            title: "When should I call a moving company?",
+            text: [
+              "We ask that you not schedule the move without having a closing date or a confirmed date and time. We recommend that you contact BD Service Point as soon as you can so that we can accommodate your specific date and time.",
+            ],
+          },
+          {
+            id: 3,
+            title: "Do I need an estimate?",
+            text: [
+              "Yes. For small moves, you can get an estimate over the phone from one of our relocation consultants or service provider. For larger moves, upon request, BD Service Point service provider representative will give you a written “Estimated Cost of Services” after a visual survey of the goods to be moved. There is no charge for the estimate.",
+            ],
+          },
+          {
+            id: 4,
+            title: "What exactly is ‘travel time’?",
+            text: [
+              "In local move, travel time is the time it takes us to get to and from the job site(s). It is charged as a flat rate based on the location of the job site(s).",
+            ],
+          },
+          {
+            id: 5,
+            title: "When is the best time to move?",
+            text: [
+              "There is no “best time” to move because everyone is different in what they need, however, the summer season is always the busiest time of the year.",
+            ],
+          },
+          {
+            id: 6,
+            title: "How long does it take to move?",
+            text: [
+              "This depends on many factors, including the time of year, weather conditions, size of your shipment, size of the elevator, the time required to load and unload, and the direction and distances your shipment is travelling.",
+            ],
+          },
+          {
+            id: 7,
+            title: "How and when will I pay?",
+            text: [
+              "We accept most forms of payment. This includes, but is not limited too, certified money orders, cash, and most major credit cards, online payment, EMI etc. For service providers we must take payment at the end of the move.",
+            ],
+          },
+          {
+            id: 8,
+            title: "Can I pack clothes in my dresser drawers?",
+            text: [
+              "In general, we recommend that you empty items from all bureaus, desks, dressers, chests, armoires, etc. Lightweight clothing-sweaters, shirts, blouses, lingerie-may be left in light dressers. Do not fill drawers with heavy items, which can damage the piece of furniture during transit.",
+            ],
+          },
+          {
+            id: 9,
+            title: "Am I protected against loss or damage?",
+            text: [
+              "Yes. There is a basic valuation that is included with all moves, as well as a few options for increasing this.",
+            ],
+          },
+          {
+            id: 10,
+            title: "How should I pack my belongings if I am doing it myself?",
+            text: [
+              "If you choose to do some or all of your own packing in preparation for your relocation, it’s especially important that you be familiar with the techniques that will best protect your possessions. Boxes should be packed tightly with padding after items are inside to prevent shifting during transportation. You can use anything like newspaper, blankets or linens to pack these boxes tight. Keep in mind that a customer packed cartons will not be insured during the move.",
+            ],
+          },
+          {
+            id: 11,
+            title:
+              "Is my building going to want to know anything about my move?",
+            text: [
+              "Most buildings with elevators are going to require that you get authorization for a specific time that you can use them for your move. You should look into this immediately to make sure you can get the time you want. Additionally, most building managers are going to want to see a “Certificate of Liability”. At your request we can have this sent to them.",
+            ],
+          },
+          {
+            id: 12,
+            title:
+              "Is there an additional charge for elevators or long hallways?",
+            text: [
+              "No. BD Service Point service provider charges the same rates whether you live in a house on the top floor of a high rise.",
+            ],
+          },
+          {
+            id: 13,
+            title: "Should I move jewelry and other valuables myself?",
+            text: [
+              "While service provider can move valuables such as money, jewelry, or other items of extraordinary value, we recommend that you carry irreplaceable and expensive articles with you.",
+            ],
+          },
+          {
+            id: 14,
+            title:
+              "It is raining/snowing today, is this going to be a problem?",
+            text: [
+              "Maybe No. All of your furniture is going to be wrapped in padding or shrink-wrap so you do not need to worry about them getting wet. If you take the packaging service or not.",
+            ],
+          },
+          {
+            id: 15,
+            title: "Can I ride along on the truck?",
+            text: [
+              "We cannot allow people other than movers to ride in the truck because for liability purposes.",
+            ],
+          },
+          {
+            id: 16,
+            title: "Am I supposed to tip the movers?",
+            text: [
+              "Tipping is not required, but many people do. You should decide based on the quality of the move that you receive. Those that do tip tend to give either a small percentage of the entire move, or a small dollar amount per mover per hour. In the end, you should only tip an amount you are comfortable with.",
+            ],
+          },
+          {
+            id: 17,
+            title:
+              "Unfortunately one of my items was damaged or lost, what should I do?",
+            text: [
+              "It is very rare that we incur any type of damage during the move. However if this does occur, please give us a call and we will address the issue.",
+            ],
+          },
+        ],
       },
       {
         id: 3,

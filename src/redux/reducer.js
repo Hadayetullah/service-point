@@ -1,51 +1,27 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import GALLERYITEMS from '../data/GalleryItems';
-import SERVICEDETAILSDATA from '../data/ServiceDetailsData';
+import GALLERYITEMS from "../data/GalleryItems";
+import * as actionTypes from "./actionTypes";
 
-import * as actionTypes from './actionTypes';
+const galleryState = {
+  serviceDetailsData: GALLERYITEMS,
+};
 
+const galleryItemsReducer = (galleryItemsState = galleryState, action) => {
+  switch (action.type) {
+    case actionTypes.DETAIL_DATA:
+      localStorage.setItem("parentId", action.parentId);
+      localStorage.setItem("childId", action.childId);
 
+      return {
+        ...galleryItemsState,
+      };
 
-const galleryItemsReducer = (galleryItemsState = GALLERYITEMS, action) =>{
-    return galleryItemsState;
-}
-
-
-const ServiceDetailsState = {
-    ServiceDetailsDate: SERVICEDETAILSDATA,
-}
-
-const ServiceDetailsReducer = (serviceState = ServiceDetailsState, action) =>{
-    switch (action.type){
-        case actionTypes.DETAIL_DATA:
-            // const parentId = action.parentId;
-            // const childId = action.childId;
-            // const data = serviceState.ServiceDetailsDate.filter(i =>{
-            //     return i.id === parentId;
-            // })[0].services.filter(j =>{
-            //     return j.id === childId;
-            // })[0];
-
-
-            localStorage.setItem("parentId", action.parentId);
-            localStorage.setItem("childId", action.childId);
-
-            // console.log("Reducer : ",data);
-
-            return {
-                ...serviceState
-            };
-            
-        default:
-            return serviceState;
-    }
-    
-}
-
-
+    default:
+      return galleryItemsState;
+  }
+};
 
 export const Reducer = combineReducers({
-    galleryItems: galleryItemsReducer,
-    serviceDetails: ServiceDetailsReducer
-})
+  galleryItems: galleryItemsReducer,
+});

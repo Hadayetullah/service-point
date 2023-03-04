@@ -159,6 +159,12 @@
 }
 
 
+/* Signup Modal */
+.signupModal{
+    --bs-modal-width: 600px !important;
+}
+
+
 /* Responsive */
 @media only screen and (max-width:428px){
     .nav-top-left {

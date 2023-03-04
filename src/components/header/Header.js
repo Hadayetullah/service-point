@@ -1,282 +1,308 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
-import './Header.css';
-
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
+import "./Header.css";
 
 import {
-    Modal, 
-    ModalHeader, 
-    ModalBody,
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText,
-    Button
-  } from 'reactstrap';
+  Modal,
+  ModalHeader,
+  ModalBody,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
+  Button,
+} from "reactstrap";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faLinkedinIn,
+  faTwitter,
+  faPinterestP,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+import { faPhone, faBars } from "@fortawesome/free-solid-svg-icons";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-    faFacebookF, 
-    faLinkedinIn, 
-    faTwitter, 
-    faPinterestP, 
-    faWhatsapp, 
-} from '@fortawesome/free-brands-svg-icons';
-import { faPhone, faBars } from '@fortawesome/free-solid-svg-icons';
-
-
-import Signup from '../auth/Signup';
-import Login from '../auth/Login';
-import NavItemDetails from './navDetailOnModal/NavItemDetails';
+import Signup from "../auth/Signup";
+import Login from "../auth/Login";
+import NavItemDetails from "./navDetailOnModal/NavItemDetails";
 // import {detailView} from '../../redux/actionCreators';
 
-
-
-const mapStateToProps = state =>{
-    // console.log("Glogal State: ", state);
-    return{
-        navMenuItem: state.galleryItems,
-        isUpdated: state.serviceDetails.isUpdated,
-    }
-}
+const mapStateToProps = (state) => {
+  // console.log("Glogal State: ", state);
+  return {
+    navMenuItem: state.galleryItems,
+    // isUpdated: state.serviceDetails.isUpdated,
+  };
+};
 // const mapDispatchToProps = dispatch =>{
 //     return{
 //         viewDetail: (parentId, childId) => dispatch(detailView(parentId, childId)),
 //     }
 // }
 
-
 class Header extends Component {
-    
-    constructor(props){
-        super(props);
-        this.state = {
-            signupModal: false,
-            loginModal: false,
-            detailsModal: false,
-            scrolled: false,
-            isOpen: false,
-            isToggolerOnNav: true,
-            modalTopColor: "#fff",
-            modalBottomColor: "#1C2E3D",
-            zIndex: 9999,
-            isResponsive: false,
-            isUpdated: this.props.isUpdated
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      signupModal: false,
+      loginModal: false,
+      detailsModal: false,
+      scrolled: false,
+      isOpen: false,
+      isToggolerOnNav: true,
+      modalTopColor: "#fff",
+      modalBottomColor: "#1C2E3D",
+      zIndex: 9999,
+      isResponsive: false,
+      isUpdated: this.props.isUpdated,
+    };
+  }
+
+  signupToggle = () => {
+    this.setState({
+      signupModal: !this.state.signupModal,
+    });
+  };
+
+  loginToggle = () => {
+    this.setState({
+      loginModal: !this.state.loginModal,
+    });
+  };
+
+  detailsModalToggle = () => {
+    if (window.pageYOffset > 0) {
+      this.setState({
+        modalTopColor: "#1C2E3D",
+        modalBottomColor: "#fff",
+        zIndex: 1,
+        detailsModal: !this.state.detailsModal,
+      });
+    } else {
+      this.setState({
+        modalTopColor: "#fff",
+        modalBottomColor: "#1C2E3D",
+        zIndex: 9999,
+        detailsModal: !this.state.detailsModal,
+      });
     }
+  };
 
-
-    signupToggle = () =>{
-        this.setState({
-            signupModal: !this.state.signupModal,
-        });
+  handleScroll = () => {
+    if (window.pageYOffset > 0) {
+      this.setState({ scrolled: true });
+    } else {
+      this.setState({ scrolled: false });
     }
+  };
 
-    loginToggle = () =>{
-        this.setState({
-            loginModal: !this.state.loginModal,
-        });
+  toggleNavbar = () => this.setState({ isOpen: !this.state.isOpen });
+
+  responsiveNav = () => {
+    if (window.innerWidth < 768) {
+      this.setState({
+        isToggolerOnNav: false,
+        isResponsive: true,
+      });
+    } else {
+      this.setState({
+        isToggolerOnNav: true,
+        isResponsive: false,
+      });
     }
+    // console.log(window.innerWidth);
+  };
 
-    detailsModalToggle = () =>{
-        if(window.pageYOffset > 0){
-            this.setState({
-                modalTopColor: "#1C2E3D",
-                modalBottomColor: "#fff",
-                zIndex: 1,
-                detailsModal: !this.state.detailsModal,
-            });
-        } else {
-            this.setState({
-                modalTopColor: "#fff",
-                modalBottomColor: "#1C2E3D",
-                zIndex: 9999,
-                detailsModal: !this.state.detailsModal,
-            });
-        }
-    }
+  // viewDetail = (parentId, childId) =>{
+  //     // console.log(parentId, childId);
+  //     this.props.viewDetail(parentId, childId);
+  //     // this.detailsModalToggle();
+  //     // return <Navigate to="/details" />;
 
-    handleScroll = () =>{
-        if(window.pageYOffset > 0){
-            this.setState({scrolled: true})
-        } else {
-            this.setState({scrolled: false})
-        }
-    }
+  // }
 
-    toggleNavbar = () => this.setState({isOpen: !this.state.isOpen});
+  componentDidMount() {
+    this.responsiveNav();
+    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("resize", this.responsiveNav);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("resize", this.responsiveNav);
+  }
 
-    responsiveNav = () =>{
-        if(window.innerWidth < 768){
-            this.setState({
-                isToggolerOnNav: false,
-                isResponsive: true,
-            })
-        } else {
-            this.setState({
-                isToggolerOnNav: true,
-                isResponsive: false,
-            })
-        }
-        // console.log(window.innerWidth);
-    }
+  render() {
+    // console.log(this.props.isUpdated);
 
-    // viewDetail = (parentId, childId) =>{
-    //     // console.log(parentId, childId);
-    //     this.props.viewDetail(parentId, childId);
-    //     // this.detailsModalToggle();
-    //     // return <Navigate to="/details" />;
+    const { scrolled, zIndex, isResponsive } = this.state;
 
-    // }
+    return (
+      <header>
+        {/* Top Navbar */}
+        <section
+          className="navTop"
+          style={{
+            marginBottom: scrolled ? "60px" : "0px",
+            borderBottom: "1px solid #CD3932",
+          }}
+        >
+          <div className="container">
+            <div className="row">
+              <div className="col-md-9 nav-top-left">
+                <div className="col-sm-3 nav-top-left-icons">
+                  <ul className="navTopIconList">
+                    <li>
+                      <Link className="fb" to={"#"}>
+                        <FontAwesomeIcon icon={faFacebookF} />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="in" to={"#"}>
+                        <FontAwesomeIcon icon={faLinkedinIn} />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="tw" to={"#"}>
+                        <FontAwesomeIcon icon={faTwitter} />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="pt" to={"#"}>
+                        <FontAwesomeIcon icon={faPinterestP} />
+                      </Link>
+                    </li>
+                    <li style={{ paddingTop: "15px" }}>|</li>
+                  </ul>
+                </div>
+                <div className="col-sm-9 col-xs-12">
+                  <div className="navTopContact">
+                    <span>
+                      <Link to={"#"} className="nav-top-phone">
+                        <FontAwesomeIcon icon={faPhone} />
+                      </Link>
+                    </span>
+                    <span>01846867388</span>
+                    <span>
+                      <Link to={"#"} className="nav-top-whatsapp">
+                        <FontAwesomeIcon icon={faWhatsapp} />
+                      </Link>
+                    </span>
+                    <span>01846867388</span>
+                  </div>
+                </div>
+              </div>
 
+              <div className="col-md-3 nav-top-right">
+                <ul className="navTopRight">
+                  <li onClick={this.loginToggle} style={{ cursor: "pointer" }}>
+                    Login
+                  </li>
+                  <li style={{ paddingTop: "15px" }}>|</li>
+                  <li
+                    onClick={this.signupToggle}
+                    style={{ paddingRight: "0", cursor: "pointer" }}
+                  >
+                    Signup
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 
-
-
-
-    componentDidMount(){
-        this.responsiveNav();
-        window.addEventListener("scroll", this.handleScroll);
-        window.addEventListener("resize", this.responsiveNav);
-    }
-    componentWillUnmount(){
-        window.removeEventListener("scroll", this.handleScroll);
-        window.removeEventListener("resize", this.responsiveNav);
-    }
-
-
-
-
-
-    render(){
-        // console.log(this.props.isUpdated);
-
-        const {scrolled, zIndex, isResponsive } = this.state;
-
-        return (
-        
-            <header>
-
-                {/* Top Navbar */}
-                <section className="navTop" 
-                    style={{
-                        marginBottom: scrolled ? "60px" : "0px",
-                        borderBottom:"1px solid #CD3932"
-                    }}
-                >
-                    <div className="container">
-                        <div className='row'>
-                            
-                            <div className='col-md-9 nav-top-left'>
-                                <div className='col-sm-3 nav-top-left-icons'>
-                                    <ul className='navTopIconList'>
-                                        <li>
-                                            <Link className='fb' to={"#"}>
-                                                <FontAwesomeIcon icon={faFacebookF} />
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className='in' to={"#"}>
-                                                <FontAwesomeIcon icon={faLinkedinIn} />
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className='tw' to={"#"}>
-                                                <FontAwesomeIcon icon={faTwitter} />
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className='pt' to={"#"}>
-                                                <FontAwesomeIcon icon={faPinterestP} />
-                                            </Link>
-                                        </li>
-                                        <li style={{paddingTop:"15px"}}>|</li>
-                                    </ul>
-                                </div>
-                                <div className='col-sm-9 col-xs-12'>
-                                    <div className='navTopContact'>
-                                        <span>
-                                            <Link to={"#"} className='nav-top-phone'><FontAwesomeIcon icon={faPhone} /></Link>
-                                        </span>
-                                        <span>01846867388</span>
-                                        <span>
-                                            <Link to={"#"} className='nav-top-whatsapp'>
-                                                <FontAwesomeIcon icon={faWhatsapp} />
-                                            </Link>
-                                        </span>
-                                        <span>01846867388</span>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            
-                            <div className='col-md-3 nav-top-right'>
-                                <ul className='navTopRight'>
-                                    <li onClick={this.loginToggle} style={{cursor:"pointer"}}>
-                                        Login
-                                    </li>
-                                    <li style={{paddingTop:"15px"}}>|</li>
-                                    <li onClick={this.signupToggle} style={{paddingRight:"0",cursor:"pointer"}}>
-                                        Signup
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-    
-    
-                {/* Bottom Navbar */}
-                <section
-                    style={{
-                        width: "100%",
-                        // display: "flex",
-                        zIndex: zIndex,
-                        top: scrolled ? 0 : 30,
-                        position: scrolled ? "fixed" : "initial",
-                        background: scrolled ? "#1C2E3D" : "#fff",
-                        borderBottom:"1px solid #CD3932"
-                        // color: scrolled ? "#fff" : "#212529",
-                    }}
-                >
-                    <Navbar expand={"md"} container={true}>
-                        <NavbarBrand style={{color: scrolled ? "#fff" : "#212529",}} href="/">LOGO</NavbarBrand>
-                        <NavbarToggler 
-                            className='modal-icon-responsive'
-                            onClick={this.toggleNavbar}
-                        >
-                            <FontAwesomeIcon icon={faBars} style={{color: scrolled ? "#fff" : "#212529",}} />
-                        </NavbarToggler>
-                        {/* <NavbarToggler className='modal-icon' /> */}
-                        <Collapse isOpen={this.state.isOpen} navbar>
-                            <Nav className="me-auto" navbar style={{visibility: scrolled ? "visible" : (isResponsive ? "visible" : "hidden"),}}>
-                                <NavItem>
-                                    <NavLink className="NavLink" style={{color: scrolled ? "#fff" : "#212529",}} to="/about-us">About Us</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="NavLink" style={{color: scrolled ? "#fff" : "#212529",}} to="/contact-us">Contact Us</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="NavLink" style={{color: scrolled ? "#fff" : "#212529",}} to="/privacy">Privacy &#38; Policy</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="NavLink" style={{color: scrolled ? "#fff" : "#212529",}} to="/terms-of-use">Terms &#38; Condition</NavLink>
-                                </NavItem>
-                                {/* <NavItem>
+        {/* Bottom Navbar */}
+        <section
+          style={{
+            width: "100%",
+            // display: "flex",
+            zIndex: zIndex,
+            top: scrolled ? 0 : 30,
+            position: scrolled ? "fixed" : "initial",
+            background: scrolled ? "#1C2E3D" : "#fff",
+            borderBottom: "1px solid #CD3932",
+            // color: scrolled ? "#fff" : "#212529",
+          }}
+        >
+          <Navbar expand={"md"} container={true}>
+            <NavbarBrand
+              style={{ color: scrolled ? "#fff" : "#212529" }}
+              href="/"
+            >
+              LOGO
+            </NavbarBrand>
+            <NavbarToggler
+              className="modal-icon-responsive"
+              onClick={this.toggleNavbar}
+            >
+              <FontAwesomeIcon
+                icon={faBars}
+                style={{ color: scrolled ? "#fff" : "#212529" }}
+              />
+            </NavbarToggler>
+            {/* <NavbarToggler className='modal-icon' /> */}
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav
+                className="me-auto"
+                navbar
+                style={{
+                  visibility: scrolled
+                    ? "visible"
+                    : isResponsive
+                    ? "visible"
+                    : "hidden",
+                }}
+              >
+                <NavItem>
+                  <NavLink
+                    className="NavLink"
+                    style={{ color: scrolled ? "#fff" : "#212529" }}
+                    to="/about-us"
+                  >
+                    About Us
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    className="NavLink"
+                    style={{ color: scrolled ? "#fff" : "#212529" }}
+                    to="/contact-us"
+                  >
+                    Contact Us
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    className="NavLink"
+                    style={{ color: scrolled ? "#fff" : "#212529" }}
+                    to="/privacy"
+                  >
+                    Privacy &#38; Policy
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    className="NavLink"
+                    style={{ color: scrolled ? "#fff" : "#212529" }}
+                    to="/terms-of-use"
+                  >
+                    Terms &#38; Condition
+                  </NavLink>
+                </NavItem>
+                {/* <NavItem>
                                     <Link href="https://github.com/reactstrap/reactstrap">
                                         GitHub
                                     </Link>
                                 </NavItem> */}
-                                {/* <UncontrolledDropdown nav inNavbar>
+                {/* <UncontrolledDropdown nav inNavbar>
                                     <DropdownToggle nav caret>
                                         Options
                                     </DropdownToggle>
@@ -287,70 +313,70 @@ class Header extends Component {
                                         <DropdownItem>Reset</DropdownItem>
                                     </DropdownMenu>
                                 </UncontrolledDropdown> */}
-                            </Nav>
-                            {/* <NavbarText>Simple Text</NavbarText> */}
-                            {/* <NavbarText>767</NavbarText> */}
-                            <hr style={{marginRight:"-120px"}} />
-                            {
-                                this.state.isToggolerOnNav
-                                ?
-                                (
-                                    <NavbarToggler 
-                                        className='modal-icon'
-                                        onClick={this.detailsModalToggle}
-                                    >
-                                        <FontAwesomeIcon icon={faBars} style={{color: scrolled ? "#fff" : "#212529",}} />
-                                    </NavbarToggler>
-                                )
-                                :
-                                (
-                                    <Button style={{fontSize:"17px", fontWeight:"bold"}} onClick={this.detailsModalToggle}>Visit All Servies</Button>
-                                )
-                            }
-                            {/* <NavbarToggler className='modal-icon' /> */}
-                        </Collapse>
-                    </Navbar>
-                </section>
-    
-    
+              </Nav>
+              {/* <NavbarText>Simple Text</NavbarText> */}
+              {/* <NavbarText>767</NavbarText> */}
+              <hr style={{ marginRight: "-120px" }} />
+              {this.state.isToggolerOnNav ? (
+                <NavbarToggler
+                  className="modal-icon"
+                  onClick={this.detailsModalToggle}
+                >
+                  <FontAwesomeIcon
+                    icon={faBars}
+                    style={{ color: scrolled ? "#fff" : "#212529" }}
+                  />
+                </NavbarToggler>
+              ) : (
+                <Button
+                  style={{ fontSize: "17px", fontWeight: "bold" }}
+                  onClick={this.detailsModalToggle}
+                >
+                  Visit All Servies
+                </Button>
+              )}
+              {/* <NavbarToggler className='modal-icon' /> */}
+            </Collapse>
+          </Navbar>
+        </section>
 
-                {/* Signup and Login Modals */}
-                <section>
-                    <Modal size='md' isOpen={this.state.signupModal}>
-                        <ModalHeader toggle={this.signupToggle}>Register</ModalHeader>
-                        <ModalBody>
-                            <Signup />
-                        </ModalBody>
-                    </Modal>
-                </section>
+        {/* Signup and Login Modals */}
+        <section>
+          <Modal
+            size="md"
+            className="signupModal"
+            isOpen={this.state.signupModal}
+          >
+            <ModalHeader toggle={this.signupToggle}>Register</ModalHeader>
+            <ModalBody>
+              <Signup />
+            </ModalBody>
+          </Modal>
+        </section>
 
-                <section>
-                    <Modal size='md' isOpen={this.state.loginModal}>
-                        <ModalHeader toggle={this.loginToggle}>Login</ModalHeader>
-                        <ModalBody>
-                            <Login />
-                        </ModalBody>
-                    </Modal>
-                </section>
+        <section>
+          <Modal size="md" isOpen={this.state.loginModal}>
+            <ModalHeader toggle={this.loginToggle}>Login</ModalHeader>
+            <ModalBody>
+              <Login />
+            </ModalBody>
+          </Modal>
+        </section>
 
-
-                {/* Bottom Navbar Details */}
-                <section>
-                    <NavItemDetails 
-                        // viewDetail={this.viewDetail}
-                        item={this.props.navMenuItem}
-                        detailsModalToggle={this.detailsModalToggle} 
-                        isModalOpen={this.state.detailsModal}
-                        modalTopColor={this.state.modalTopColor}
-                        modalBottomColor={this.state.modalBottomColor}
-                    />
-                </section>
-
-    
-            </header>
-    
-        );
-    }
+        {/* Bottom Navbar Details */}
+        <section>
+          <NavItemDetails
+            // viewDetail={this.viewDetail}
+            item={this.props.navMenuItem}
+            detailsModalToggle={this.detailsModalToggle}
+            isModalOpen={this.state.detailsModal}
+            modalTopColor={this.state.modalTopColor}
+            modalBottomColor={this.state.modalBottomColor}
+          />
+        </section>
+      </header>
+    );
+  }
 }
 
 export default connect(mapStateToProps)(Header);
