@@ -1,47 +1,91 @@
-import React, { Component, createRef } from "react";
-import { Form, FormGroup, Input, Button, Alert } from "reactstrap";
+import React, { useState } from "react";
+import {
+  Form,
+  FormGroup,
+  Input,
+  Button,
+  Alert,
+  FormFeedback,
+} from "reactstrap";
 
-class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.email = createRef();
-    this.password = createRef();
+const Login = () => {
+  // const email = React.createRef();
+  // const password = React.useRef();
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  // console.log("Email: ", email);
 
-  handleSubmit = (event) => {
-    console.log(
-      "Email: ",
-      this.email.current.value,
-      "Password: ",
-      this.password.current.value
-    );
+  const [formState, setFormState] = useState({
+    emailLogin: "",
+    passwordLogin: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  console.log("Errors: ", errors);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormState((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    const validationErrors = validate(formState);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+    } else {
+      console.log(formState);
+    }
     event.preventDefault();
   };
 
-  render() {
-    return (
-      <div>
-        {/* <Alert color={}>
+  const validate = (formData) => {
+    const errors = {};
 
-                </Alert> */}
-        <Form onSubmit={this.handleSubmit} style={{ margin: "20px 0" }}>
-          <FormGroup>
-            <Input placeholder="Email" type="email" innerRef={this.email} />
-          </FormGroup>{" "}
-          <FormGroup>
-            <Input
-              placeholder="Password"
-              type="password"
-              innerRef={this.password}
-            />
-          </FormGroup>{" "}
-          <Button type="submit">Submit</Button>
-        </Form>
-      </div>
-    );
-  }
-}
+    if (!formData.emailLogin) {
+      errors.emailLogin = "Please provide email address";
+    } else if (!/\S+@\S+\.\S+/.test(formData.emailLogin)) {
+      errors.emailLogin = "Invalid email address";
+    }
+
+    if (!formData.passwordLogin) {
+      errors.passwordLogin = "Please provide password";
+    } else if (formData.passwordLogin.length < 8) {
+      errors.passwordLogin = "Password must be at least 8 characters long";
+    }
+
+    return errors;
+  };
+
+  return (
+    <div>
+      <Form onSubmit={handleSubmit} style={{ margin: "20px 0" }}>
+        <FormGroup>
+          <Input
+            placeholder="Email"
+            type="email"
+            name="emailLogin"
+            value={formState.emailLogin}
+            onChange={handleInputChange}
+            valid={false}
+            invalid={errors.emailLogin && true}
+          />
+          {errors.emailLogin && (
+            <FormFeedback invalid={true}>{errors.emailLogin}</FormFeedback>
+          )}
+        </FormGroup>{" "}
+        <FormGroup>
+          <Input
+            placeholder="Password"
+            type="password"
+            name="passwordLogin"
+            value={formState.passwordLogin}
+            onChange={handleInputChange}
+          />
+        </FormGroup>{" "}
+        <Button type="submit">Submit</Button>
+      </Form>
+    </div>
+  );
+};
 
 export default Login;

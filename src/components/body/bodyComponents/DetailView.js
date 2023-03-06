@@ -9,9 +9,13 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
+// Home Needs
 import HouseShifting from "./DetailViewDetails/homeNeeds/HouseShifting";
 import CommercialShifting from "./DetailViewDetails/homeNeeds/CommercialShifting";
+import HomeDeepClean from "./DetailViewDetails/homeNeeds/HomeDeepClean";
+import TankPipeClean from "./DetailViewDetails/homeNeeds/TankPipeClean";
 
+// AC Repair
 import AcRepair from "./DetailViewDetails/acRepair/AcRepair";
 
 import FAQs from "../../specialComponents/FAQs";
@@ -36,7 +40,12 @@ class DetailView extends Component {
   }
 
   render() {
-    const homeNeedsList = [HouseShifting, CommercialShifting];
+    const homeNeedsList = [
+      HouseShifting,
+      CommercialShifting,
+      HomeDeepClean,
+      TankPipeClean,
+    ];
 
     const parentId = localStorage.getItem("parentId");
     const childId = localStorage.getItem("childId");

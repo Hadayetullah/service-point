@@ -97,6 +97,65 @@ const Home = (props) => {
         </div>
       </section>
 
+      <section className="key-features">
+        <div className="container">
+          <div className="key-features-top">
+            <h2>Our Key Features</h2>
+            <p>"Delivering Best Quality Services, Securing Your Smile"</p>
+          </div>
+          <div className="row">
+            <div className="col-md-4 col-sm-12">
+              <div className="feature">
+                <div className="feature-left">
+                  <h5>Expert Technician</h5>
+                  <p>
+                    From switch replacement to complete home renovation, we
+                    provide expert hands to every home complication.
+                  </p>
+                </div>
+                <div className="feature-right">
+                  <div className="feature-right-inside">
+                    <img src="asset/key-features/s-people.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4 col-sm-12">
+              <div className="feature">
+                <div className="feature-left">
+                  <h5>Services On Demand</h5>
+                  <p>
+                    Serving 24x7 to our customer is top motto of Ezhome. Now get
+                    services at your door anytime, anywhere.
+                  </p>
+                </div>
+                <div className="feature-right">
+                  <div className="feature-right-inside">
+                    <img src="asset/key-features/s-clock.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4 col-sm-12">
+              <div className="feature">
+                <div className="feature-left">
+                  <h5>Genuine Price</h5>
+                  <p>
+                    Easy booking, On-time service delivery, cutting edge
+                    resolution through expert hands on Pocket friendly cost.
+                  </p>
+                </div>
+                <div className="feature-right">
+                  <div className="feature-right-inside">
+                    <img src="asset/key-features/s-taka.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Scroll To Top */}
       <ScrollToTop />
     </div>

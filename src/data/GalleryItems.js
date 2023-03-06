@@ -326,8 +326,35 @@ const GalleryItems = [
       {
         id: 4,
         item: "Home Deep Cleaning Service",
-        title: "Deep Cleaning",
+        title: "Home Deep Cleaning",
+        componentName: "HomeDeepClean",
         src: "asset/service-icon/cleaning.png",
+        data: [
+          {
+            id: 1,
+            title:
+              "Does the price include cleaning material and equipment charge?",
+            text: [
+              "Yes. All kinds of material cost for cleaning services is included in the price declared.",
+            ],
+          },
+          {
+            id: 2,
+            title:
+              "What if something goes wrong after availing a service from BD Service Point?",
+            text: [
+              "       If anything goes wrong after availing a particular through BD Service Point. A tri-party investigation will be launched (which will involve Sheba, service partner and the customer).After completion of a transparent investigation. Detection and rectification of the issue will be made. ",
+            ],
+          },
+          {
+            id: 3,
+            title:
+              "Is the price Subjected to Fluctuation depending on work scope?",
+            text: [
+              "The prices declared are estimated and may vary depending on the complexity of work.",
+            ],
+          },
+        ],
       },
       {
         id: 5,
@@ -339,7 +366,63 @@ const GalleryItems = [
         id: 6,
         item: "Tank & Pipe Cleaning Service",
         title: "Tank & Pipe Cleaning",
+        componentName: "TankPipeClean",
         src: "asset/service-icon/ac-services.png",
+        data: [
+          {
+            id: 1,
+            title: "Does my tank need to be empty for you to clean it?",
+            text: [
+              "Yes. Water tank needs to be kept empty prior to the service delivery. ",
+            ],
+          },
+          {
+            id: 2,
+            title: "How long does it take to clean?",
+            text: [
+              "This depends on the size of water tanks, work scope and complexity. Our service provider will try to complete cleaning your tank within 3-6 hours.",
+            ],
+          },
+          {
+            id: 3,
+            title: "Does my tank need to be empty for you to clean it?",
+            text: [
+              " Yes. Water tank needs to be kept empty prior to the service delivery.",
+            ],
+          },
+          {
+            id: 4,
+            title:
+              "How long do I have to wait after you clean my tank in order to use it again?",
+            text: [
+              "  You can start using your tank right after we are done with cleaning.",
+            ],
+          },
+          {
+            id: 5,
+            title: "How much does it cost to clean a tank?",
+            text: ["     It depends on the size and types of the tank."],
+          },
+          {
+            id: 6,
+            title: "Does the price fixed?",
+            text: [
+              "  The price is not fixed it will be variable on the size and types of the tank",
+            ],
+          },
+          {
+            id: 7,
+            title: "Do I need to pay any advance payment?",
+            text: ["   There no need to pay any advance payment"],
+          },
+          {
+            id: 8,
+            title: "Is the price applicable for any size of underground tank?",
+            text: [
+              "   No. For regular overhead water tank used in six storied buildings, this package covers all cost. However, upon inspection, if the tank size is larger than regular size package price may vary within tolerable range.",
+            ],
+          },
+        ],
       },
       {
         id: 7,
