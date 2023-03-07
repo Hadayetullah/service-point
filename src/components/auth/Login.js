@@ -21,7 +21,7 @@ const Login = () => {
 
   const [errors, setErrors] = useState({});
 
-  console.log("Errors: ", errors);
+  // console.log("Errors: ", errors);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -34,6 +34,7 @@ const Login = () => {
       setErrors(validationErrors);
     } else {
       console.log(formState);
+      console.log(errors);
     }
     event.preventDefault();
   };
@@ -43,14 +44,16 @@ const Login = () => {
 
     if (!formData.emailLogin) {
       errors.emailLogin = "Please provide email address";
-    } else if (!/\S+@\S+\.\S+/.test(formData.emailLogin)) {
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(formData.emailLogin)
+    ) {
       errors.emailLogin = "Invalid email address";
     }
 
     if (!formData.passwordLogin) {
       errors.passwordLogin = "Please provide password";
     } else if (formData.passwordLogin.length < 8) {
-      errors.passwordLogin = "Password must be at least 8 characters long";
+      errors.passwordLogin = "Invalid password";
     }
 
     return errors;
@@ -66,7 +69,6 @@ const Login = () => {
             name="emailLogin"
             value={formState.emailLogin}
             onChange={handleInputChange}
-            valid={false}
             invalid={errors.emailLogin && true}
           />
           {errors.emailLogin && (
@@ -80,7 +82,11 @@ const Login = () => {
             name="passwordLogin"
             value={formState.passwordLogin}
             onChange={handleInputChange}
+            invalid={errors.passwordLogin && true}
           />
+          {errors.passwordLogin && (
+            <FormFeedback invalid={true}>{errors.passwordLogin}</FormFeedback>
+          )}
         </FormGroup>{" "}
         <Button type="submit">Submit</Button>
       </Form>
