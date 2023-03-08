@@ -446,7 +446,68 @@ const GalleryItems = [
         id: 10,
         item: "Painting & Renovation Service",
         title: "Painting & Renovation",
+        componentName: "PaintingRenovation",
         src: "asset/service-icon/painting.png",
+        data: [
+          {
+            id: 1,
+            title: "How is the cost calculated for painting walls?",
+            text: [
+              "The cost is calculated based on the amount of paint used for painting walls.To help you understand we’ve added an example: A room that is 10 x 15 feet with an 9-foot ceiling. The room has two doors and two windows. Measure the total distance (perimeter) around the room. (10 ft. + 15 ft.) x 2 = 50 ft. Multiply the perimeter by the ceiling height to get the total wall area: 50 ft. x 9 ft. = 450 sq. ft. Doors are usually 21 square feet (there are two in this example): 21 sq. ft. x 2 = 42 sq. ft. Windows average 15 square feet (there are two in this example): 15 sq. ft. x 2 = 30 sq. ft. Take the total wall area and subtract the area for the doors and windows to get the wall surface to be painted: 450 sq. ft. (wall area) – 42 sq. ft. (doors) – 30 sq. ft. (windows) = 378 sq. ft. of walls that needs to be painted. You can calculate the quantity of ceiling paint needed for the ceiling by multiplying the width of the room by its length: 10 ft. x 15 ft. = 150 sq. ft. So in this example total paint surface is 528 sq. ft.",
+            ],
+          },
+          {
+            id: 2,
+            title: "What is the coverage area of the Paints?",
+            text: [
+              " It usually provides a coverage of 120 - 140 square feet per litre for 1 coat and 60 - 70 square feet per litre for 2 coats on a normal masonry surface.",
+            ],
+          },
+          {
+            id: 3,
+            title: "What is the life time of the color?",
+            text: [
+              "Color life span is 4 to 5 years. Hence, it depends on the wall condition..",
+            ],
+          },
+
+          {
+            id: 4,
+            title: "What is the life time of the color?",
+            text: [
+              "Color life span is 4 to 5 years. Hence, it depends on the wall condition..",
+            ],
+          },
+          {
+            id: 5,
+            title: "Do I need to pay for extra labor?",
+            text: [
+              " For every service we will assign a proper number of laborers to complete it on time. But if you want extra labor in order to complete it early then you have to pay for extra labor.",
+            ],
+          },
+          {
+            id: 6,
+            title:
+              "Do i need to provide visit charge if i don't want the service?",
+            text: [
+              " Yes. After expert visit your place the consultation fee of 250 tk needs to be paid. With consultation you will get:1. on site inspection and analysis of wall condition 2. suitable color and paint preference 3. costing and measurement 4. other queries which you may face during painting. These service becomes free when you take the painting service with BD Service Point",
+            ],
+          },
+          {
+            id: 7,
+            title: "What is the purpose of renovation?",
+            text: [
+              " To remodel & redesign your old property of house, office or any other space by changing the structure, looks, design or repair existing and increase value, beautification, comfort and personal preferences.",
+            ],
+          },
+          {
+            id: 8,
+            title: "How the service cost calculated?",
+            text: [
+              " The renovation & repair of existing property services cost depends on material and man hour requires to complete the services. Expert will visit and analysis the requirements and provide quotation based on square feet or Job unit required.",
+            ],
+          },
+        ],
       },
       {
         id: 11,
@@ -464,7 +525,32 @@ const GalleryItems = [
         id: 13,
         item: "Plumbing Service",
         title: "Plumbing",
+        componentName: "Plumbing",
         src: "asset/service-icon/plumbing.png",
+        data: [
+          {
+            id: 1,
+            title: "Does accessories cost included in service charge?",
+            text: [
+              "No, additional materials and parts cost are excluded from service charge.",
+            ],
+          },
+          {
+            id: 2,
+            title:
+              "Is the price mentioned subjected to fluctuation depending on work scope?",
+            text: [
+              " The price mentioned here is estimated and may vary depending on work scope, service/product availability.",
+            ],
+          },
+          {
+            id: 3,
+            title: "Do I have to pay any charge if I don’t take any service?",
+            text: [
+              "If you don’t avial any plumbing and sanitary service after provided technician reach at your doorstep then you only have to pay the visiting charge which is BDT 100.",
+            ],
+          },
+        ],
       },
       {
         id: 14,
@@ -1188,7 +1274,60 @@ const GalleryItems = [
         id: 1,
         item: "CCTV Install & Repair Service",
         title: "CCTV Install & Repair",
+        componentName: "CCTVRepairInstall",
         src: "asset/service-icon/cctv.png",
+        data: [
+          {
+            id: 1,
+            title: "What can I expect from this service?",
+            text: [
+              "You can expect a single installer who is able to service a home up to two stories in height using a standard two-section ladder for access to the camera mounting positions. The pro will run and conceal the video cables you supply between the camera and the DVR unit. The camera will require a local power socket and final camera mounting position will be governed by available viewing angles and safe ladder access. A final assessment of camera images will be carried out to confirm that the system is operational following the installation and the pro will show you how to use your new system. Providers are not expected to patch or repair the drywall if holes must be cut to run cables through your walls. Remote viewing setup is not included in the price of this service ",
+            ],
+          },
+          {
+            id: 2,
+            title: "What do I need to provide for this service?",
+            text: [
+              "You are responsible for the provision of all equipment, including power strip and recording device, and adequate power sockets in close proximity to the DVR position. If you need the provider to supply the camera system.",
+            ],
+          },
+          {
+            id: 3,
+            title: "Is accessories cost included in the price mentioned?",
+            text: [
+              "No. The price mentioned here includes only service charge and not materiel cost.",
+            ],
+          },
+          {
+            id: 4,
+            title: "What is the minimum service charge for the technician?",
+            text: [
+              "   If the Total bill is below BDT 200 then the minimum service charge of BDT 200 is applicable.",
+            ],
+          },
+          {
+            id: 5,
+            title:
+              "Is the price mentioned subjected to fluctuation depending on work scope?",
+            text: [
+              "The price mentioned here are estimated and may vary depending on work scope, service/product availability.",
+            ],
+          },
+          {
+            id: 6,
+            title: "How long the service will take?",
+            text: [
+              "CCTV installation service will take up to 2 hours depending on work scope and material availability.",
+            ],
+          },
+          {
+            id: 7,
+            title: "Do I have to pay any charge if I don't take any service?",
+            text: [
+              " If you don’t avail any service after provided technician reaches at your doorstep then you only have to pay the visiting charge which is BDT 100.",
+            ],
+          },
+        ],
       },
       {
         id: 2,
@@ -1200,7 +1339,32 @@ const GalleryItems = [
         id: 3,
         item: "Sanitary Service",
         title: "Sanitary Service",
+        componentName: "Sanitary",
         src: "asset/service-icon/ac-services.png",
+        data: [
+          {
+            id: 1,
+            title: "Does accessories cost included in service charge?",
+            text: [
+              "No, additional materials and parts cost are excluded from service charge.",
+            ],
+          },
+          {
+            id: 2,
+            title:
+              "Is the price mentioned subjected to fluctuation depending on work scope?",
+            text: [
+              " The price mentioned here is estimated and may vary depending on work scope, service/product availability.",
+            ],
+          },
+          {
+            id: 3,
+            title: "Do I have to pay any charge if I don’t take any service?",
+            text: [
+              "If you don’t avial any plumbing and sanitary service after provided technician reach at your doorstep then you only have to pay the visiting charge which is BDT 100.",
+            ],
+          },
+        ],
       },
       {
         id: 4,

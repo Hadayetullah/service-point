@@ -79,7 +79,7 @@ class Signup extends Component {
     if (!formData.phoneSignup) {
       errors.phoneSignup = "Please provide your phone number";
     } else if (
-      !/(^(\+88|0088)?(01){1}[3456789]{1}(\d){8})$/.test(formData.phoneSignup)
+      !/(^(\+88|88)?(01){1}[3456789]{1}(\d){8})$/.test(formData.phoneSignup)
     ) {
       errors.phoneSignup = "Invalid phone number";
     }

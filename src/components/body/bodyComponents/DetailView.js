@@ -14,9 +14,15 @@ import HouseShifting from "./DetailViewDetails/homeNeeds/HouseShifting";
 import CommercialShifting from "./DetailViewDetails/homeNeeds/CommercialShifting";
 import HomeDeepClean from "./DetailViewDetails/homeNeeds/HomeDeepClean";
 import TankPipeClean from "./DetailViewDetails/homeNeeds/TankPipeClean";
+import PaintingRenovation from "./DetailViewDetails/homeNeeds/PaintingRenovation";
+import Plumbing from "./DetailViewDetails/homeNeeds/Plumbing";
 
 // AC Repair
 import AcRepair from "./DetailViewDetails/acRepair/AcRepair";
+
+// Appliances
+import CCTVRepairInstall from "./DetailViewDetails/appliances/CCTVRepairInstall";
+import Sanitary from "./DetailViewDetails/appliances/Sanitary";
 
 import FAQs from "../../specialComponents/FAQs";
 import ScrollToTop from "../../specialComponents/ScrollToTop";
@@ -45,7 +51,12 @@ class DetailView extends Component {
       CommercialShifting,
       HomeDeepClean,
       TankPipeClean,
+      PaintingRenovation,
+      Plumbing,
     ];
+
+    const appliances = [CCTVRepairInstall, Sanitary];
+    const specialServices = [];
 
     const parentId = localStorage.getItem("parentId");
     const childId = localStorage.getItem("childId");
@@ -57,7 +68,7 @@ class DetailView extends Component {
 
     let displayContent = null;
 
-    const generateComponent = (componentName) => {
+    const generateHomeNeedsComponent = (componentName) => {
       for (let i in homeNeedsList) {
         if (componentName === homeNeedsList[i].name) {
           let BringComponent = homeNeedsList[i];
@@ -67,19 +78,39 @@ class DetailView extends Component {
       }
     };
 
+    const generateAppliancesComponent = (componentName) => {
+      for (let i in appliances) {
+        if (componentName === appliances[i].name) {
+          let BringComponent = appliances[i];
+          displayContent = <BringComponent />;
+          break;
+        }
+      }
+    };
+
+    const generateSpecialServicesComponent = (componentName) => {
+      for (let i in specialServices) {
+        if (componentName === specialServices[i].name) {
+          let BringComponent = specialServices[i];
+          displayContent = <BringComponent />;
+          break;
+        }
+      }
+    };
+
     const componentName = childData.componentName;
     switch (data.id) {
       case 1:
-        generateComponent(componentName);
+        generateHomeNeedsComponent(componentName);
         break;
       case 2:
         displayContent = <AcRepair />;
         break;
       case 3:
-        generateComponent(componentName);
+        generateAppliancesComponent(componentName);
         break;
       case 4:
-        generateComponent(componentName);
+        generateSpecialServicesComponent(componentName);
         break;
     }
 
@@ -110,7 +141,7 @@ class DetailView extends Component {
               <div className="col-md-6">
                 <div
                   style={{
-                    width: "155px",
+                    width: "165px",
                     marginLeft: "5px",
                     borderBottom: "1px solid #FC5C18",
                   }}

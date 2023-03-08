@@ -59,14 +59,15 @@
 	display: inline-block;
 }
 .detail-middle-middle h1, h2, h3, h4{
-	color: #2E2E41 !important;
+	color: #1C2E3D !important;
+	font-weight: bolder !important;
 }
 .detail-middle-middle p{
 	font-size: 18px;
 	color: #494967;
 }
 .detail-middle-middle p strong{
-	font-size: 16px;
+	font-size: 18px;
 	color: #56465E;
 }
 .detail-middle-middle ul{
