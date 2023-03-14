@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import {
+  UncontrolledPopover,
+  PopoverHeader,
+  PopoverBody,
+  PopoverItem,
+} from "reactstrap";
 import "./Header.css";
 
 import {
@@ -29,10 +35,16 @@ import {
   faPinterestP,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import { faPhone, faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPhone,
+  faBars,
+  faCircleUser,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 import Signup from "../auth/Signup";
 import Login from "../auth/Login";
+import ChangePassword from "../auth/ChangePassword";
 import NavItemDetails from "./navDetailOnModal/NavItemDetails";
 // import {detailView} from '../../redux/actionCreators';
 
@@ -53,6 +65,7 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isAuthenticated: false,
       signupModal: false,
       loginModal: false,
       detailsModal: false,
@@ -63,7 +76,7 @@ class Header extends Component {
       modalBottomColor: "#1C2E3D",
       zIndex: 9999,
       isResponsive: false,
-      isUpdated: this.props.isUpdated,
+      changePassword: false,
     };
   }
 
@@ -76,6 +89,12 @@ class Header extends Component {
   loginToggle = () => {
     this.setState({
       loginModal: !this.state.loginModal,
+    });
+  };
+
+  changePasswordToggle = () => {
+    this.setState({
+      changePassword: !this.state.changePassword,
     });
   };
 
@@ -145,6 +164,74 @@ class Header extends Component {
 
     const { scrolled, zIndex, isResponsive } = this.state;
 
+    const authenticatedNavTopRight = (
+      <ul className="navTopRight">
+        <li>Logout</li>
+        <li>|</li>
+        <li>
+          <span id="OnpopUserMenu">
+            <FontAwesomeIcon icon={faCircleUser} />
+          </span>
+          <UncontrolledPopover
+            target="OnpopUserMenu"
+            placement="top"
+            className="user-popover"
+            style={{ background: "#9AAFEB" }}
+          >
+            <PopoverHeader>
+              <div>
+                <span style={{ marginLeft: "38px", fontSize: "155px" }}>
+                  <FontAwesomeIcon icon={faUser} />
+                </span>
+              </div>
+              <h5 style={{ textAlign: "center" }}>Md. Hadayetullah</h5>
+            </PopoverHeader>
+            <PopoverBody>
+              <div style={{ marginBottom: "0px" }}>
+                <p style={{ padding: "0", margin: "0" }}>Phone: 01735848465</p>
+                <p style={{ padding: "0", margin: "0" }}>
+                  Email: amanprince606@gmail.com
+                </p>
+                <hr />
+                <Button style={{ width: "100%", marginBottom: "10px" }}>
+                  MY Offers
+                </Button>
+                <Button style={{ width: "100%", marginBottom: "10px" }}>
+                  Recent Services
+                </Button>
+                <Button style={{ width: "100%", marginBottom: "10px" }}>
+                  My Pending Servises
+                </Button>
+                <hr />
+                <Button
+                  onClick={this.changePasswordToggle}
+                  style={{ marginRight: "5px" }}
+                >
+                  Change Password
+                </Button>
+                <Button>Logout</Button>
+              </div>
+            </PopoverBody>
+          </UncontrolledPopover>
+        </li>
+      </ul>
+    );
+
+    const notAuthenticatedNavTopRight = (
+      <ul className="navTopRight">
+        <li onClick={this.loginToggle} style={{ cursor: "pointer" }}>
+          Login
+        </li>
+        <li style={{ paddingTop: "15px" }}>|</li>
+        <li
+          onClick={this.signupToggle}
+          style={{ paddingRight: "0", cursor: "pointer" }}
+        >
+          Signup
+        </li>
+      </ul>
+    );
+
     return (
       <header>
         {/* Top Navbar */}
@@ -180,7 +267,7 @@ class Header extends Component {
                         <FontAwesomeIcon icon={faPinterestP} />
                       </Link>
                     </li>
-                    <li style={{ paddingTop: "15px" }}>|</li>
+                    <li style={{ fontSize: "17px", paddingTop: "16px" }}>|</li>
                   </ul>
                 </div>
                 <div className="col-sm-9 col-xs-12">
@@ -202,18 +289,8 @@ class Header extends Component {
               </div>
 
               <div className="col-md-3 nav-top-right">
-                <ul className="navTopRight">
-                  <li onClick={this.loginToggle} style={{ cursor: "pointer" }}>
-                    Login
-                  </li>
-                  <li style={{ paddingTop: "15px" }}>|</li>
-                  <li
-                    onClick={this.signupToggle}
-                    style={{ paddingRight: "0", cursor: "pointer" }}
-                  >
-                    Signup
-                  </li>
-                </ul>
+                {/* {notAuthenticatedNavTopRight} */}
+                {authenticatedNavTopRight}
               </div>
             </div>
           </div>
@@ -245,7 +322,7 @@ class Header extends Component {
             >
               <FontAwesomeIcon
                 icon={faBars}
-                style={{ color: scrolled ? "#fff" : "#212529" }}
+                style={{ color: scrolled ? "#fff" : "#355875" }}
               />
             </NavbarToggler>
             {/* <NavbarToggler className='modal-icon' /> */}
@@ -340,7 +417,7 @@ class Header extends Component {
           </Navbar>
         </section>
 
-        {/* Signup and Login Modals */}
+        {/* Signup, Login, Change-Password Modals */}
         <section>
           <Modal
             size="md"
@@ -359,6 +436,16 @@ class Header extends Component {
             <ModalHeader toggle={this.loginToggle}>Login</ModalHeader>
             <ModalBody>
               <Login />
+            </ModalBody>
+          </Modal>
+        </section>
+        <section>
+          <Modal size="md" isOpen={this.state.changePassword}>
+            <ModalHeader toggle={this.changePasswordToggle}>
+              Change Password
+            </ModalHeader>
+            <ModalBody>
+              <ChangePassword />
             </ModalBody>
           </Modal>
         </section>

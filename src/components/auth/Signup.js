@@ -1,4 +1,5 @@
 import React, { Component, createRef } from "react";
+import axios from "axios";
 import {
   Form,
   FormGroup,
@@ -11,19 +12,19 @@ import {
 class Signup extends Component {
   constructor(props) {
     super(props);
-    // this.nameSignup = createRef();
-    // this.phoneSignup = createRef();
-    // this.emailSignup = createRef();
-    // this.passwordSignup = createRef();
-    // this.confirmPassword = createRef();
+    // this.name = createRef();
+    // this.phone = createRef();
+    // this.email = createRef();
+    // this.password = createRef();
+    // this.password2 = createRef();
 
     this.state = {
       formState: {
-        nameSignup: "",
-        phoneSignup: "",
-        emailSignup: "",
-        passwordSignup: "",
-        confirmPassword: "",
+        name: "",
+        email: "",
+        phone: "",
+        password: "",
+        password2: "",
       },
       errors: {},
     };
@@ -70,40 +71,40 @@ class Signup extends Component {
   validate = (formData) => {
     const errors = {};
 
-    if (!formData.nameSignup) {
-      errors.nameSignup = "Please provide your name";
-    } else if (formData.nameSignup.length <= 3) {
-      errors.nameSignup = "Please provide your full name";
+    if (!formData.name) {
+      errors.name = "Please provide your name";
+    } else if (formData.name.length <= 3) {
+      errors.name = "Please provide your full name";
     }
 
-    if (!formData.phoneSignup) {
-      errors.phoneSignup = "Please provide your phone number";
+    if (!formData.phone) {
+      errors.phone = "Please provide your phone number";
     } else if (
-      !/(^(\+88|88)?(01){1}[3456789]{1}(\d){8})$/.test(formData.phoneSignup)
+      !/(^(\+88|88)?(01){1}[3456789]{1}(\d){8})$/.test(formData.phone)
     ) {
-      errors.phoneSignup = "Invalid phone number";
+      errors.phone = "Invalid phone number";
     }
 
-    if (!formData.emailSignup) {
-      errors.emailSignup = "Please provide your email address";
+    if (!formData.email) {
+      errors.email = "Please provide your email address";
     } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(formData.emailSignup)
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(formData.email)
     ) {
-      errors.emailSignup = "Invalid email address";
+      errors.email = "Invalid email address";
     }
 
-    if (!formData.passwordSignup) {
-      errors.passwordSignup = "Please provide password";
-    } else if (formData.passwordSignup.length < 8) {
-      errors.passwordSignup = "Password must be at least 8 characters long";
+    if (!formData.password) {
+      errors.password = "Please provide password";
+    } else if (formData.password.length < 8) {
+      errors.password = "Password must be at least 8 characters long";
     }
 
-    if (!formData.confirmPassword) {
-      errors.confirmPassword = "Please provide password again";
-    } else if (formData.confirmPassword.length < 8) {
-      errors.confirmPassword = "Password must be at least 8 characters long";
-    } else if (formData.confirmPassword != formData.passwordSignup) {
-      errors.confirmPassword = "Password doesn't match";
+    if (!formData.password2) {
+      errors.password2 = "Please provide password again";
+    } else if (formData.password2.length < 8) {
+      errors.password2 = "Password must be at least 8 characters long";
+    } else if (formData.password2 != formData.password) {
+      errors.password2 = "Password doesn't match";
     }
 
     return errors;
@@ -117,13 +118,25 @@ class Signup extends Component {
         errors: validationErrors,
       });
     } else {
-      console.log("State: ", this.state);
+      axios
+        .post(
+          "http://127.0.0.1:8000/api/user/registration/",
+          this.state.formState,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((response) => console.log(response))
+        .catch((err) => console.log(err));
+      // console.log("State: ", this.state.formState);
     }
     event.preventDefault();
   };
 
   render() {
-    // console.log(this.passwordSignup);
+    // console.log(this.password);
     return (
       <div>
         {/* <Alert color={}>
@@ -134,16 +147,16 @@ class Signup extends Component {
             <Input
               placeholder="Full Name"
               type="text"
-              name="nameSignup"
-              value={this.state.formState.nameSignup}
+              name="name"
+              value={this.state.formState.name}
               onChange={this.handleInputChange}
-              invalid={this.state.errors.nameSignup && true}
+              invalid={this.state.errors.name && true}
               onBlur={this.handleErrorLook}
               onFocus={this.handleErrorLook}
             />
-            {this.state.errors.nameSignup && (
+            {this.state.errors.name && (
               <FormFeedback invalid={true}>
-                {this.state.errors.nameSignup}
+                {this.state.errors.name}
               </FormFeedback>
             )}
           </FormGroup>
@@ -151,16 +164,16 @@ class Signup extends Component {
             <Input
               placeholder="Phone Number"
               type="text"
-              name="phoneSignup"
-              value={this.state.formState.phoneSignup}
+              name="phone"
+              value={this.state.formState.phone}
               onChange={this.handleInputChange}
-              invalid={this.state.errors.phoneSignup && true}
+              invalid={this.state.errors.phone && true}
               onBlur={this.handleErrorLook}
               onFocus={this.handleErrorLook}
             />
-            {this.state.errors.phoneSignup && (
+            {this.state.errors.phone && (
               <FormFeedback invalid={true}>
-                {this.state.errors.phoneSignup}
+                {this.state.errors.phone}
               </FormFeedback>
             )}
           </FormGroup>
@@ -168,16 +181,16 @@ class Signup extends Component {
             <Input
               placeholder="Email"
               type="email"
-              name="emailSignup"
-              value={this.state.formState.emailSignup}
+              name="email"
+              value={this.state.formState.email}
               onChange={this.handleInputChange}
-              invalid={this.state.errors.emailSignup && true}
+              invalid={this.state.errors.email && true}
               onBlur={this.handleErrorLook}
               onFocus={this.handleErrorLook}
             />
-            {this.state.errors.emailSignup && (
+            {this.state.errors.email && (
               <FormFeedback invalid={true}>
-                {this.state.errors.emailSignup}
+                {this.state.errors.email}
               </FormFeedback>
             )}
           </FormGroup>{" "}
@@ -185,16 +198,16 @@ class Signup extends Component {
             <Input
               placeholder="Password"
               type="password"
-              name="passwordSignup"
-              value={this.state.formState.passwordSignup}
+              name="password"
+              value={this.state.formState.password}
               onChange={this.handleInputChange}
-              invalid={this.state.errors.passwordSignup && true}
+              invalid={this.state.errors.password && true}
               onBlur={this.handleErrorLook}
               onFocus={this.handleErrorLook}
             />
-            {this.state.errors.passwordSignup && (
+            {this.state.errors.password && (
               <FormFeedback invalid={true}>
-                {this.state.errors.passwordSignup}
+                {this.state.errors.password}
               </FormFeedback>
             )}
           </FormGroup>
@@ -202,16 +215,16 @@ class Signup extends Component {
             <Input
               placeholder="Confirm Password"
               type="password"
-              name="confirmPassword"
-              value={this.state.formState.confirmPassword}
+              name="password2"
+              value={this.state.formState.password2}
               onChange={this.handleInputChange}
-              invalid={this.state.errors.confirmPassword && true}
+              invalid={this.state.errors.password2 && true}
               onBlur={this.handleErrorLook}
               onFocus={this.handleErrorLook}
             />
-            {this.state.errors.confirmPassword && (
+            {this.state.errors.password2 && (
               <FormFeedback invalid={true}>
-                {this.state.errors.confirmPassword}
+                {this.state.errors.password2}
               </FormFeedback>
             )}
           </FormGroup>{" "}

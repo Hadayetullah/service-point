@@ -1,11 +1,11 @@
 /* Navbar top */
-.navTop{
-    width: 100%;
-    background-color: #F0F0F0;
-    max-height: 30px; 
-    /* max-height: auto; */
-    font-weight:normal; 
-    font-size:15px;
+.navTop {
+	width: 100%;
+	background-color: #F0F0F0;
+	height: 35px;
+	/* max-height: auto; */
+	font-weight: normal;
+	font-size: 15px;
 }
 /* .navTopRow{
     margin-left: -20px !important;
@@ -17,28 +17,30 @@
     padding: 0;
     margin: 0;
 }
-.navTopIconList li{
-    display: table-cell;
-    padding: 10px 20px 0px 0px;
-    vertical-align: top;
-    line-height: 0;
-    /* transition: padding 0.1s; */
+.navTopIconList li {
+	display: table-cell;
+	padding: 10px 20px 0px 0px;
+	vertical-align: top;
+	line-height: 0;
+	color: #355875;
+	font-weight: bold;
 }
-.navTopIconList li a{
-    font-size: 15px;
-    color: #999;
-    padding: 0;
-    margin: 0;
-    transition: font-size 0.1s;
+.navTopIconList li a {
+	font-size: 16px;
+	color: #355875;
+	padding: 0;
+	margin: 0;
+	transition: font-size 0.1s;
 }
-.nav-top-phone{
-    font-size:14px;
-    color:#3C5A9B;
+.nav-top-phone {
+	font-size: 14px;
+	color: #22384A;
 }
-.nav-top-whatsapp{
-    font-size:16px;
-    background-color:inherit;
-    color:#0E9805;
+.nav-top-whatsapp {
+	font-size: 18px;
+	background-color: inherit;
+	color: #0E9805;
+	margin-left: 8px;
 }
 /* .navTopIconList li a:hover{
     color: red;
@@ -72,27 +74,59 @@
     margin: 0 0 0 5px;
     float: left;
 }
-.navTopContact span{
-    float: left;
-    vertical-align: baseline;
-    color: #333;
-    font-size:15px;
-    padding: 5px 5px 0px 0px;
+.navTopContact span {
+	cursor: pointer;
+	float: left;
+	vertical-align: baseline;
+	color: #3A607E;
+	font-size: 16px;
+	padding: 5px 2px 0px 0px;
+	font-weight: bold;
 }
 
+/* .navTopRight {
+	float: right;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 17px;
+} */
+.navTopRight {
+	float: right;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 17px;
+	font-weight: bold;
+	color: #3A607E;
+}
+.navTopRight li {
+    cursor: pointer;
+	display: table-cell;
+	padding: 16px 15px 0px 0px;
+	vertical-align: top;
+	line-height: 0;
+}
+.navTopRight li span {
+    cursor: pointer;
+	color: #183153;
+	font-size: 30px;
+	float: right;
+	margin-top: -15px;
+}
+.popover{
+    --bs-popover-bg: #9AAFEB !important;
+}
+.user-popover{
+    background-color: #9AAFEB !important;
+}
+.user-popover h3{
+    width: 95%;
+	margin: 10px auto;
+	background: #1F4E79;
+	border-radius: 20px;
+}
 
-.navTopRight{
-    float: right;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.navTopRight li{
-    display: table-cell;
-    padding: 15px 15px 0px 0px;
-    vertical-align: top;
-    line-height: 0;
-}
 
 
 /* .navBottom{
