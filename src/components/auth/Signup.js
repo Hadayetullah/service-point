@@ -1,5 +1,7 @@
 import React, { Component, createRef } from "react";
-import axios from "axios";
+import { connect } from "react-redux";
+import { signupUser } from "../../redux/authActionCreators";
+
 import {
   Form,
   FormGroup,
@@ -8,6 +10,12 @@ import {
   Alert,
   FormFeedback,
 } from "reactstrap";
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signupUser: (signupData) => dispatch(signupUser(signupData)),
+  };
+};
 
 class Signup extends Component {
   constructor(props) {
@@ -118,18 +126,7 @@ class Signup extends Component {
         errors: validationErrors,
       });
     } else {
-      axios
-        .post(
-          "http://127.0.0.1:8000/api/user/registration/",
-          this.state.formState,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-        .then((response) => console.log(response))
-        .catch((err) => console.log(err));
+      this.props.signupUser(this.state.formState);
       // console.log("State: ", this.state.formState);
     }
     event.preventDefault();
@@ -235,4 +232,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default connect(null, mapDispatchToProps)(Signup);

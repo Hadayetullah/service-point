@@ -7,6 +7,12 @@ const galleryState = {
   serviceDetailsData: GALLERYITEMS,
 };
 
+// State for User Validation
+const authState = {
+  token: null,
+  userId: null,
+};
+
 const galleryItemsReducer = (galleryItemsState = galleryState, action) => {
   switch (action.type) {
     case actionTypes.DETAIL_DATA:
@@ -22,6 +28,28 @@ const galleryItemsReducer = (galleryItemsState = galleryState, action) => {
   }
 };
 
+// Reducer for Authorization, Authentication, Change Password and Reset Password
+const authReducer = (state = authState, action) => {
+  switch (action.type) {
+    case actionTypes.AUTH_SUCCESS:
+      return {
+        ...state,
+        token: action.payload.token,
+        userId: action.payload.userId,
+      };
+    case actionTypes.LOGOUT_USER:
+      return {
+        ...state,
+        token: null,
+        userId: null,
+      };
+    default:
+      return state;
+  }
+};
+
+// Combined Reducers
 export const Reducer = combineReducers({
   galleryItems: galleryItemsReducer,
+  authReducer: authReducer,
 });

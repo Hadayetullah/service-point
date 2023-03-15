@@ -44,6 +44,7 @@ import {
 
 import Signup from "../auth/Signup";
 import Login from "../auth/Login";
+import { logoutUser } from "../../redux/authActionCreators";
 import ChangePassword from "../auth/ChangePassword";
 import NavItemDetails from "./navDetailOnModal/NavItemDetails";
 // import {detailView} from '../../redux/actionCreators';
@@ -52,14 +53,15 @@ const mapStateToProps = (state) => {
   // console.log("Glogal State: ", state);
   return {
     navMenuItem: state.galleryItems,
+    token: state.authReducer.token,
     // isUpdated: state.serviceDetails.isUpdated,
   };
 };
-// const mapDispatchToProps = dispatch =>{
-//     return{
-//         viewDetail: (parentId, childId) => dispatch(detailView(parentId, childId)),
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: () => dispatch(logoutUser()),
+  };
+};
 
 class Header extends Component {
   constructor(props) {
@@ -166,7 +168,7 @@ class Header extends Component {
 
     const authenticatedNavTopRight = (
       <ul className="navTopRight">
-        <li>Logout</li>
+        <li onClick={this.props.logout}>Logout</li>
         <li>|</li>
         <li>
           <span id="OnpopUserMenu">
@@ -209,7 +211,7 @@ class Header extends Component {
                 >
                   Change Password
                 </Button>
-                <Button>Logout</Button>
+                <Button onClick={this.props.logout}>Logout</Button>
               </div>
             </PopoverBody>
           </UncontrolledPopover>
@@ -289,8 +291,9 @@ class Header extends Component {
               </div>
 
               <div className="col-md-3 nav-top-right">
-                {/* {notAuthenticatedNavTopRight} */}
-                {authenticatedNavTopRight}
+                {this.props.token === null
+                  ? notAuthenticatedNavTopRight
+                  : authenticatedNavTopRight}
               </div>
             </div>
           </div>
@@ -466,4 +469,4 @@ class Header extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

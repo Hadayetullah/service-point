@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-// import { useSelector } from 'react-redux';
 
 import Home from "./bodyComponents/Home";
 import DetailView from "./bodyComponents/DetailView";
@@ -10,8 +9,6 @@ import TermsOfUse from "./bodyComponents/TermsOfUse";
 import Privacy from "./bodyComponents/Privacy";
 
 import Spinner from "../specialComponents/Spinner";
-// import Login from './bodyComponents/Login';
-// import Register from './bodyComponents/Register';
 // import ServiceDetails from './bodyComponents/ServiceDetails';
 
 const Body = () => {

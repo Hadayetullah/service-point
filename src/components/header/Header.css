@@ -115,7 +115,8 @@
 	margin-top: -15px;
 }
 .popover{
-    --bs-popover-bg: #9AAFEB !important;
+    /* --bs-popover-bg: #9AAFEB !important; */
+    background-color: #9AAFEB !important;
 }
 .user-popover{
     background-color: #9AAFEB !important;

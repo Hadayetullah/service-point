@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+
 import {
   Form,
   FormGroup,
@@ -9,12 +10,16 @@ import {
   FormFeedback,
 } from "reactstrap";
 
+import { loginUser } from "../../redux/authActionCreators";
+import { useDispatch } from "react-redux";
+
 const Login = () => {
   // const email = React.createRef();
   // const password = React.useRef();
 
   // console.log("Email: ", email);
 
+  const dispatch = useDispatch();
   const [formState, setFormState] = useState({
     email: "",
     password: "",
@@ -34,14 +39,7 @@ const Login = () => {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      axios
-        .post("http://127.0.0.1:8000/api/user/login/", formState, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-        .then((response) => console.log(response))
-        .catch((err) => console.log(err));
+      dispatch(loginUser(formState));
       // console.log("Form Data: ", formState);
       // console.log("Error: ", errors);
     }
