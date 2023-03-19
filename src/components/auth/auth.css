@@ -1,0 +1,43 @@
+.login-bottom {
+	width: 100%;
+}
+.login-bottom p {
+	float: left;
+	margin-right: 10px;
+}
+
+.reset-forget-password {
+	width: 420px;
+	margin: 0px auto;
+	border: 1px solid #999;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0px 2px 10px #333;
+	background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+.reset-forget-password h5 {
+	/* color: #fc466b; */
+	text-align: center;
+	font-weight: bold;
+	font-size: 28px;
+	margin-bottom: 45px;
+}
+.reset-forget-password label {
+	margin: 0;
+	font-weight: bold;
+}
+.reset-forget-password input{
+	margin-bottom: -10px !important;
+}
+.reset-pass-err{
+	color: #96273e !important;
+	margin: 0;
+	font-weight: bold;
+}
+.reset-forget-password button {
+	width: 100%;
+	font-weight: bolder;
+	font-size: 18px;
+	text-transform: uppercase;
+	background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}

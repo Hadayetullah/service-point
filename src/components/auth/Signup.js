@@ -132,8 +132,11 @@ class Signup extends Component {
     event.preventDefault();
   };
 
+  componentDidMount() {
+    document.body.style.paddingRight = "0";
+  }
+
   render() {
-    // console.log(this.password);
     return (
       <div>
         {/* <Alert color={}>
@@ -227,6 +230,17 @@ class Signup extends Component {
           </FormGroup>{" "}
           <Button type="submit">Submit</Button>
         </Form>
+        <div style={{ margin: "20px 20px" }}>
+          <p>
+            Have an account?{" "}
+            <strong
+              style={{ cursor: "pointer" }}
+              onClick={this.props.loginToggleFromSignupModal}
+            >
+              Login Here
+            </strong>
+          </p>
+        </div>
       </div>
     );
   }

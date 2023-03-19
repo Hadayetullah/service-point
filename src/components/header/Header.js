@@ -1,13 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
-import {
-  UncontrolledPopover,
-  PopoverHeader,
-  PopoverBody,
-  PopoverItem,
-} from "reactstrap";
-import "./Header.css";
 
 import {
   Modal,
@@ -19,7 +12,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  UncontrolledDropdown,
+  Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
@@ -42,10 +35,13 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
+import "./Header.css";
+
 import Signup from "../auth/Signup";
 import Login from "../auth/Login";
 import { logoutUser } from "../../redux/authActionCreators";
 import ChangePassword from "../auth/ChangePassword";
+import SendForgetPasswordEmail from "../auth/SendForgetPasswordEmail";
 import NavItemDetails from "./navDetailOnModal/NavItemDetails";
 // import {detailView} from '../../redux/actionCreators';
 
@@ -79,6 +75,8 @@ class Header extends Component {
       zIndex: 9999,
       isResponsive: false,
       changePassword: false,
+      dropdown: false,
+      forgetPassword: false,
     };
   }
 
@@ -94,9 +92,36 @@ class Header extends Component {
     });
   };
 
+  signupToggleFromLoginModal = () => {
+    this.setState({
+      loginModal: !this.state.loginModal,
+      signupModal: !this.state.signupModal,
+    });
+  };
+
+  loginToggleFromSignupModal = () => {
+    this.setState({
+      signupModal: !this.state.signupModal,
+      loginModal: !this.state.loginModal,
+    });
+  };
+
+  forgetPasswordToggleFromLoginModal = () => {
+    this.setState({
+      loginModal: !this.state.loginModal,
+      forgetPassword: !this.state.forgetPassword,
+    });
+  };
+
   changePasswordToggle = () => {
     this.setState({
       changePassword: !this.state.changePassword,
+    });
+  };
+
+  forgetPasswordToggle = () => {
+    this.setState({
+      forgetPassword: !this.state.forgetPassword,
     });
   };
 
@@ -127,6 +152,7 @@ class Header extends Component {
   };
 
   toggleNavbar = () => this.setState({ isOpen: !this.state.isOpen });
+  dropdownToggle = () => this.setState({ dropdown: !this.state.dropdown });
 
   responsiveNav = () => {
     if (window.innerWidth < 768) {
@@ -171,50 +197,52 @@ class Header extends Component {
         <li onClick={this.props.logout}>Logout</li>
         <li>|</li>
         <li>
-          <span id="OnpopUserMenu">
-            <FontAwesomeIcon icon={faCircleUser} />
-          </span>
-          <UncontrolledPopover
-            target="OnpopUserMenu"
-            placement="top"
-            className="user-popover"
-            style={{ background: "#9AAFEB" }}
-          >
-            <PopoverHeader>
-              <div>
-                <span style={{ marginLeft: "38px", fontSize: "155px" }}>
-                  <FontAwesomeIcon icon={faUser} />
+          <div className="d-flex">
+            <Dropdown
+              isOpen={this.state.dropdown}
+              toggle={this.dropdownToggle}
+              direction={"down"}
+              // style={{ height:"600px" }}
+            >
+              <DropdownToggle className="dropdown-toggle-nav-top">
+                <span>
+                  <FontAwesomeIcon icon={faCircleUser} />
                 </span>
-              </div>
-              <h5 style={{ textAlign: "center" }}>Md. Hadayetullah</h5>
-            </PopoverHeader>
-            <PopoverBody>
-              <div style={{ marginBottom: "0px" }}>
-                <p style={{ padding: "0", margin: "0" }}>Phone: 01735848465</p>
-                <p style={{ padding: "0", margin: "0" }}>
-                  Email: amanprince606@gmail.com
-                </p>
-                <hr />
-                <Button style={{ width: "100%", marginBottom: "10px" }}>
-                  MY Offers
-                </Button>
-                <Button style={{ width: "100%", marginBottom: "10px" }}>
-                  Recent Services
-                </Button>
-                <Button style={{ width: "100%", marginBottom: "10px" }}>
+              </DropdownToggle>
+              {/* <DropdownToggle caret={true}>Dropdown</DropdownToggle> */}
+              <DropdownMenu
+                style={{ marginRight: "-73px" }}
+                // style={{ background: "#9AAFEB" }}
+              >
+                <DropdownItem className="dropdown-header-pic">
+                  <span>
+                    <FontAwesomeIcon
+                      icon={faUser}
+                      style={{ fontSize: "110px" }}
+                    />
+                  </span>
+                </DropdownItem>
+
+                <DropdownItem className="dp-item">My Offers</DropdownItem>
+                <DropdownItem className="dp-item">Recent Services</DropdownItem>
+                <DropdownItem className="dp-item">
                   My Pending Servises
-                </Button>
-                <hr />
-                <Button
+                </DropdownItem>
+
+                <DropdownItem divider />
+                <DropdownItem
+                  className="dp-item"
                   onClick={this.changePasswordToggle}
-                  style={{ marginRight: "5px" }}
                 >
                   Change Password
-                </Button>
-                <Button onClick={this.props.logout}>Logout</Button>
-              </div>
-            </PopoverBody>
-          </UncontrolledPopover>
+                </DropdownItem>
+                {/* <DropdownItem className="dp-item" style={{ marginTop: "2px" }}>
+                  Logout
+                </DropdownItem>
+                <DropdownItem className="dp-item">Quo Action</DropdownItem> */}
+              </DropdownMenu>
+            </Dropdown>
+          </div>
         </li>
       </ul>
     );
@@ -429,7 +457,9 @@ class Header extends Component {
           >
             <ModalHeader toggle={this.signupToggle}>Register</ModalHeader>
             <ModalBody>
-              <Signup />
+              <Signup
+                loginToggleFromSignupModal={this.loginToggleFromSignupModal}
+              />
             </ModalBody>
           </Modal>
         </section>
@@ -438,7 +468,12 @@ class Header extends Component {
           <Modal size="md" isOpen={this.state.loginModal}>
             <ModalHeader toggle={this.loginToggle}>Login</ModalHeader>
             <ModalBody>
-              <Login />
+              <Login
+                signupToggleFromLoginModal={this.signupToggleFromLoginModal}
+                forgetPasswordToggleFromLoginModal={
+                  this.forgetPasswordToggleFromLoginModal
+                }
+              />
             </ModalBody>
           </Modal>
         </section>
@@ -449,6 +484,16 @@ class Header extends Component {
             </ModalHeader>
             <ModalBody>
               <ChangePassword />
+            </ModalBody>
+          </Modal>
+        </section>
+        <section>
+          <Modal size="md" isOpen={this.state.forgetPassword}>
+            <ModalHeader toggle={this.forgetPasswordToggle}>
+              Reset your forgotten password
+            </ModalHeader>
+            <ModalBody>
+              <SendForgetPasswordEmail />
             </ModalBody>
           </Modal>
         </section>

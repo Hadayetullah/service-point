@@ -36,11 +36,11 @@ export const signupUser = (signupData) => (dispatch) => {
       },
     })
     .then((response) => {
+      console.log("Signup Response: ", response);
       if (response.status === 200) {
         const token = response.data.token.access;
         dispatch(extrackInfo(token));
       }
-      //   console.log(decoded);
     })
     .catch((err) => console.log(err));
 };
@@ -53,12 +53,28 @@ export const loginUser = (loginData) => (dispatch) => {
       },
     })
     .then((response) => {
+      console.log(response);
       if (response.status === 200) {
         const token = response.data.token.access;
         dispatch(extrackInfo(token));
       }
-      //   console.log(response);
-    });
+    })
+    .catch((err) => console.log(err));
+};
+
+export const sendForgetPasswordEmail = (email) => {
+  axios
+    .post("http://127.0.0.1:8000/api/user/send-reset-password-email/", email, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then((response) => {
+      if (response.status === 200) {
+        console.log("Send Forget Password - Response: ", response);
+      }
+    })
+    .catch((err) => console.log("Send Forget Password - Error: ", err));
 };
 
 export const logoutUser = () => {
@@ -68,6 +84,19 @@ export const logoutUser = () => {
   return {
     type: actionTypes.LOGOUT_USER,
   };
+};
+
+export const changePassword = (passwords) => {
+  const token = localStorage.getItem("token");
+  axios
+    .post("http://127.0.0.1:8000/api/user/changepassword/", passwords, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => console.log(response))
+    .catch((err) => console.log(err));
 };
 
 export const authCheck = () => (dispatch) => {

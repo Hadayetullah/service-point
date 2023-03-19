@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import {
@@ -9,11 +9,12 @@ import {
   Alert,
   FormFeedback,
 } from "reactstrap";
+import "./auth.css";
 
 import { loginUser } from "../../redux/authActionCreators";
 import { useDispatch } from "react-redux";
 
-const Login = () => {
+const Login = (props) => {
   // const email = React.createRef();
   // const password = React.useRef();
 
@@ -66,6 +67,10 @@ const Login = () => {
     return errors;
   };
 
+  useEffect(() => {
+    document.body.style.paddingRight = "0";
+  }, []);
+
   return (
     <div>
       <Form onSubmit={handleSubmit} style={{ margin: "20px 0" }}>
@@ -97,6 +102,28 @@ const Login = () => {
         </FormGroup>{" "}
         <Button type="submit">Submit</Button>
       </Form>
+      <div className="login-bottom">
+        <p>
+          <strong
+            style={{ cursor: "pointer" }}
+            onClick={props.forgetPasswordToggleFromLoginModal}
+          >
+            Forgot Password
+          </strong>
+        </p>
+        <p>
+          <strong>|</strong>
+        </p>
+        <p>
+          Don't have an account?{" "}
+          <strong
+            style={{ cursor: "pointer" }}
+            onClick={props.signupToggleFromLoginModal}
+          >
+            Signup Here
+          </strong>
+        </p>
+      </div>
     </div>
   );
 };

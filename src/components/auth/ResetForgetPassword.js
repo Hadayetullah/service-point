@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { changePassword } from "../../redux/authActionCreators";
 import {
   Form,
   FormGroup,
+  Label,
   Input,
   Button,
   Alert,
   FormFeedback,
 } from "reactstrap";
+import "./auth.css";
 
-const ChangePassword = () => {
+const ResetForgetPassword = () => {
+  const height = window.screen.availHeight;
+  // console.log(height);
+
   const [formState, setFormState] = useState({
     password: "",
     password2: "",
@@ -53,11 +58,15 @@ const ChangePassword = () => {
   };
 
   return (
-    <div>
-      <Form onSubmit={handleSubmit}>
+    <div
+      style={{ height: `${height - 265}px`, width: "100%", paddingTop: "6%" }}
+    >
+      <Form onSubmit={handleSubmit} className="reset-forget-password">
+        <h5>Reset Password</h5>
         <FormGroup>
+          <Label>Password*</Label>
           <Input
-            placeholder="Password"
+            // placeholder="Password"
             type="password"
             name="password"
             value={formState.password}
@@ -65,12 +74,15 @@ const ChangePassword = () => {
             invalid={errors.password && true}
           />
           {errors.password && (
-            <FormFeedback invalid={true}>{errors.password}</FormFeedback>
+            <FormFeedback className="reset-pass-err" invalid={true}>
+              {errors.password}
+            </FormFeedback>
           )}
-        </FormGroup>{" "}
+        </FormGroup>
         <FormGroup>
+          <Label>Confirm Password*</Label>
           <Input
-            placeholder="Confirm Password"
+            // placeholder="Confirm Password"
             type="password"
             name="password2"
             value={formState.password2}
@@ -78,13 +90,15 @@ const ChangePassword = () => {
             invalid={errors.password2 && true}
           />
           {errors.password2 && (
-            <FormFeedback invalid={true}>{errors.password2}</FormFeedback>
+            <FormFeedback className="reset-pass-err" invalid={true}>
+              {errors.password2}
+            </FormFeedback>
           )}
-        </FormGroup>{" "}
+        </FormGroup>
         <Button type="submit">Submit</Button>
       </Form>
     </div>
   );
 };
 
-export default ChangePassword;
+export default ResetForgetPassword;

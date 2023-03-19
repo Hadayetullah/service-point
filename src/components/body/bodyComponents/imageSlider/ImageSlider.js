@@ -1,31 +1,31 @@
-
-
-
 import React, { Component } from "react";
-import './ImageSlider.css';
+import "./ImageSlider.css";
 
 class ImageSlider extends Component {
   state = {
     images: [
-      { url: 'asset/example.jpg', alt: 'Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1' },
-      { url: 'asset/example2.jpg', alt: 'Image 2Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1' },
-      { url: 'asset/example.jpg', alt: 'Image between 2 and 3Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1' },
-      { url: 'asset/example3.jpg', alt: 'Image 3Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1' },
+      {
+        url: "asset/example.jpg",
+        alt: "Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1",
+      },
+      {
+        url: "asset/example2.jpg",
+        alt: "Image 2Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1",
+      },
+      {
+        url: "asset/example.jpg",
+        alt: "Image between 2 and 3Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1",
+      },
+      {
+        url: "asset/example3.jpg",
+        alt: "Image 3Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1",
+      },
     ],
     currentIndex: 0,
     previousIndex: null,
     // textClass: "car-text-in",
     // time: 9000,
   };
-
-
-
-
-
-
-
-
-
 
   // const textClass = this.state.textClass === "car-text-in"
   //       ? "car-text-out"
@@ -37,20 +37,13 @@ class ImageSlider extends Component {
   //         textClass: textClass,
   //       };
 
-
-
-
-
-
-
   componentDidMount() {
     // this.time = setTimeout(()=>{
     //   this.setState({textClass:"car-text-out"});
     // }, 7000);
 
-
     this.interval = setInterval(() => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         // console.log(prevState);
         const nextIndex =
           prevState.currentIndex === this.state.images.length - 1
@@ -67,7 +60,7 @@ class ImageSlider extends Component {
       //   this.setState({textClass:"car-text-out"});
       // }, 9000);
     }, 10000);
-    
+
     // this.textDealy = setInterval(() => {
     //   this.setState({
     //     textClass: this.state.textClass === "car-text-in"
@@ -116,4 +109,3 @@ class ImageSlider extends Component {
 }
 
 export default ImageSlider;
-

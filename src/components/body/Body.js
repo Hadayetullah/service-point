@@ -8,6 +8,8 @@ import ContactUs from "./bodyComponents/ContactUs";
 import TermsOfUse from "./bodyComponents/TermsOfUse";
 import Privacy from "./bodyComponents/Privacy";
 
+import ResetForgetPassword from "../auth/ResetForgetPassword";
+
 import Spinner from "../specialComponents/Spinner";
 // import ServiceDetails from './bodyComponents/ServiceDetails';
 
@@ -21,17 +23,14 @@ const Body = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/details" element={<DetailView />} />
         <Route path="about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="reset-password" element={<ResetForgetPassword />} />
+        <Route path="/" element={<Home />} />
         <Route path="/spinner" element={<Spinner />} />
-        {/* <Route path='/faq' element={<FAQ />} />
-                <Route path='/login' element={<Login />} />
-                <Route path='/register' element={<Register />} />
-                <Route path='/service-details' element={<ServiceDetails />} /> */}
       </Routes>
     </div>
   );
