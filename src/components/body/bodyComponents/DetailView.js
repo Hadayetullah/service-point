@@ -12,10 +12,15 @@ import {
 // Home Needs
 import HouseShifting from "./DetailViewDetails/homeNeeds/HouseShifting";
 import CommercialShifting from "./DetailViewDetails/homeNeeds/CommercialShifting";
+import CleaningPestControl from "./DetailViewDetails/homeNeeds/CleaningPestControl";
 import HomeDeepClean from "./DetailViewDetails/homeNeeds/HomeDeepClean";
+import SofaCarpetClean from "./DetailViewDetails/homeNeeds/SofaCarpetClean";
 import TankPipeClean from "./DetailViewDetails/homeNeeds/TankPipeClean";
+import BathroomKitchenClean from "./DetailViewDetails/homeNeeds/BathroomKitchenClean";
+import PremiumClean from "./DetailViewDetails/homeNeeds/PremiumClean";
 import PaintingRenovation from "./DetailViewDetails/homeNeeds/PaintingRenovation";
 import Plumbing from "./DetailViewDetails/homeNeeds/Plumbing";
+import MoversPackers from "./DetailViewDetails/homeNeeds/MoversPackers";
 
 // AC Repair
 import AcRepair from "./DetailViewDetails/acRepair/AcRepair";
@@ -23,6 +28,9 @@ import AcRepair from "./DetailViewDetails/acRepair/AcRepair";
 // Appliances
 import CCTVRepairInstall from "./DetailViewDetails/appliances/CCTVRepairInstall";
 import Sanitary from "./DetailViewDetails/appliances/Sanitary";
+
+// Special Services
+import PickupRruckRental from "./DetailViewDetails/specialServices/PickupRruckRental";
 
 import FAQs from "../../specialComponents/FAQs";
 import ScrollToTop from "../../specialComponents/ScrollToTop";
@@ -49,14 +57,19 @@ class DetailView extends Component {
     const homeNeedsList = [
       HouseShifting,
       CommercialShifting,
+      CleaningPestControl,
       HomeDeepClean,
+      SofaCarpetClean,
       TankPipeClean,
+      BathroomKitchenClean,
+      PremiumClean,
       PaintingRenovation,
       Plumbing,
+      MoversPackers,
     ];
 
     const appliances = [CCTVRepairInstall, Sanitary];
-    const specialServices = [];
+    const specialServices = [PickupRruckRental];
 
     const parentId = localStorage.getItem("parentId");
     const childId = localStorage.getItem("childId");
@@ -127,7 +140,7 @@ class DetailView extends Component {
               <div className="col-md-6">
                 <Card>
                   <CardImg
-                    src="asset/example3.jpg"
+                    src="asset/Untitled-2.jpg"
                     alt="Image"
                     style={{
                       width: "100%",
@@ -174,7 +187,7 @@ class DetailView extends Component {
                   <div className="visit-summary-child">
                     <strong>What's Included?</strong>
                     <p>Only service charge</p>
-                    <p>Service Guarantee Upto 7 Days of Service</p>
+                    <p>Service Warranty Upto 7 Days of Service</p>
                   </div>
                 </div>
                 <br />

@@ -17,7 +17,8 @@ const Home = (props) => {
   const galleryItems = useSelector((state) => state.galleryItems);
 
   const dispatch = useDispatch();
-  const viewDetail = (parentId, childId) => {
+  const viewDetail = (parentId, childId, componentName) => {
+    console.log("Component Name: ", componentName);
     dispatch(detailView(parentId, childId));
     navigate("/details");
   };

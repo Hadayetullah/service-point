@@ -47,3 +47,36 @@
 	box-shadow: 0px 1px 1px 1px #1C2E3D;
 	color: #CD3932;
 }
+
+/* Tooltip */
+.tooltip-gallery{
+	position: relative;
+}
+.tooltip-gallery .tooltip-gallery-text {
+	/* visibility: hidden; */
+	/* visibility: visible; */
+	width: 120px;
+	background-color: #1C2E3D;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -60px;
+}
+.tooltip-gallery .tooltip-gallery-text::after{
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: black transparent transparent transparent;
+}
+/* .tooltip-gallery:hover .tooltip-gallery-text{
+	visibility: visible;
+} */

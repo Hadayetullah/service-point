@@ -5,19 +5,19 @@ class ImageSlider extends Component {
   state = {
     images: [
       {
-        url: "asset/example.jpg",
+        url: "asset/sdasdsd.jpg",
         alt: "Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1",
       },
       {
-        url: "asset/example2.jpg",
+        url: "asset/sdasdsd.jpg",
         alt: "Image 2Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1",
       },
       {
-        url: "asset/example.jpg",
+        url: "asset/sdasdsd.jpg",
         alt: "Image between 2 and 3Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1",
       },
       {
-        url: "asset/example3.jpg",
+        url: "asset/sdasdsd.jpg",
         alt: "Image 3Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1Image 1",
       },
     ],
