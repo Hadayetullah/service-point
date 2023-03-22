@@ -28,7 +28,7 @@ const Body = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/privacy" element={<Privacy />} />
-        <Route path="reset-password" element={<ResetForgetPassword />} />
+        <Route path="/reset-password/*" element={<ResetForgetPassword />} />
         <Route path="/" element={<Home />} />
         <Route path="/spinner" element={<Spinner />} />
       </Routes>

@@ -77,6 +77,25 @@ export const sendForgetPasswordEmail = (email) => {
     .catch((err) => console.log("Send Forget Password - Error: ", err));
 };
 
+export const resetForgetPassword = (passResetData, urlPath) => {
+  axios
+    .post(
+      "http://127.0.0.1:8000/api/user/reset/" +
+        urlPath[0] +
+        "/" +
+        urlPath[1] +
+        "/",
+      passResetData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+    .then((response) => console.log("Reset Forget Pass: ", response))
+    .catch((err) => console.log("Reset Forget Pass Err: ", err));
+};
+
 export const logoutUser = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("expirationTime");

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { changePassword } from "../../redux/authActionCreators";
+import { resetForgetPassword } from "../../redux/authActionCreators";
 import {
   Form,
   FormGroup,
@@ -13,7 +13,11 @@ import "./auth.css";
 
 const ResetForgetPassword = () => {
   const height = window.screen.availHeight;
+  const urlPath = window.location.pathname
+    .split("reset-password/")[1]
+    .split("/");
   // console.log(height);
+  // console.log(urlPath);
 
   const [formState, setFormState] = useState({
     password: "",
@@ -32,7 +36,7 @@ const ResetForgetPassword = () => {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      changePassword(formState);
+      resetForgetPassword(formState, urlPath);
       // console.log("Form Data: ", formState);
       // console.log("Error: ", errors);
     }

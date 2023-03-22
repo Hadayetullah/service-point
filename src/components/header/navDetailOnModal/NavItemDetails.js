@@ -16,7 +16,7 @@ const NavItemDetails = (props) => {
   const dispatch = useDispatch();
 
   const details = (parentId, childId, componentName) => {
-    if (componentName !== null) {
+    if (componentName != null) {
       props.detailsModalToggle();
       dispatch(detailView(parentId, childId));
       navigate("/details");

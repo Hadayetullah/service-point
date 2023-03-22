@@ -54,6 +54,14 @@ class DetailView extends Component {
   }
 
   render() {
+    const parentId = localStorage.getItem("parentId");
+    const childId = localStorage.getItem("childId");
+
+    const data = this.props.data.galleryItems.serviceDetailsData[parentId - 1];
+    const childData = data.services[childId - 1];
+    const title = childData.item;
+    const textData = childData.data;
+
     const homeNeedsList = [
       HouseShifting,
       CommercialShifting,
@@ -71,42 +79,39 @@ class DetailView extends Component {
     const appliances = [CCTVRepairInstall, Sanitary];
     const specialServices = [PickupRruckRental];
 
-    const parentId = localStorage.getItem("parentId");
-    const childId = localStorage.getItem("childId");
-
-    const data = this.props.data.galleryItems.serviceDetailsData[parentId - 1];
-    const childData = data.services[childId - 1];
-    const title = childData.item;
-    const textData = childData.data;
-
     let displayContent = null;
 
     const generateHomeNeedsComponent = (componentName) => {
       for (let i in homeNeedsList) {
+        console.log("Before: ", homeNeedsList[i].name);
         if (componentName === homeNeedsList[i].name) {
           let BringComponent = homeNeedsList[i];
+          console.log("After: ", homeNeedsList[i].name);
           displayContent = <BringComponent />;
-          break;
+          console.log("dlfhsdsfsdhofjo");
+          // break;
         }
       }
     };
 
     const generateAppliancesComponent = (componentName) => {
+      console.log(componentName);
       for (let i in appliances) {
         if (componentName === appliances[i].name) {
           let BringComponent = appliances[i];
           displayContent = <BringComponent />;
-          break;
+          // break;
         }
       }
     };
 
     const generateSpecialServicesComponent = (componentName) => {
+      console.log(componentName);
       for (let i in specialServices) {
         if (componentName === specialServices[i].name) {
           let BringComponent = specialServices[i];
           displayContent = <BringComponent />;
-          break;
+          // break;
         }
       }
     };
