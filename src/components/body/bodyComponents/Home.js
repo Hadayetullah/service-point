@@ -18,9 +18,11 @@ const Home = (props) => {
 
   const dispatch = useDispatch();
   const viewDetail = (parentId, childId, componentName) => {
-    console.log("Component Name: ", componentName);
-    dispatch(detailView(parentId, childId));
-    navigate("/details");
+    if (componentName !== null) {
+      dispatch(detailView(parentId, childId));
+      navigate("/details");
+    }
+    // console.log("Component Name: ", componentName);
   };
 
   return (

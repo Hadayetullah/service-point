@@ -1,5 +1,4 @@
 import React from "react";
-import "./NavItemDetails.css";
 import { Modal, ModalBody } from "reactstrap";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,15 +7,20 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { detailView } from "../../../redux/actionCreators";
+import NavItemDetailsTooltip from "./NavItemDetailsTooltip";
+
+import "./NavItemDetails.css";
 
 const NavItemDetails = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const details = (parentId, childId) => {
-    props.detailsModalToggle();
-    dispatch(detailView(parentId, childId));
-    navigate("/details");
+  const details = (parentId, childId, componentName) => {
+    if (componentName !== null) {
+      props.detailsModalToggle();
+      dispatch(detailView(parentId, childId));
+      navigate("/details");
+    }
   };
 
   const items = props.item.serviceDetailsData.map((item, index) => {
@@ -26,9 +30,14 @@ const NavItemDetails = (props) => {
         <ul>
           {item.services.map((subItem, j) => {
             return (
-              <li key={j} onClick={() => details(item.id, subItem.id)}>
-                {subItem.title}
-              </li>
+              <NavItemDetailsTooltip
+                key={j}
+                pid={item.id}
+                child={subItem}
+                details={details}
+                modalTopColor={props.modalTopColor}
+                modalBottomColor={props.modalBottomColor}
+              />
             );
           })}
         </ul>

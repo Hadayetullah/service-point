@@ -51,7 +51,7 @@ const GalleryTooltip = (props) => {
           }}
           className="tooltip-gallery-text"
         >
-          Tooltip text
+          Service Unavilable!
         </span>
       </Card>
     </div>
