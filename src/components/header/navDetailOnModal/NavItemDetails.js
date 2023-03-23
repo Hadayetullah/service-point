@@ -4,8 +4,8 @@ import { Modal, ModalBody } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-import { useDispatch } from "react-redux";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { detailView } from "../../../redux/actionCreators";
 import NavItemDetailsTooltip from "./NavItemDetailsTooltip";
 
@@ -15,6 +15,8 @@ const NavItemDetails = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const item = useSelector((state) => state.galleryItems);
+
   const details = (parentId, childId, componentName) => {
     if (componentName != null) {
       props.detailsModalToggle();
@@ -23,7 +25,7 @@ const NavItemDetails = (props) => {
     }
   };
 
-  const items = props.item.serviceDetailsData.map((item, index) => {
+  const items = item.serviceDetailsData.map((item, index) => {
     return (
       <div key={index} className="serviceContent">
         <h5>{item.title}</h5>

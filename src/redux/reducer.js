@@ -16,8 +16,8 @@ const authState = {
 const galleryItemsReducer = (galleryItemsState = galleryState, action) => {
   switch (action.type) {
     case actionTypes.DETAIL_DATA:
-      localStorage.setItem("parentId", action.parentId);
-      localStorage.setItem("childId", action.childId);
+      localStorage.setItem("parentId", action.payload.parentId);
+      localStorage.setItem("childId", action.payload.childId);
 
       return {
         ...galleryItemsState,

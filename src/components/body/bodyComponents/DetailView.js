@@ -62,75 +62,97 @@ class DetailView extends Component {
     const title = childData.item;
     const textData = childData.data;
 
-    const homeNeedsList = [
-      HouseShifting,
-      CommercialShifting,
-      CleaningPestControl,
-      HomeDeepClean,
-      SofaCarpetClean,
-      TankPipeClean,
-      BathroomKitchenClean,
-      PremiumClean,
-      PaintingRenovation,
-      Plumbing,
-      MoversPackers,
-    ];
+    // const homeNeedsList = [Plumbing, MoversPackers];
 
-    const appliances = [CCTVRepairInstall, Sanitary];
-    const specialServices = [PickupRruckRental];
+    // const appliances = [CCTVRepairInstall, Sanitary];
+    // const specialServices = [PickupRruckRental];
 
     let displayContent = null;
 
-    const generateHomeNeedsComponent = (componentName) => {
-      for (let i in homeNeedsList) {
-        console.log("Before: ", homeNeedsList[i].name);
-        if (componentName === homeNeedsList[i].name) {
-          let BringComponent = homeNeedsList[i];
-          console.log("After: ", homeNeedsList[i].name);
-          displayContent = <BringComponent />;
-          console.log("dlfhsdsfsdhofjo");
-          // break;
-        }
-      }
-    };
-
-    const generateAppliancesComponent = (componentName) => {
-      console.log(componentName);
-      for (let i in appliances) {
-        if (componentName === appliances[i].name) {
-          let BringComponent = appliances[i];
-          displayContent = <BringComponent />;
-          // break;
-        }
-      }
-    };
-
-    const generateSpecialServicesComponent = (componentName) => {
-      console.log(componentName);
-      for (let i in specialServices) {
-        if (componentName === specialServices[i].name) {
-          let BringComponent = specialServices[i];
-          displayContent = <BringComponent />;
-          // break;
-        }
-      }
-    };
-
-    const componentName = childData.componentName;
-    switch (data.id) {
-      case 1:
-        generateHomeNeedsComponent(componentName);
-        break;
-      case 2:
-        displayContent = <AcRepair />;
-        break;
-      case 3:
-        generateAppliancesComponent(componentName);
-        break;
-      case 4:
-        generateSpecialServicesComponent(componentName);
-        break;
+    if (childData.componentName === "HouseShifting") {
+      displayContent = <HouseShifting />;
+    } else if (childData.componentName === "CommercialShifting") {
+      displayContent = <CommercialShifting />;
+    } else if (childData.componentName === "CleaningPestControl") {
+      displayContent = <CleaningPestControl />;
+    } else if (childData.componentName === "HomeDeepClean") {
+      displayContent = <HomeDeepClean />;
+    } else if (childData.componentName === "SofaCarpetClean") {
+      displayContent = <SofaCarpetClean />;
+    } else if (childData.componentName === "SofaCarpetClean") {
+      displayContent = <SofaCarpetClean />;
+    } else if (childData.componentName === "TankPipeClean") {
+      displayContent = <TankPipeClean />;
+    } else if (childData.componentName === "BathroomKitchenClean") {
+      displayContent = <BathroomKitchenClean />;
+    } else if (childData.componentName === "PremiumClean") {
+      displayContent = <PremiumClean />;
+    } else if (childData.componentName === "PaintingRenovation") {
+      displayContent = <PaintingRenovation />;
+    } else if (childData.componentName === "Plumbing") {
+      displayContent = <Plumbing />;
+    } else if (childData.componentName === "MoversPackers") {
+      displayContent = <MoversPackers />;
+    } else if (childData.componentName === "AcRepair") {
+      displayContent = <AcRepair />;
+    } else if (childData.componentName === "CCTVRepairInstall") {
+      displayContent = <CCTVRepairInstall />;
+    } else if (childData.componentName === "Sanitary") {
+      displayContent = <Sanitary />;
+    } else if (childData.componentName === "PickupRruckRental") {
+      displayContent = <PickupRruckRental />;
     }
+
+    // const generateHomeNeedsComponent = (componentName) => {
+    //   for (let i in homeNeedsList) {
+    //     console.log("Before: ", homeNeedsList[i].name);
+    //     if (componentName === homeNeedsList[i].name) {
+    //       let BringComponent = homeNeedsList[i];
+    //       console.log("After: ", homeNeedsList[i].name);
+    //       displayContent = <BringComponent />;
+    //       console.log("dlfhsdsfsdhofjo");
+    //       // break;
+    //     }
+    //   }
+    // };
+
+    // const generateAppliancesComponent = (componentName) => {
+    //   console.log(componentName);
+    //   for (let i in appliances) {
+    //     if (componentName === appliances[i].name) {
+    //       let BringComponent = appliances[i];
+    //       displayContent = <BringComponent />;
+    //       // break;
+    //     }
+    //   }
+    // };
+
+    // const generateSpecialServicesComponent = (componentName) => {
+    //   console.log(componentName);
+    //   for (let i in specialServices) {
+    //     if (componentName === specialServices[i].name) {
+    //       let BringComponent = specialServices[i];
+    //       displayContent = <BringComponent />;
+    //       // break;
+    //     }
+    //   }
+    // };
+
+    // const componentName = childData.componentName;
+    // switch (data.id) {
+    //   case 1:
+    //     generateHomeNeedsComponent(componentName);
+    //     break;
+    //   case 2:
+    //     displayContent = <AcRepair />;
+    //     break;
+    //   case 3:
+    //     generateAppliancesComponent(componentName);
+    //     break;
+    //   case 4:
+    //     generateSpecialServicesComponent(componentName);
+    //     break;
+    // }
 
     return (
       <section>

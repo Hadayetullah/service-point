@@ -47,7 +47,6 @@ const NavItemDetailsTooltip = (props) => {
           //   marginTop: "-20px",
           //   borderWidth: "30px",
           //   borderBottom: "1px",
-          //   borderStyle: "solid",
           borderColor: `transparent ${modalTopColor} transparent transparent`,
         }}
       ></span>

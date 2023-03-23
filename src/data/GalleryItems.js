@@ -876,7 +876,7 @@ const GalleryItems = [
         id: 1,
         item: "AC Installation Service",
         title: "Installation",
-        componentName: "AcInstallation",
+        componentName: "AcRepair",
         src: "asset/service-icon/ac-services.png",
         data: [
           {
@@ -929,7 +929,7 @@ const GalleryItems = [
         id: 2,
         item: "AC Uninstallation Service",
         title: "Uninstallation",
-        componentName: "AcUninstallation",
+        componentName: "AcRepair",
         src: "asset/service-icon/ac-services.png",
         data: [
           {
@@ -982,7 +982,7 @@ const GalleryItems = [
         id: 3,
         item: "AC Gas Refill Service",
         title: "Gas Refill",
-        componentName: "AcGasRefill",
+        componentName: "AcRepair",
         src: "asset/service-icon/ac-services.png",
         data: [
           {
@@ -1035,7 +1035,7 @@ const GalleryItems = [
         id: 4,
         item: "AC Leak Repair Service",
         title: "Leak Repair",
-        componentName: "AcLeakRepair",
+        componentName: "AcRepair",
         src: "asset/service-icon/ac-services.png",
         data: [
           {
@@ -1088,7 +1088,7 @@ const GalleryItems = [
         id: 5,
         item: "AC Circuit Reapir Service",
         title: "Circuit Reapir",
-        componentName: "AcCircuitReapir",
+        componentName: "AcRepair",
         src: "asset/service-icon/ac-services.png",
         data: [
           {
@@ -1141,7 +1141,7 @@ const GalleryItems = [
         id: 6,
         item: "AC Capacitor Repalcement Service",
         title: "Capacitor Repalcement",
-        componentName: "AcCapacitorRepalcement",
+        componentName: "AcRepair",
         src: "asset/service-icon/ac-services.png",
         data: [
           {
@@ -1194,7 +1194,7 @@ const GalleryItems = [
         id: 7,
         item: "AC Compresser Change Service",
         title: "Compresser Change",
-        componentName: "AcCompresserChange",
+        componentName: "AcRepair",
         src: "asset/service-icon/ac-services.png",
         data: [
           {
@@ -1247,7 +1247,7 @@ const GalleryItems = [
         id: 8,
         item: "AC Basic Service",
         title: "Basic Service",
-        componentName: "AcBasicService",
+        componentName: "AcRepair",
         src: "asset/service-icon/ac-services.png",
         data: [
           {
@@ -1300,7 +1300,7 @@ const GalleryItems = [
         id: 9,
         item: "AC Master Service",
         title: "Master Service",
-        componentName: "AcMasterService",
+        componentName: "AcRepair",
         src: "asset/service-icon/ac-services.png",
         data: [
           {
@@ -1353,7 +1353,7 @@ const GalleryItems = [
         id: 10,
         item: "AC Jet Wash Service",
         title: "Jet Wash",
-        componentName: "AcJetWash",
+        componentName: "AcRepair",
         src: "asset/service-icon/washing-machine.png",
         data: [
           {
@@ -1406,7 +1406,7 @@ const GalleryItems = [
         id: 11,
         item: "AC Dry Servicing Service",
         title: "Dry Servicing",
-        componentName: "AcDryServicing",
+        componentName: "AcRepair",
         src: "asset/service-icon/ac-services.png",
         data: [
           {
@@ -1512,7 +1512,7 @@ const GalleryItems = [
         id: 13,
         item: "AC Inspection Service",
         title: "Inspection",
-        componentName: "AcInspection",
+        componentName: "AcRepair",
         src: "asset/service-icon/ac-services.png",
         data: [
           {

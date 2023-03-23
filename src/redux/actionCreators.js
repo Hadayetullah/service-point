@@ -1,8 +1,9 @@
-import * as actionTypes from './actionTypes';
+import * as actionTypes from "./actionTypes";
 
-
-export const detailView = (parentId, childId) =>({
-    type: actionTypes.DETAIL_DATA,
+export const detailView = (parentId, childId) => ({
+  type: actionTypes.DETAIL_DATA,
+  payload: {
     parentId: parentId,
-    childId: childId
-})
+    childId: childId,
+  },
+});
