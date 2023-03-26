@@ -45,6 +45,27 @@ export const signupUser = (signupData) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
+export const signupVerification = (data, urlPath) => {
+  axios
+    .post(
+      "http://127.0.0.1:8000/api/user/authenticate/" +
+        urlPath[0] +
+        "/" +
+        urlPath[1] +
+        "/" +
+        urlPath[2] +
+        "/",
+      data,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+    .then((response) => console.log(response))
+    .catch((err) => console.log(err));
+};
+
 export const loginUser = (loginData) => (dispatch) => {
   axios
     .post("http://127.0.0.1:8000/api/user/login/", loginData, {

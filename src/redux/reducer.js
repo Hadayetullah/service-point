@@ -11,6 +11,9 @@ const galleryState = {
 const authState = {
   token: null,
   userId: null,
+  isSignupSuccess: false,
+  isSignupVerificationLoding: false,
+  isSignupVerificationMsg: null,
 };
 
 const galleryItemsReducer = (galleryItemsState = galleryState, action) => {

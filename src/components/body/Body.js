@@ -8,6 +8,7 @@ import ContactUs from "./bodyComponents/ContactUs";
 import TermsOfUse from "./bodyComponents/TermsOfUse";
 import Privacy from "./bodyComponents/Privacy";
 
+import SignupVerification from "../auth/SignupVerification";
 import ResetForgetPassword from "../auth/ResetForgetPassword";
 
 import Spinner from "../specialComponents/Spinner";
@@ -29,6 +30,7 @@ const Body = () => {
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/reset-password/*" element={<ResetForgetPassword />} />
+        <Route path="/authenticate/*" element={<SignupVerification />} />
         <Route path="/" element={<Home />} />
         <Route path="/spinner" element={<Spinner />} />
       </Routes>

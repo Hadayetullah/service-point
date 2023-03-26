@@ -2,6 +2,7 @@ export const DETAIL_DATA = "DETAIL_DATA";
 
 // Auth
 export const AUTH_SUCCESS = "AUTH_SUCCESS";
+export const SIGNUP_VERIFICATION = "SIGNUP_VERIFICATION";
 export const LOGOUT_USER = "LOGOUT_USER";
 export const CHANGE_PASSWORD = "CHANGE_PASSWORD";
 export const FORGET_PASSWORD = "FORGET_PASSWORD";
