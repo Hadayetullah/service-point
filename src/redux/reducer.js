@@ -11,8 +11,11 @@ const galleryState = {
 const authState = {
   token: null,
   userId: null,
-  isSignupSuccess: false,
+  signupLoading: false,
+  // isSignupSuccess: false,
+  isSignupSuccessMsg: null,
   isSignupVerificationLoding: false,
+  // isSignupVerificationSuccess: false,
   isSignupVerificationMsg: null,
 };
 
@@ -37,6 +40,29 @@ const authReducer = (state = authState, action) => {
     case actionTypes.AUTH_SUCCESS:
       return {
         ...state,
+        token: action.payload.token,
+        userId: action.payload.userId,
+      };
+    case actionTypes.SIGNUP_LOADING:
+      return {
+        ...state,
+        signupLoading: true,
+      };
+    case actionTypes.SIGNUP_SUCCESS:
+      return {
+        ...state,
+        signupLoading: false,
+        // isSignupSuccess: true,
+      };
+    case actionTypes.SIGNUP_VERIFICATION_LOADING:
+      return {
+        ...state,
+        isSignupVerificationLoding: true,
+      };
+    case actionTypes.SIGNUP_VERIFICATION_SUCCESS:
+      return {
+        ...state,
+        isSignupVerificationLoding: false,
         token: action.payload.token,
         userId: action.payload.userId,
       };

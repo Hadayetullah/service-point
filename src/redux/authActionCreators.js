@@ -2,9 +2,9 @@ import * as actionTypes from "./actionTypes";
 import jwtDecode from "jwt-decode";
 import axios from "axios";
 
-const authSuccess = (token, userId) => {
+const authSuccess = (token, userId, acType) => {
   return {
-    type: actionTypes.AUTH_SUCCESS,
+    type: acType,
     payload: {
       token: token,
       userId: userId,
@@ -12,23 +12,28 @@ const authSuccess = (token, userId) => {
   };
 };
 
-const extrackInfo = (token) => (dispatch) => {
+const loading = (acType) => ({
+  type: acType,
+});
+
+const extrackInfo = (token, acType) => (dispatch) => {
   const decoded = jwtDecode(token);
   const expTime = decoded.exp;
   const user_id = decoded.user_id;
-  console.log("expTime: ", new Date(expTime));
+  // console.log("expTime: ", new Date(expTime));
   const expirationTime = new Date(expTime * 1000);
-  console.log("New Time: ", expirationTime);
-  console.log("Date : ", new Date());
+  // console.log("New Time: ", expirationTime);
+  // console.log("Date : ", new Date());
 
   localStorage.setItem("token", token);
   localStorage.setItem("userId", user_id);
   localStorage.setItem("expirationTime", expirationTime);
 
-  dispatch(authSuccess(token, user_id));
+  dispatch(authSuccess(token, user_id, acType));
 };
 
 export const signupUser = (signupData) => (dispatch) => {
+  dispatch(loading(actionTypes.SIGNUP_LOADING));
   axios
     .post("http://127.0.0.1:8000/api/user/registration/", signupData, {
       headers: {
@@ -36,16 +41,16 @@ export const signupUser = (signupData) => (dispatch) => {
       },
     })
     .then((response) => {
-      console.log("Signup Response: ", response);
-      if (response.status === 200) {
-        const token = response.data.token.access;
-        dispatch(extrackInfo(token));
+      // console.log("Signup Response: ", response);
+      if (response.status === 201) {
+        dispatch(loading(actionTypes.SIGNUP_SUCCESS));
       }
     })
     .catch((err) => console.log(err));
 };
 
-export const signupVerification = (data, urlPath) => {
+export const signupVerification = (data, urlPath) => (dispatch) => {
+  dispatch(loading(actionTypes.SIGNUP_VERIFICATION_LOADING));
   axios
     .post(
       "http://127.0.0.1:8000/api/user/authenticate/" +
@@ -62,7 +67,12 @@ export const signupVerification = (data, urlPath) => {
         },
       }
     )
-    .then((response) => console.log(response))
+    .then((response) => {
+      if (response.status === 200) {
+        const token = response.data.token.access;
+        dispatch(extrackInfo(token, actionTypes.SIGNUP_VERIFICATION_SUCCESS));
+      }
+    })
     .catch((err) => console.log(err));
 };
 
@@ -77,7 +87,7 @@ export const loginUser = (loginData) => (dispatch) => {
       console.log(response);
       if (response.status === 200) {
         const token = response.data.token.access;
-        dispatch(extrackInfo(token));
+        dispatch(extrackInfo(token, actionTypes.AUTH_SUCCESS));
       }
     })
     .catch((err) => console.log(err));
@@ -152,7 +162,7 @@ export const authCheck = () => (dispatch) => {
     } else {
       // login
       const userId = localStorage.getItem("userId");
-      dispatch(authSuccess(token, userId));
+      dispatch(authSuccess(token, userId, actionTypes.AUTH_SUCCESS));
     }
   }
 };

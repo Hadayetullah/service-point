@@ -1,25 +1,42 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 
+import Spinner from "../specialComponents/Spinner";
 import { Alert } from "reactstrap";
-import "./auth.css";
+import "../header/Header.css";
 
 import { signupVerification } from "../../redux/authActionCreators";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
 
 const SignupVerification = (props) => {
-  const urlPath = window.location.pathname.split("authenticate/")[1].split("/");
-  const data = {
-    is_verified: true,
-  };
-  //   const dispatch = useDispatch();
+  const state = useSelector((state) => state.authReducer);
+  const isSignupVerificationLoding = state.isSignupVerificationLoding;
+  //   const token = state.token;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   useEffect(() => {
-    // dispatch(signupVerification(data, urlPath));
-    signupVerification(data, urlPath);
+    const urlPath = window.location.pathname
+      .split("authenticate/")[1]
+      .split("/");
+    const data = {
+      is_verified: true,
+    };
+    dispatch(signupVerification(data, urlPath));
+    // signupVerification(data, urlPath);
     // document.body.style.paddingRight = "0";
   }, []);
 
-  return <div></div>;
+  const height = window.screen.availHeight;
+
+  if (isSignupVerificationLoding) {
+    return (
+      <div style={{ height: `${height}px`, width: "100%", paddingTop: "5%" }}>
+        <Spinner />
+      </div>
+    );
+  } else {
+    navigate("/");
+  }
 };
 
 export default SignupVerification;

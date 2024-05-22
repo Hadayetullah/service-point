@@ -49,8 +49,7 @@ const mapStateToProps = (state) => {
   // console.log("Glogal State: ", state);
   return {
     navMenuItem: state.galleryItems,
-    token: state.authReducer.token,
-    // isUpdated: state.serviceDetails.isUpdated,
+    authState: state.authReducer,
   };
 };
 const mapDispatchToProps = (dispatch) => {
@@ -188,7 +187,7 @@ class Header extends Component {
   }
 
   render() {
-    // console.log(this.props.isUpdated);
+    // console.log(this.props.authState);
 
     const { scrolled, zIndex, isResponsive } = this.state;
 
@@ -319,7 +318,7 @@ class Header extends Component {
               </div>
 
               <div className="col-md-3 nav-top-right">
-                {this.props.token === null
+                {this.props.authState.token === null
                   ? notAuthenticatedNavTopRight
                   : authenticatedNavTopRight}
               </div>
@@ -455,9 +454,17 @@ class Header extends Component {
             className="signupModal"
             isOpen={this.state.signupModal}
           >
-            <ModalHeader toggle={this.signupToggle}>Register</ModalHeader>
+            <ModalHeader
+              className={
+                this.props.authState.signupLoading ? "form-disabled" : ""
+              }
+              toggle={this.signupToggle}
+            >
+              Register
+            </ModalHeader>
             <ModalBody>
               <Signup
+                signupLoading={this.props.authState.signupLoading}
                 loginToggleFromSignupModal={this.loginToggleFromSignupModal}
               />
             </ModalBody>

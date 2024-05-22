@@ -1,6 +1,7 @@
 import React, { Component, createRef } from "react";
 import { connect } from "react-redux";
 import { signupUser } from "../../redux/authActionCreators";
+import Spinner from "../specialComponents/Spinner";
 
 import {
   Form,
@@ -142,104 +143,112 @@ class Signup extends Component {
         {/* <Alert color={}>
 
                 </Alert> */}
-        <Form onSubmit={this.handleSubmit} style={{ margin: "20px 20px" }}>
-          <FormGroup>
-            <Input
-              placeholder="Full Name"
-              type="text"
-              name="name"
-              value={this.state.formState.name}
-              onChange={this.handleInputChange}
-              invalid={this.state.errors.name && true}
-              onBlur={this.handleErrorLook}
-              onFocus={this.handleErrorLook}
-            />
-            {this.state.errors.name && (
-              <FormFeedback invalid={true}>
-                {this.state.errors.name}
-              </FormFeedback>
-            )}
-          </FormGroup>
-          <FormGroup>
-            <Input
-              placeholder="Phone Number"
-              type="text"
-              name="phone"
-              value={this.state.formState.phone}
-              onChange={this.handleInputChange}
-              invalid={this.state.errors.phone && true}
-              onBlur={this.handleErrorLook}
-              onFocus={this.handleErrorLook}
-            />
-            {this.state.errors.phone && (
-              <FormFeedback invalid={true}>
-                {this.state.errors.phone}
-              </FormFeedback>
-            )}
-          </FormGroup>
-          <FormGroup>
-            <Input
-              placeholder="Email"
-              type="email"
-              name="email"
-              value={this.state.formState.email}
-              onChange={this.handleInputChange}
-              invalid={this.state.errors.email && true}
-              onBlur={this.handleErrorLook}
-              onFocus={this.handleErrorLook}
-            />
-            {this.state.errors.email && (
-              <FormFeedback invalid={true}>
-                {this.state.errors.email}
-              </FormFeedback>
-            )}
-          </FormGroup>{" "}
-          <FormGroup>
-            <Input
-              placeholder="Password"
-              type="password"
-              name="password"
-              value={this.state.formState.password}
-              onChange={this.handleInputChange}
-              invalid={this.state.errors.password && true}
-              onBlur={this.handleErrorLook}
-              onFocus={this.handleErrorLook}
-            />
-            {this.state.errors.password && (
-              <FormFeedback invalid={true}>
-                {this.state.errors.password}
-              </FormFeedback>
-            )}
-          </FormGroup>
-          <FormGroup>
-            <Input
-              placeholder="Confirm Password"
-              type="password"
-              name="password2"
-              value={this.state.formState.password2}
-              onChange={this.handleInputChange}
-              invalid={this.state.errors.password2 && true}
-              onBlur={this.handleErrorLook}
-              onFocus={this.handleErrorLook}
-            />
-            {this.state.errors.password2 && (
-              <FormFeedback invalid={true}>
-                {this.state.errors.password2}
-              </FormFeedback>
-            )}
-          </FormGroup>{" "}
-          <Button type="submit">Submit</Button>
-        </Form>
-        <div style={{ margin: "20px 20px" }}>
-          <p>
-            Have an account?{" "}
-            <strong
-              style={{ cursor: "pointer" }}
-              onClick={this.props.loginToggleFromSignupModal}
-            >
-              Login Here
-            </strong>
-          </p>
+
+        <div className={this.props.signupLoading ? "form-disabled" : ""}>
+          <Form onSubmit={this.handleSubmit} style={{ margin: "20px 20px" }}>
+            <FormGroup>
+              <Input
+                placeholder="Full Name"
+                type="text"
+                name="name"
+                value={this.state.formState.name}
+                onChange={this.handleInputChange}
+                invalid={this.state.errors.name && true}
+                onBlur={this.handleErrorLook}
+                onFocus={this.handleErrorLook}
+              />
+              {this.state.errors.name && (
+                <FormFeedback invalid={true}>
+                  {this.state.errors.name}
+                </FormFeedback>
+              )}
+            </FormGroup>
+            <FormGroup>
+              <Input
+                placeholder="Phone Number"
+                type="text"
+                name="phone"
+                value={this.state.formState.phone}
+                onChange={this.handleInputChange}
+                invalid={this.state.errors.phone && true}
+                onBlur={this.handleErrorLook}
+                onFocus={this.handleErrorLook}
+              />
+              {this.state.errors.phone && (
+                <FormFeedback invalid={true}>
+                  {this.state.errors.phone}
+                </FormFeedback>
+              )}
+            </FormGroup>
+            <FormGroup>
+              <Input
+                placeholder="Email"
+                type="email"
+                name="email"
+                value={this.state.formState.email}
+                onChange={this.handleInputChange}
+                invalid={this.state.errors.email && true}
+                onBlur={this.handleErrorLook}
+                onFocus={this.handleErrorLook}
+              />
+              {this.state.errors.email && (
+                <FormFeedback invalid={true}>
+                  {this.state.errors.email}
+                </FormFeedback>
+              )}
+            </FormGroup>{" "}
+            <FormGroup>
+              <Input
+                placeholder="Password"
+                type="password"
+                name="password"
+                value={this.state.formState.password}
+                onChange={this.handleInputChange}
+                invalid={this.state.errors.password && true}
+                onBlur={this.handleErrorLook}
+                onFocus={this.handleErrorLook}
+              />
+              {this.state.errors.password && (
+                <FormFeedback invalid={true}>
+                  {this.state.errors.password}
+                </FormFeedback>
+              )}
+            </FormGroup>
+            <FormGroup>
+              <Input
+                placeholder="Confirm Password"
+                type="password"
+                name="password2"
+                value={this.state.formState.password2}
+                onChange={this.handleInputChange}
+                invalid={this.state.errors.password2 && true}
+                onBlur={this.handleErrorLook}
+                onFocus={this.handleErrorLook}
+              />
+              {this.state.errors.password2 && (
+                <FormFeedback invalid={true}>
+                  {this.state.errors.password2}
+                </FormFeedback>
+              )}
+            </FormGroup>{" "}
+            <Button type="submit">Submit</Button>
+          </Form>
+          <div style={{ margin: "20px 20px" }}>
+            <p>
+              Have an account?{" "}
+              <strong
+                style={{ cursor: "pointer" }}
+                onClick={this.props.loginToggleFromSignupModal}
+              >
+                Login Here
+              </strong>
+            </p>
+          </div>
+          {this.props.signupLoading && (
+            <div className="loading">
+              <Spinner />
+            </div>
+          )}
         </div>
       </div>
     );
